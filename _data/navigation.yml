@@ -1,4 +1,6 @@
 main:
+  - title: "Home"
+    url: / 
   - title: "Meet the Team"
     url: /team/
   - title: "Our Work"
