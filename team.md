@@ -1,47 +1,24 @@
 ---
-title: "Team"
+title: "Meet the Team"
 permalink: /team/
 layout: page
 ---
 
-<style>
-.team-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill,minmax(220px,1fr));
-  gap: 1.25rem;
-  margin-top: 1rem;
-}
-.team-card {
-  padding: 1rem;
-  border-radius: 8px;
-  background: var(--color-canvas, #fff);
-  box-shadow: var(--shadow-depth-1, 0 1px 3px rgba(0,0,0,0.08));
-  text-align: center;
-}
-.team-photo {
-  width: 120px;
-  height: 120px;
-  object-fit: cover;
-  border-radius: 50%;
-  margin-bottom: 0.5rem;
-}
-.team-links a { margin: 0 0.25rem; font-size: 0.95rem; }
-.role { color: var(--type-muted); margin-top: 0.25rem; font-weight:600; }
-</style>
-
-<div class="team-grid">
+<div class="team-list">
 {% for member in site.data.team %}
-  <article class="team-card" id="{{ member.id }}">
-    <img src="{{ member.image }}" alt="{{ member.name }}" class="team-photo" />
-    <h3>{{ member.name }}</h3>
-    <div class="role">{{ member.role }}</div>
-    <p>{{ member.bio }}</p>
-    <p class="team-links">
-      {% if member.github %}<a href="https://github.com/{{ member.github }}" target="_blank">GitHub</a>{% endif %}
-      {% if member.twitter %}<a href="https://twitter.com/{{ member.twitter }}" target="_blank">Twitter</a>{% endif %}
-      {% if member.orcid %}<a href="https://orcid.org/{{ member.orcid }}" target="_blank">ORCID</a>{% endif %}
-      {% if member.email %}<a href="mailto:{{ member.email }}">Email</a>{% endif %}
-    </p>
-  </article>
+  <section class="team-row" id="{{ member.id }}">
+    <img src="{{ member.image }}" alt="{{ member.name }}" class="team-photo-left" />
+    <div class="team-info">
+      <h3 class="team-name">{{ member.name }}</h3>
+      {% if member.role %}<p class="team-role">{{ member.role }}</p>{% endif %}
+      <ul class="team-meta">
+        {% if member.email %}<li>Email: <a href="mailto:{{ member.email }}">{{ member.email }}</a></li>{% endif %}
+        {% if member.github %}<li>GitHub: <a href="https://github.com/{{ member.github }}" target="_blank">@{{ member.github }}</a></li>{% endif %}
+        {% if member.twitter %}<li>Twitter/X: <a href="https://twitter.com/{{ member.twitter }}" target="_blank">@{{ member.twitter }}</a></li>{% endif %}
+        {% if member.orcid %}<li>ORCID: <a href="https://orcid.org/{{ member.orcid }}" target="_blank">{{ member.orcid }}</a></li>{% endif %}
+      </ul>
+      {% if member.bio %}<p class="team-bio">{{ member.bio }}</p>{% endif %}
+    </div>
+  </section>
 {% endfor %}
 </div>
