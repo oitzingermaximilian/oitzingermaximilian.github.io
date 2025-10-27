@@ -1,0 +1,15 @@
+- id: paper1
+  title: "An interesting paper about X"
+  authors: "A. One, B. Two, C. Three"
+  year: 2024
+  doi: "10.1234/example.doi.1"
+  url: "https://doi.org/10.1234/example.doi.1"
+  description: "One-line description of the paper and why it matters."
+
+- id: paper2
+  title: "Another work on Y"
+  authors: "Team Name"
+  year: 2023
+  doi: "10.5678/example.doi.2"
+  url: "https://doi.org/10.5678/example.doi.2"
+  description: "Short summary."
