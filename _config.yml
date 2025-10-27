@@ -1,0 +1,17 @@
+remote_theme: "mmistakes/minimal-mistakes"
+title: "Your Team Name"
+description: "Team page for our work and publications"
+baseurl: ""     # leave empty for user site
+url: "https://oitzingermaximilian.github.io"
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+nav:
+  - title: "Team"
+    url: /team/
+  - title: "Publications"
+    url: /publications/
+
+# Optional: enable show_excerpts, paginate, etc.
