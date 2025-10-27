@@ -14,6 +14,7 @@ layout: single
     {% if pub.doi %}
       <p class="work-links">DOI: <a href="{{ pub.url | default: 'https://doi.org/' | append: pub.doi }}" target="_blank">{{ pub.doi }}</a></p>
     {% endif %}
+
     {% assign abstract = pub.abstract | default: pub.description %}
     {% if abstract %}
       <details class="work-abstract">
