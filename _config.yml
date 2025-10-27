@@ -1,17 +1,13 @@
 remote_theme: "mmistakes/minimal-mistakes"
-title: "Your Team Name"
-description: "Team page for our work and publications"
-baseurl: ""     # leave empty for user site
-url: "https://oitzingermaximilian.github.io"
 
+title: "Our Team"
+description: "Team page for our work and publications"
+
+# Required for correct absolute URLs on a user site
+url: "https://oitzingermaximilian.github.io"
+baseurl: ""
+
+# Keep plugins minimal and GitHub Pages–compatible
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
-
-nav:
-  - title: "Team"
-    url: /team/
-  - title: "Publications"
-    url: /publications/
-
-# Optional: enable show_excerpts, paginate, etc.
