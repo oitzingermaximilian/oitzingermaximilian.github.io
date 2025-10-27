@@ -1,7 +1,7 @@
 ---
 title: "Our Work"
 permalink: /publications/
-layout: page
+layout: single
 ---
 
 <div class="work-list">
