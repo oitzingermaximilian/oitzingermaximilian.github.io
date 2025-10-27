@@ -1,0 +1,19 @@
+- id: maximilian
+  name: "Maximilian Oitzinger"
+  role: "Team Lead"
+  bio: "Short bio: research interests, one-line summary."
+  image: "/assets/images/team/maximilian.jpg"
+  github: "oitzingermaximilian"
+  twitter: "max_twitter"
+  orcid: "0000-0000-0000-0000"
+  email: "max@example.com"
+
+- id: jane
+  name: "Jane Doe"
+  role: "Researcher"
+  bio: "Short bio for Jane."
+  image: "/assets/images/team/jane.jpg"
+  github: "janedoe"
+  twitter: "jane_twitter"
+  orcid: "0000-0000-0000-0001"
+  email: "jane@example.com"
