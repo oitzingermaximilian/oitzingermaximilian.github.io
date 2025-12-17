@@ -10,14 +10,14 @@ permalink: /team/
     display: flex; 
     flex-direction: column; 
     gap: 1.5rem; 
-    width: 100%; /* Ensure it uses full page width */
+    width: 100%;
   }
   
   /* Individual Team Card */
   .team-row {
     display: flex;
-    align-items: flex-start; /* Aligns image and text to top */
-    gap: 1.5rem;
+    align-items: center; /* Changed to 'center' so the bigger image looks balanced vertically */
+    gap: 2rem;           /* Increased gap slightly for the bigger image */
     padding: 1.5rem;
     border-radius: 8px;
     background: #fff;
@@ -25,20 +25,21 @@ permalink: /team/
     border: 1px solid #eee;
   }
 
-  /* Image Styling */
+  /* Image Styling - BIGGER NOW */
   .team-photo-left {
-    width: 120px;
-    height: 120px;
+    width: 160px;        /* Increased from 120px */
+    height: 160px;       /* Increased from 120px */
     object-fit: cover;
     border-radius: 50%;
-    flex-shrink: 0; /* Prevents image from getting squashed */
-    background-color: #f0f0f0; /* Gray placeholder if image missing */
+    flex-shrink: 0;
+    background-color: #f0f0f0;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Added a subtle shadow to the photo */
   }
 
-  /* Text Container - fixes "too small" issue */
+  /* Text Container */
   .team-info { 
     flex: 1; 
-    min-width: 0; /* Critical for allowing text to wrap correctly */
+    min-width: 0;
   }
 
   .team-name { margin-top: 0; margin-bottom: 0.25rem; font-size: 1.5em; line-height: 1.2; }
@@ -61,7 +62,7 @@ permalink: /team/
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
-    margin-top: auto; /* Pushes buttons to bottom if needed */
+    margin-top: auto;
   }
 
   .social-btn {
@@ -89,7 +90,12 @@ permalink: /team/
 
   /* Mobile Adjustments */
   @media (max-width: 600px) {
-    .team-row { flex-direction: column; text-align: center; align-items: center; }
+    .team-row { 
+      flex-direction: column; 
+      text-align: center; 
+      align-items: center; 
+      gap: 1rem;
+    }
     .team-info { width: 100%; }
     .team-social { justify-content: center; }
   }
