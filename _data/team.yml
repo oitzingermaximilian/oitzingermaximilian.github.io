@@ -95,7 +95,7 @@
       url: "https://orcid.org/0009-0005-2028-6151"
       icon: "fab fa-orcid"
     - platform: "Google Scholar"
-      url: "https://scholar.google.com"
+      url: "https://scholar.google.com/citations?user=Tug88OAAAAAJ&hl=de"
       icon: "fas fa-graduation-cap"
 
 - id: marcus
