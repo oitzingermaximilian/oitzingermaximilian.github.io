@@ -3,19 +3,21 @@
   role: "Postdoc & Team Lead (ES3M)"
   bio: "Heads the Energy System Modeling team 'From Minerals to Megawatts' (ES3M) at TU Wien. Research focuses on cross-sectoral modeling of clean-tech supply chains, transformation pathways, and LNG market dynamics."
   image: "/assets/images/team/sebastian.jpg"
-  github: "sebastianzwickl"
-  linkedin: "sebastian-zwickl-bernhard"
-  orcid: "0000-0002-8599-6278"
-  email: "zwickl-bernhard@eeg.tuwien.ac.at"
+  github: "https://github.com/sebastianzwickl"
+  linkedin: "https://www.linkedin.com/in/sebastian-zwickl-bernhard"
+  orcid: "https://orcid.org/0000-0002-8599-6278"
+  google_scholar: "https://scholar.google.com/citations?hl=de&user=qknMCCYAAAAJ"
+  email: "zwickl@eeg.tuwien.ac.at"
 
 - id: daniel
   name: "Daniel Cäsar"
   role: "Researcher"
   bio: "Short bio for Daniel."
   image: "/assets/images/team/daniel.jpg"
-  github: "danielcaesar"
-  linkedin: "daniel-caesar"
-  orcid: "0000-0000-0000-0000"
+  github: "https://github.com/danielcaesar"
+  linkedin: "https://www.linkedin.com/in/daniel-caesar"
+  orcid: "https://orcid.org/0000-0000-0000-0000"
+  google_scholar: "https://scholar.google.com" # Add URL here
   email: "caesar@eeg.tuwien.ac.at"
 
 - id: alexander
@@ -23,9 +25,10 @@
   role: "Researcher"
   bio: "Short bio for Alexander."
   image: "/assets/images/team/alexander.jpg"
-  github: "alexandercseko"
-  linkedin: "alexander-cseko"
-  orcid: "0000-0000-0000-0000"
+  github: "https://github.com/alexandercseko"
+  linkedin: "https://www.linkedin.com/in/alexander-cseko"
+  orcid: "https://orcid.org/0000-0000-0000-0000"
+  google_scholar: "https://scholar.google.com" # Add URL here
   email: "csekoe@eeg.tuwien.ac.at"
 
 - id: helen
@@ -33,9 +36,10 @@
   role: "Researcher"
   bio: "Short bio for Helen."
   image: "/assets/images/team/helen.jpg"
-  github: "helenfischer"
-  linkedin: "helen-fischer"
-  orcid: "0000-0000-0000-0000"
+  github: "https://github.com/helenfischer"
+  linkedin: "https://www.linkedin.com/in/helen-fischer"
+  orcid: "https://orcid.org/0000-0000-0000-0000"
+  google_scholar: "https://scholar.google.com" # Add URL here
   email: "fischer@eeg.tuwien.ac.at"
 
 - id: maximilian
@@ -43,9 +47,10 @@
   role: "Researcher"
   bio: "Short bio: research interests, one-line summary."
   image: "/assets/images/team/maximilian.jpg"
-  github: "oitzingermaximilian"
-  linkedin: "maximilian-oitzinger"
-  orcid: "0009-0005-2028-6151"
+  github: "https://github.com/oitzingermaximilian"
+  linkedin: "https://www.linkedin.com/in/maximilian-oitzinger"
+  orcid: "https://orcid.org/0009-0005-2028-6151"
+  google_scholar: "https://scholar.google.com/citations?user=Tug88OAAAAAJ&hl=de&oi=ao"
   email: "oitzinger@eeg.tuwien.ac.at"
 
 - id: marcus
@@ -53,7 +58,8 @@
   role: "Researcher"
   bio: "Short bio for Marcus."
   image: "/assets/images/team/marcus.jpg"
-  github: "marcusotti"
-  linkedin: "marcus-otti"
-  orcid: "0000-0000-0000-0000"
+  github: "https://github.com/marcusotti"
+  linkedin: "https://www.linkedin.com/in/marcus-otti"
+  orcid: "https://orcid.org/0000-0000-0000-0000"
+  google_scholar: "https://scholar.google.com" # Add URL here
   email: "otti@eeg.tuwien.ac.at"
