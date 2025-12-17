@@ -1,6 +1,6 @@
 ---
 layout: home
-title: "Welcome"
+title: ""
 permalink: /
 ---
 
@@ -131,7 +131,7 @@ permalink: /
     {% endfor %}
   </div>
 
-  <a href="/team/" class="btn-main">View Full Team Profiles</a>
+  <a href="/team/" class="btn-main">Meet the Team</a>
 </section>
 
 <section class="home-pubs-section">
