@@ -5,38 +5,63 @@ permalink: /team/
 ---
 
 <style>
-  .team-list { display: grid; gap: 1.5rem; }
+  /* Main Grid Container */
+  .team-list { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 1.5rem; 
+    width: 100%; /* Ensure it uses full page width */
+  }
   
+  /* Individual Team Card */
   .team-row {
     display: flex;
-    align-items: flex-start;
+    align-items: flex-start; /* Aligns image and text to top */
     gap: 1.5rem;
     padding: 1.5rem;
     border-radius: 8px;
-    background: #fff; /* White card background */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Soft shadow */
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
     border: 1px solid #eee;
   }
 
+  /* Image Styling */
   .team-photo-left {
     width: 120px;
     height: 120px;
     object-fit: cover;
-    border-radius: 50%; /* Circular Image */
-    flex-shrink: 0;
+    border-radius: 50%;
+    flex-shrink: 0; /* Prevents image from getting squashed */
+    background-color: #f0f0f0; /* Gray placeholder if image missing */
   }
 
-  .team-info { flex: 1; }
-  .team-name { margin-top: 0; margin-bottom: 0.25rem; font-size: 1.5em; }
-  .team-role { color: #666; font-weight: bold; margin-bottom: 0.5rem; }
-  .team-bio { margin-bottom: 1rem; }
+  /* Text Container - fixes "too small" issue */
+  .team-info { 
+    flex: 1; 
+    min-width: 0; /* Critical for allowing text to wrap correctly */
+  }
+
+  .team-name { margin-top: 0; margin-bottom: 0.25rem; font-size: 1.5em; line-height: 1.2; }
+  .team-role { color: #666; font-weight: bold; margin-bottom: 0.75rem; }
+  .team-bio { margin-bottom: 1rem; line-height: 1.6; }
   
+  /* Email Styling */
+  .team-email {
+    margin-bottom: 1rem;
+    font-size: 0.95em;
+  }
+  .email-label {
+    font-weight: 600;
+    color: #555;
+    margin-right: 5px;
+  }
+
   /* Social Button Styles */
   .team-social {
     display: flex;
-    gap: 8px;
-    margin-top: 10px;
+    gap: 10px;
     flex-wrap: wrap;
+    margin-top: auto; /* Pushes buttons to bottom if needed */
   }
 
   .social-btn {
@@ -65,6 +90,7 @@ permalink: /team/
   /* Mobile Adjustments */
   @media (max-width: 600px) {
     .team-row { flex-direction: column; text-align: center; align-items: center; }
+    .team-info { width: 100%; }
     .team-social { justify-content: center; }
   }
 </style>
@@ -75,7 +101,7 @@ permalink: /team/
 <div class="team-list">
   {% for member in site.data.team %}
   <div class="team-row">
-    <img src="{{ member.image }}" class="team-photo-left" alt="{{ member.name }}">
+    <img src="{{ member.image }}" class="team-photo-left" alt="{{ member.name }}" onerror="this.style.display='none'">
     
     <div class="team-info">
       <h3 class="team-name">{{ member.name }}</h3>
@@ -84,9 +110,10 @@ permalink: /team/
       <p class="team-bio">{{ member.bio }}</p>
       
       {% if member.email %}
-      <p class="team-meta" style="font-size: 0.9em; margin-top: 0.5rem; margin-bottom: 0.5rem;">
-        📧 <a href="mailto:{{ member.email }}">{{ member.email }}</a>
-      </p>
+      <div class="team-email">
+        <span class="email-label">Email:</span>
+        <a href="mailto:{{ member.email }}">{{ member.email }}</a>
+      </div>
       {% endif %}
 
       {% if member.social_links %}
