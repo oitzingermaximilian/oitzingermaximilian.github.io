@@ -1,25 +1,39 @@
 ---
-title: "Meet the Team"
+layout: page
+title: Our Team
 permalink: /team/
-layout: single
 ---
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.4/css/academicons.min.css">
+
 <div class="team-list">
-{% for member in site.data.team %}
-  <section class="team-row" id="{{ member.id }}">
-    <img src="{{ member.image }}" alt="{{ member.name }}" class="team-photo-left" />
+  {% for member in site.data.team %}
+  <div class="team-row">
+    <img src="{{ member.image }}" class="team-photo-left" alt="{{ member.name }}">
+    
     <div class="team-info">
       <h3 class="team-name">{{ member.name }}</h3>
-      {% if member.role %}<p class="team-role">{{ member.role }}</p>{% endif %}
-      <ul class="team-meta">
-        {% if member.role %}<li><strong>Position:</strong> {{ member.role }}</li>{% endif %}
-        {% if member.email %}<li><strong>Email:</strong> <a href="mailto:{{ member.email }}">{{ member.email }}</a></li>{% endif %}
-        {% if member.github %}<li><strong>GitHub:</strong> <a href="https://github.com/{{ member.github }}" target="_blank">@{{ member.github }}</a></li>{% endif %}
-        {% if member.twitter %}<li><strong>Twitter/X:</strong> <a href="https://twitter.com/{{ member.twitter }}" target="_blank">@{{ member.twitter }}</a></li>{% endif %}
-        {% if member.orcid %}<li><strong>ORCID:</strong> <a href="https://orcid.org/{{ member.orcid }}" target="_blank">{{ member.orcid }}</a></li>{% endif %}
-      </ul>
-      {% if member.bio %}<p class="team-bio">{{ member.bio }}</p>{% endif %}
+      <p class="team-role">{{ member.role }}</p>
+      
+      <p class="team-bio">{{ member.bio }}</p>
+      
+      {% if member.email %}
+      <p class="team-meta" style="font-size: 0.9em; margin-top: 0.5rem;">
+        📧 <a href="mailto:{{ member.email }}">{{ member.email }}</a>
+      </p>
+      {% endif %}
+
+      {% if member.social_links %}
+      <div class="team-social">
+        {% for link in member.social_links %}
+          <a href="{{ link.url }}" target="_blank" title="{{ link.platform }}" class="social-btn">
+            <i class="{{ link.icon }}"></i>
+          </a>
+        {% endfor %}
+      </div>
+      {% endif %}
     </div>
-  </section>
-{% endfor %}
+  </div>
+  {% endfor %}
 </div>
