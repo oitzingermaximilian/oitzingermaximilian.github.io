@@ -74,3 +74,36 @@ details.work-abstract[open] > summary { margin-bottom: .25rem; }
   }
   .team-meta { margin-left: 0; }
 }
+
+/* Add to the bottom of your CSS file */
+
+/* Social Icons container */
+.team-social {
+  margin-top: 0.75rem;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+/* The round buttons */
+.social-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #f0f0f0;
+  color: #333;
+  text-decoration: none !important; /* Force no underline */
+  transition: all 0.2s ease;
+  font-size: 1rem;
+  border: 1px solid #e0e0e0;
+}
+
+.social-btn:hover {
+  background-color: #1e90ff; /* Blue on hover */
+  border-color: #1e90ff;
+  color: #fff;
+  transform: translateY(-2px);
+}
