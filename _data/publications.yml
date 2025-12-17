@@ -1,15 +1,15 @@
-- id: paper1
-  title: "An interesting paper about X"
-  authors: "A. One, B. Two, C. Three"
-  year: 2024
-  doi: "10.1234/example.doi.1"
-  url: "https://doi.org/10.1234/example.doi.1"
-  description: "One-line description of the paper and why it matters."
+- id: strategic-solar-stockpiling
+  title: "Strategic solar module stockpiling in the EU: A scenario-based analysis of costs and benefits beyond 2030"
+  authors: "Sebastian Zwickl-Bernhard, Maximilian Oitzinger, Helen Anais Fischer, Stian Backe"
+  year: 2025
+  doi: "10.1016/j.enpol.2025.114626"
+  url: "https://doi.org/10.1016/j.enpol.2025.114626"
+  description: "Analyzes the optimal levels of strategic solar module stockpiles in the EU to achieve climate neutrality by 2050. The study finds that stockpiling is cost-effective in specific scenarios, particularly under unfavorable import conditions, and can reduce import dependency by introducing temporal flexibility."
 
-- id: paper2
-  title: "Another work on Y"
-  authors: "Team Name"
-  year: 2023
-  doi: "10.5678/example.doi.2"
-  url: "https://doi.org/10.5678/example.doi.2"
-  description: "Short summary."
+- id: securing-eu-supply-chains
+  title: "Securing EU Clean Technology Supply Chains: Learning Rates in Material Recycling and Strategic Stockpiling"
+  authors: "Sebastian Zwickl-Bernhard, Maximilian Oitzinger"
+  year: 2025
+  doi: "10.1109/EEM60825.2025.11050187"
+  url: "https://ieeexplore.ieee.org/document/11050187/"
+  description: "Examines how the EU can meet its 2030 domestic sourcing targets for solar PV modules. The study models learning rates for material recycling and finds that strategic stockpiling is crucial for meeting benchmarks in the late 2020s and early 2040s, complementing domestic remanufacturing."
