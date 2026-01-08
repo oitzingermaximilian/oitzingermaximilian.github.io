@@ -5,6 +5,18 @@ permalink: /team/
 ---
 
 <style>
+    /* Force the main content container to be wider just for this page */
+  .page__inner-wrap {
+    width: 100% !important;
+    max-width: 1200px !important; /* Increases max-width from the default narrow column */
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /* Sometimes themes use these classes instead, it doesn't hurt to include them */
+  .wrapper, .page__content {
+    max-width: 1200px !important;
+  }
   /* Main Grid Container */
   .team-list { 
     display: flex; 
