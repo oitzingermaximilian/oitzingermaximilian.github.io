@@ -140,8 +140,6 @@ header:
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.4/css/academicons.min.css">
 
-<h1 style="text-align: center; margin-bottom: 2rem; color: #1e90ff; font-weight: bold;">Meet the Team</h1>
-
 <div class="team-list">
   {% for member in site.data.team %}
   <div class="team-row">
