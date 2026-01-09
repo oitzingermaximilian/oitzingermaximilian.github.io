@@ -1,5 +1,4 @@
 ---
-title: "Our Work"
 permalink: /publications/
 layout: single
 ---
