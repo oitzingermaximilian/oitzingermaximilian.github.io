@@ -1,5 +1,5 @@
 ---
-layout: home
+layout: splash
 permalink: /
 ---
 
@@ -114,7 +114,6 @@ permalink: /
 </section>
 
 <section class="home-team-section">
-  <h3>Meet the Team</h3>
   <div class="home-team-grid">
     {% for member in site.data.team %}
     <a href="/team/#{{ member.id }}" class="home-member">
@@ -123,7 +122,7 @@ permalink: /
     </a>
     {% endfor %}
   </div>
-  <a href="/team/" class="btn-main">View Full Team Profiles</a>
+  <a href="/team/" class="btn-main">Meet the Team</a>
 </section>
 
 <section class="home-thesis-section">
