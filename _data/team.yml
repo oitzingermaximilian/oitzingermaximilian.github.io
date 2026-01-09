@@ -22,21 +22,21 @@
 - id: daniel
   name: "Daniel Cäsar"
   role: "Researcher"
-  bio: "Short bio for Daniel."
+  bio: "Daniel is a researcher associate and PhD candidate at the Energy Economics Group (EEG) since December 2025. His work focuses on the analysis of dual prices in large-scale energy system optimization and on concepts for energy-token-based communities. Daniel also brings prior professional and academic experience in the development of hydrogen markets and infrastructures, as well as in conducting parametric life cycle assessments. He holds a B.Sc. and M.Sc. in Business Administration and Engineering (Mechanical Engineering) from RWTH Aachen University."
   image: "/assets/images/team/daniel.jpg"
   email: "caesar@eeg.tuwien.ac.at"
   social_links:
     - platform: "GitHub"
-      url: "https://github.com/danielcaesar"
+      url: "https://github.com/danielcaesar-tuw"
       icon: "fab fa-github"
     - platform: "LinkedIn"
-      url: "https://www.linkedin.com/in/daniel-caesar"
+      url: "www.linkedin.com/in/daniel-cäsar-7460481b5"
       icon: "fab fa-linkedin"
     - platform: "ORCID"
-      url: "https://orcid.org/0000-0000-0000-0000"
+      url: "https://orcid.org/0009-0008-6840-0453"
       icon: "fab fa-orcid"
     - platform: "Google Scholar"
-      url: "https://scholar.google.com"
+      url: ""
       icon: "fas fa-graduation-cap"
 
 - id: alexander
