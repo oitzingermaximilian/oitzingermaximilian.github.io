@@ -1,5 +1,4 @@
 ---
-title: "Meet the Team"
 layout: splash
 permalink: /team/
 header:
