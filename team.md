@@ -3,17 +3,18 @@ title: "Meet the Team"
 layout: splash
 permalink: /team/
 header:
-  overlay_color: "#fff" # Optional: Keeps the header clean if the theme adds an image
+  overlay_color: "#fff"
 ---
 
 <style>
-  /* 1. LAYOUT OVERRIDES */
-  /* Force the content wrapper to use 90% of the screen width (or max 1600px) */
+  /* --- 1. LAYOUT & WIDTH FIXES --- */
+  
+  /* Make the container MASSIVE (Wide!) */
   .page__inner-wrap {
     float: none !important;
     margin: 0 auto !important;
-    width: 90% !important;
-    max-width: 1600px !important;
+    width: 95% !important;       /* Uses 95% of the screen */
+    max-width: 1900px !important; /* Cap it at 1900px (very wide) */
     padding-right: 0 !important;
   }
 
@@ -24,14 +25,12 @@ header:
     float: none !important;
   }
   
-  /* Hide the default page title area if it appears duplicated */
-  .page__title {
-    margin-top: 1rem;
-    text-align: center;
-    margin-bottom: 2rem;
+  /* HIDE the theme's default duplicate title (The white one) */
+  .page__title, .page__hero-caption, .page__hero-title {
+    display: none !important;
   }
 
-  /* 2. TEAM CARD STYLING */
+  /* --- 2. TEAM CARD STYLING --- */
   .team-list {
     display: flex;
     flex-direction: column;
@@ -42,19 +41,19 @@ header:
 
   .team-row {
     display: flex;
-    flex-direction: row; /* Horizontal layout */
-    align-items: center; /* Center vertically */
-    gap: 3rem;           /* Space between photo and text */
+    flex-direction: row; 
+    align-items: center; 
+    gap: 3rem;           
     width: 100%;
   }
 
-  /* PHOTO: Fixed width on the left */
+  /* PHOTO: Fixed width */
   .team-photo-left {
     width: 200px;
     height: 200px;
     object-fit: cover;
     border-radius: 50%;
-    flex-shrink: 0;      /* Do not shrink */
+    flex-shrink: 0;
     background-color: #fff;
     border: 5px solid #fff;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
@@ -62,9 +61,9 @@ header:
 
   /* INFO BOX: Fills the rest of the row */
   .team-info {
-    flex: 1;             /* Grow to fill all available space */
+    flex: 1;             
     background: #fff;
-    padding: 2.5rem;
+    padding: 3rem;       /* Increased padding slightly */
     border-radius: 12px;
     border: 1px solid #e5e7eb;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
@@ -129,7 +128,7 @@ header:
   }
   .social-btn i { font-size: 16px; }
 
-  /* MOBILE: Stack vertically on small screens */
+  /* MOBILE: Stack vertically */
   @media (max-width: 900px) {
     .team-row { flex-direction: column; text-align: center; gap: 1.5rem; }
     .team-photo-left { margin-bottom: -40px; z-index: 2; position: relative; width: 150px; height: 150px; }
@@ -142,7 +141,7 @@ header:
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.4/css/academicons.min.css">
 
-<h1 style="text-align: center; margin-bottom: 1rem;">Meet the Team</h1>
+<h1 style="text-align: center; margin-bottom: 2rem; color: #1e90ff; font-weight: bold;">Meet the Team</h1>
 
 <div class="team-list">
   {% for member in site.data.team %}
