@@ -11,10 +11,10 @@ header:
   /* 1. HIDE DEFAULT TITLES */
   .page__title { display: none !important; }
   
-  /* 2. LAYOUT FIXES FOR SPLASH */
+  /* 2. LAYOUT FIXES */
   .page__inner-wrap {
     width: 95% !important;
-    max-width: 1100px !important;
+    max-width: 1200px !important;
     margin: 0 auto !important;
     padding: 0 !important;
   }
@@ -29,18 +29,22 @@ header:
   .team-list { 
     display: flex; 
     flex-direction: column; 
+    /* Gap between different team members */
     gap: 3rem; 
     width: 100%;
     margin-top: 3rem;
     padding-bottom: 3rem;
   }
   
-  /* 4. THE ROW */
+  /* 4. THE ROW (Image + Card Wrapper) */
   .team-row {
     display: flex;
     align-items: center; 
     justify-content: center;
-    position: relative;
+    
+    /* This creates the space between the Picture and the Box */
+    gap: 3rem; 
+    
     max-width: 100%; 
     margin: 0 auto;
     scroll-margin-top: 100px; 
@@ -53,26 +57,31 @@ header:
     object-fit: cover;
     border-radius: 50%;
     flex-shrink: 0; 
+    
     background-color: #fff;
+    /* Clean border, no overlap shadows */
     border: 5px solid #fff; 
     box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
-    z-index: 2; 
-    margin-right: -40px; 
+    
+    /* Removed negative margin - Image stands alone now */
+    margin: 0; 
   }
 
   /* 6. THE TEXT CARD */
   .team-info { 
     flex: 1; 
-    min-width: 0;
+    min-width: 0; /* Prevents flexbox issues */
     background: #fff;
     
-    /* Padding-left is 6rem to prevent image slicing */
-    padding: 2.5rem 2.5rem 2.5rem 6rem;       
+    /* RESTORED STANDARD PADDING (No need to push text for image) */
+    padding: 2.5rem;       
     
     border-radius: 12px; 
     border: 1px solid #e5e7eb;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
     position: relative;
+    
+    /* RESTORED LEFT ALIGNMENT */
     text-align: left; 
   }
 
@@ -80,16 +89,13 @@ header:
   .team-name { margin-top: 0; margin-bottom: 0.25rem; font-size: 1.75em; line-height: 1.2; }
   .team-role { color: #1e90ff; font-weight: 700; margin-bottom: 1rem; text-transform: uppercase; font-size: 0.85em; letter-spacing: 0.5px; }
   
-  /* --- BLOCKSATZ (JUSTIFY) --- */
   .team-bio { 
     margin-bottom: 1.5rem; 
     line-height: 1.7; 
     color: #4b5563; 
     font-size: 1.05rem;
-    
-    /* Hier ist die Änderung: */
-    text-align: justify; 
-    hyphens: auto; /* Hilft gegen große Lücken */
+    /* Back to Left Align */
+    text-align: left; 
   }
   
   /* Email Styling */
@@ -143,28 +149,22 @@ header:
     .team-row { 
       flex-direction: column; 
       text-align: center; 
-      gap: 0;
+      gap: 1.5rem; /* Vertical gap on mobile */
       margin-bottom: 3rem;
     }
     
     .team-photo-left {
       width: 140px; 
       height: 140px;
-      margin-right: 0;      
-      margin-bottom: -50px; 
     }
     
     .team-info { 
       width: 100%; 
-      padding: 4rem 2rem 2rem 2rem; 
+      padding: 2rem; 
       text-align: center; 
     }
 
-    /* Auf Mobile sieht Blocksatz oft komisch aus, daher ggf. zurücksetzen oder lassen */
-    .team-bio {
-        text-align: center; /* oder left, falls bevorzugt */
-    }
-    
+    .team-bio { text-align: center; }
     .team-social { justify-content: center; }
     .team-email { justify-content: center; } 
   }
