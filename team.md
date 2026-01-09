@@ -12,10 +12,9 @@ header:
   .page__title { display: none !important; }
   
   /* 2. LAYOUT FIXES FOR SPLASH */
-  /* This ensures the content is centered and wide, but not infinite width */
   .page__inner-wrap {
     width: 95% !important;
-    max-width: 1100px !important; /* Perfect reading width */
+    max-width: 1100px !important;
     margin: 0 auto !important;
     padding: 0 !important;
   }
@@ -36,34 +35,28 @@ header:
     padding-bottom: 3rem;
   }
   
-  /* 4. THE ROW (Image + Card Wrapper) */
+  /* 4. THE ROW */
   .team-row {
     display: flex;
     align-items: center; 
     justify-content: center;
     position: relative;
-    /* Ensure the row doesn't get wider than our limit */
     max-width: 100%; 
     margin: 0 auto;
-    
-    /* Offset for anchor jumping */
     scroll-margin-top: 100px; 
   }
 
-  /* 5. THE IMAGE (Floating Left) */
+  /* 5. THE IMAGE */
   .team-photo-left {
     width: 180px;        
     height: 180px;
     object-fit: cover;
     border-radius: 50%;
     flex-shrink: 0; 
-    
     background-color: #fff;
     border: 5px solid #fff; 
     box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
     z-index: 2; 
-    
-    /* The overlap trick */
     margin-right: -40px; 
   }
 
@@ -73,8 +66,8 @@ header:
     min-width: 0;
     background: #fff;
     
-    /* Padding-left compensates for the image overlap */
-    padding: 2.5rem 2.5rem 2.5rem 4rem;       
+    /* Padding-left is 6rem to prevent image slicing */
+    padding: 2.5rem 2.5rem 2.5rem 6rem;       
     
     border-radius: 12px; 
     border: 1px solid #e5e7eb;
@@ -86,7 +79,18 @@ header:
   /* Typography */
   .team-name { margin-top: 0; margin-bottom: 0.25rem; font-size: 1.75em; line-height: 1.2; }
   .team-role { color: #1e90ff; font-weight: 700; margin-bottom: 1rem; text-transform: uppercase; font-size: 0.85em; letter-spacing: 0.5px; }
-  .team-bio { margin-bottom: 1.5rem; line-height: 1.7; color: #4b5563; font-size: 1.05rem; }
+  
+  /* --- BLOCKSATZ (JUSTIFY) --- */
+  .team-bio { 
+    margin-bottom: 1.5rem; 
+    line-height: 1.7; 
+    color: #4b5563; 
+    font-size: 1.05rem;
+    
+    /* Hier ist die Änderung: */
+    text-align: justify; 
+    hyphens: auto; /* Hilft gegen große Lücken */
+  }
   
   /* Email Styling */
   .team-email {
@@ -154,6 +158,11 @@ header:
       width: 100%; 
       padding: 4rem 2rem 2rem 2rem; 
       text-align: center; 
+    }
+
+    /* Auf Mobile sieht Blocksatz oft komisch aus, daher ggf. zurücksetzen oder lassen */
+    .team-bio {
+        text-align: center; /* oder left, falls bevorzugt */
     }
     
     .team-social { justify-content: center; }
