@@ -66,7 +66,9 @@ permalink: /
   /* 3. Publications Preview */
   .home-pubs-section {
     max-width: 800px;
-    margin: 0 auto;
+    margin: 0 auto 3rem auto;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 3rem;
   }
   .pub-preview-card {
     background: #fff;
@@ -83,6 +85,22 @@ permalink: /
   }
   .pub-title { font-size: 1.1rem; font-weight: bold; color: #333; margin-bottom: 0.25rem; display: block; }
   .pub-meta { font-size: 0.9rem; color: #777; }
+
+  /* 4. Student Opportunities (New Section) */
+  .home-student-section {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 3rem auto;
+    padding: 2rem;
+    background-color: #f8fbff;
+    border-radius: 12px;
+    border: 1px dashed #1e90ff;
+  }
+  .home-student-section h3 {
+    color: #333;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+  }
 
   /* Buttons */
   .btn-main {
@@ -149,4 +167,13 @@ permalink: /
   <div style="text-align: center;">
     <a href="/publications/" class="btn-secondary">View All Publications →</a>
   </div>
+</section>
+
+<section class="home-student-section">
+  <h3>Want to contribute or be part of ES3M?</h3>
+  <p style="margin-bottom: 1.5rem; color: #555;">
+    Are you interested in writing your Bachelor's or Master's thesis with us? <br>
+    Check out our available topics and get in touch with our team.
+  </p>
+  <a href="/thesis/" class="btn-main">Available Topics</a>
 </section>
