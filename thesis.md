@@ -1,16 +1,9 @@
 ---
-title: "Available Thesis Topics"
 layout: splash
 permalink: /thesis/
 header:
   overlay_color: "#fff"
 ---
-<style>
-  /* Makes all headings (H1, H2) blue */
-  h1 {
-    color: #1e90ff !important;
-  }
-</style>
 
 <style>
   /* Reuse the wide layout from your team page */
