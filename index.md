@@ -126,6 +126,14 @@ permalink: /
   <a href="/team/" class="btn-main">View Full Team Profiles</a>
 </section>
 
+<section class="home-thesis-section">
+  <h3>Interested in working with us?</h3>
+  <p style="color: #666; margin-bottom: 1rem;">
+    We are always looking for motivated students for Bachelor and Master theses.
+  </p>
+  <a href="/thesis/" class="btn-main">View Available Thesis Topics</a>
+</section>
+
 <section class="home-pubs-section">
   <h3 style="text-align: center; margin-bottom: 1.5rem;">Recent Research & Publications</h3>
   {% for paper in site.data.papers limit:3 %}
@@ -141,10 +149,3 @@ permalink: /
   </div>
 </section>
 
-<section class="home-thesis-section">
-  <h3>Interested in working with us?</h3>
-  <p style="color: #666; margin-bottom: 1rem;">
-    We are always looking for motivated students for Bachelor and Master theses.
-  </p>
-  <a href="/thesis/" class="btn-main">View Available Thesis Topics</a>
-</section>
