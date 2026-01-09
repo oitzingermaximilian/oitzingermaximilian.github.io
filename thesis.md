@@ -1,6 +1,7 @@
 ---
 layout: splash
 permalink: /thesis/
+title: "Thesis Topic"
 header:
   overlay_color: "#fff"
 ---
@@ -14,9 +15,7 @@ header:
   }
   
   .page__title {
-    text-align: center;
-    color: #1e90ff;
-    margin-bottom: 2rem;
+    display: none !important;
   }
 
   .thesis-grid {
