@@ -62,6 +62,9 @@ permalink: /
   .home-pubs-section {
     max-width: 800px;
     margin: 0 auto;
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #eee;
   }
   .pub-preview-card {
     background: #fff;
@@ -79,6 +82,13 @@ permalink: /
   .pub-title { font-size: 1.1rem; font-weight: bold; color: #333; margin-bottom: 0.25rem; display: block; }
   .pub-meta { font-size: 0.9rem; color: #777; }
 
+  /* Thesis Section */
+  .home-thesis-section {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 3rem auto;
+  }
+
   /* UNIFORM BUTTON STYLE */
   .btn-main {
     display: inline-block;
@@ -91,6 +101,7 @@ permalink: /
     margin-top: 1rem;
     transition: background 0.2s;
     border: none;
+    cursor: pointer;
   }
   .btn-main:hover { background-color: #0056b3; }
 </style>
@@ -129,4 +140,12 @@ permalink: /
   <div style="text-align: center;">
     <a href="/publications/" class="btn-main">View All Publications</a>
   </div>
+</section>
+
+<section class="home-thesis-section">
+  <h3>Interested in working with us?</h3>
+  <p style="color: #666; margin-bottom: 1rem;">
+    We are always looking for motivated students for Bachelor and Master theses.
+  </p>
+  <a href="/thesis/" class="btn-main">View Available Thesis Topics</a>
 </section>
