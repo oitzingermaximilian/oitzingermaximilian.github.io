@@ -1,6 +1,6 @@
 ---
 title: "Meet the Team"
-layout: single
+layout: splash
 permalink: /team/
 classes: wide
 ---
