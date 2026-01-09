@@ -1,80 +1,77 @@
 ---
 title: "Meet the Team"
-layout: single
+layout: splash
 permalink: /team/
-classes: wide
+header:
+  overlay_color: "#fff" # Optional: Keeps the header clean if the theme adds an image
 ---
 
 <style>
-  /* --- 1. FORCE FULL WIDTH (The Fix) --- */
-  
-  /* 1. Delete the invisible sidebar that is pushing everything right */
-  .sidebar, .page__sidebar {
-    display: none !important;
-    width: 0 !important;
-  }
-
-  /* 2. Force the page container to be wide and centered */
+  /* 1. LAYOUT OVERRIDES */
+  /* Force the content wrapper to use 90% of the screen width (or max 1600px) */
   .page__inner-wrap {
-    width: 100% !important;
-    max-width: 1600px !important; /* Increased width to match your drawing */
+    float: none !important;
     margin: 0 auto !important;
-    padding: 0 2rem !important;   /* Adds a little safety space on the sides */
+    width: 90% !important;
+    max-width: 1600px !important;
+    padding-right: 0 !important;
   }
 
-  /* 3. Allow content to fill the new wide container */
   .page__content {
     width: 100% !important;
-    max-width: 100% !important;
     margin: 0 !important;
     padding: 0 !important;
     float: none !important;
   }
+  
+  /* Hide the default page title area if it appears duplicated */
+  .page__title {
+    margin-top: 1rem;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
 
-  /* --- 2. ROW LAYOUT (Photo Left, Text Wide) --- */
-
+  /* 2. TEAM CARD STYLING */
   .team-list {
     display: flex;
     flex-direction: column;
     gap: 2rem;
     width: 100%;
+    margin-top: 2rem;
   }
 
   .team-row {
     display: flex;
-    flex-direction: row; /* Forces side-by-side layout */
-    align-items: center; /* Vertically centers the photo with the text */
-    gap: 3rem;           /* Gap between photo and text */
+    flex-direction: row; /* Horizontal layout */
+    align-items: center; /* Center vertically */
+    gap: 3rem;           /* Space between photo and text */
     width: 100%;
   }
 
-  /* Photo Styles */
+  /* PHOTO: Fixed width on the left */
   .team-photo-left {
-    width: 200px;        /* Made slightly bigger to match wide layout */
+    width: 200px;
     height: 200px;
     object-fit: cover;
     border-radius: 50%;
-    flex-shrink: 0;      /* Prevents photo from getting squished */
-    
+    flex-shrink: 0;      /* Do not shrink */
     background-color: #fff;
     border: 5px solid #fff;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   }
 
-  /* Text Card Styles */
+  /* INFO BOX: Fills the rest of the row */
   .team-info {
-    flex: 1;             /* This is key: tells text to fill ALL remaining space */
-    min-width: 0;        /* Prevents overflow issues */
-    
+    flex: 1;             /* Grow to fill all available space */
     background: #fff;
-    padding: 2.5rem;     /* More padding for the wider look */
+    padding: 2.5rem;
     border-radius: 12px;
     border: 1px solid #e5e7eb;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
     position: relative;
   }
 
-  /* Arrow pointing to photo */
+  /* Speech Bubble Arrow */
   .team-info::before {
     content: "";
     position: absolute;
@@ -96,7 +93,7 @@ classes: wide
     border-color: transparent #fff transparent transparent;
   }
 
-  /* Typography */
+  /* TEXT STYLES */
   .team-name { margin-top: 0; margin-bottom: 0.25rem; font-size: 1.8em; line-height: 1.2; }
   .team-role { color: #1e90ff; font-weight: 700; margin-bottom: 0.75rem; text-transform: uppercase; font-size: 0.9em; letter-spacing: 0.5px; }
   .team-bio { margin-bottom: 1.5rem; line-height: 1.6; color: #4b5563; font-size: 1.05em; }
@@ -109,8 +106,8 @@ classes: wide
   }
   .email-label { font-weight: 600; color: #333; margin-right: 5px; }
 
+  /* SOCIAL ICONS */
   .team-social { display: flex; gap: 10px; flex-wrap: wrap; }
-
   .social-btn {
     display: inline-flex !important;
     align-items: center;
@@ -132,30 +129,20 @@ classes: wide
   }
   .social-btn i { font-size: 16px; }
 
-  /* Mobile Adjustments */
+  /* MOBILE: Stack vertically on small screens */
   @media (max-width: 900px) {
-    .team-row { 
-      flex-direction: column; 
-      text-align: center; 
-      gap: 1.5rem;
-    }
-    .team-photo-left {
-      width: 150px; 
-      height: 150px;
-      margin-bottom: -40px; 
-      z-index: 2; 
-      position: relative;
-    }
-    .team-info { 
-      width: 100%; 
-      padding-top: 50px; 
-    }
+    .team-row { flex-direction: column; text-align: center; gap: 1.5rem; }
+    .team-photo-left { margin-bottom: -40px; z-index: 2; position: relative; width: 150px; height: 150px; }
+    .team-info { width: 100%; padding-top: 50px; }
     .team-info::before, .team-info::after { display: none; }
     .team-social { justify-content: center; }
   }
 </style>
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.4/css/academicons.min.css">
+
+<h1 style="text-align: center; margin-bottom: 1rem;">Meet the Team</h1>
 
 <div class="team-list">
   {% for member in site.data.team %}
