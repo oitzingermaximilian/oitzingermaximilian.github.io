@@ -7,7 +7,7 @@ header:
 ---
 <style>
   /* Makes all headings (H1, H2) blue */
-  h1, h2, h3 {
+  h1 {
     color: #1e90ff !important;
   }
 </style>
