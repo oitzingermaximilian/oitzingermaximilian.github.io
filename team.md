@@ -9,7 +9,7 @@ classes: wide
   /* 1. FORCE WIDE LAYOUT */
   .page__inner-wrap {
     width: 95% !important;
-    max-width: 1200px !important;
+    max-width: 1900px !important;
     margin: 0 auto !important;
     padding-right: 0 !important;
   }
