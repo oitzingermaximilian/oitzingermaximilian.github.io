@@ -6,7 +6,7 @@ classes: wide
 ---
 
 <style>
-  /* 1. FORCE WIDE LAYOUT (Critical Fix) */
+  /* 1. FORCE WIDE LAYOUT */
   .page__inner-wrap {
     width: 95% !important;
     max-width: 1200px !important;
@@ -61,8 +61,8 @@ classes: wide
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
     position: relative;
     
-    /* --- NEW: CENTER TEXT INSIDE THE CARD --- */
-    text-align: center; 
+    /* --- RESTORED: LEFT ALIGNMENT --- */
+    text-align: left; 
   }
 
   /* Typography */
@@ -76,14 +76,11 @@ classes: wide
     font-size: 0.95em;
     padding-top: 1rem;
     border-top: 1px solid #f0f0f0; 
-    /* Ensure email content is centered */
-    display: flex;
-    justify-content: center;
-    gap: 5px;
   }
   .email-label {
     font-weight: 600;
     color: #333;
+    margin-right: 5px;
   }
 
   /* Social Button Styles */
@@ -91,8 +88,8 @@ classes: wide
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
-    /* --- NEW: CENTER BUTTONS --- */
-    justify-content: center;
+    /* --- RESTORED: LEFT ALIGNMENT --- */
+    justify-content: flex-start;
   }
 
   .social-btn {
@@ -132,8 +129,11 @@ classes: wide
       z-index: 2; 
       position: relative;
     }
-    .team-info { width: 100%; padding-top: 50px; }
-    /* Social is already centered by justify-content: center above */
+    .team-info { width: 100%; padding-top: 50px; text-align: center; }
+    
+    /* Keep centered on mobile for better look */
+    .team-social { justify-content: center; }
+    .team-email { justify-content: center; display: flex; } 
   }
 </style>
 
