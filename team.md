@@ -2,76 +2,72 @@
 title: "Meet the Team"
 layout: splash
 permalink: /team/
-classes: wide
+header:
+  overlay_color: "#fff"
+  overlay_filter: 0
 ---
 
 <style>
-  /* 1. THEME OVERRIDES (Fixes the "Wasted Space" on the left) */
-  /* This forces the content container to ignore the sidebar gap */
-  .page__content {
-    width: 100% !important;
-    max-width: 100% !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    float: none !important;
-  }
-
+  /* 1. HIDE DEFAULT TITLES */
+  .page__title { display: none !important; }
+  
+  /* 2. LAYOUT FIXES FOR SPLASH */
+  /* This ensures the content is centered and wide, but not infinite width */
   .page__inner-wrap {
-    width: 100% !important;
-    max-width: 100% !important;
-    margin: 0 !important;
-    padding: 0 2rem !important; /* Small padding so it doesn't touch screen edges */
+    width: 95% !important;
+    max-width: 1100px !important; /* Perfect reading width */
+    margin: 0 auto !important;
+    padding: 0 !important;
   }
   
-  /* HIDE THE PAGE TITLE */
-  .page__title { display: none; }
+  .page__content {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
 
-  /* 2. MAIN LIST CONTAINER */
+  /* 3. MAIN LIST CONTAINER */
   .team-list { 
     display: flex; 
     flex-direction: column; 
     gap: 3rem; 
     width: 100%;
-    margin-top: 2rem;
+    margin-top: 3rem;
+    padding-bottom: 3rem;
   }
   
-  /* 3. THE CENTERED ROW (The Fix for alignment) */
+  /* 4. THE ROW (Image + Card Wrapper) */
   .team-row {
     display: flex;
-    align-items: center; /* Vertically center image with text */
-    justify-content: center; /* Horizontally center the content */
-    
-    /* This constrains the width so text isn't too long to read */
-    max-width: 1100px; 
-    /* This centers the whole block on the page */
-    margin: 0 auto; 
-    
+    align-items: center; 
+    justify-content: center;
     position: relative;
-    padding: 0;
-    border: none;
-    background: transparent;
-    box-shadow: none;
+    /* Ensure the row doesn't get wider than our limit */
+    max-width: 100%; 
+    margin: 0 auto;
+    
+    /* Offset for anchor jumping */
     scroll-margin-top: 100px; 
   }
 
-  /* 4. THE IMAGE (Floating Left) */
+  /* 5. THE IMAGE (Floating Left) */
   .team-photo-left {
     width: 180px;        
     height: 180px;
     object-fit: cover;
     border-radius: 50%;
-    flex-shrink: 0; /* Prevents image from shrinking */
+    flex-shrink: 0; 
     
     background-color: #fff;
     border: 5px solid #fff; 
     box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
-    z-index: 2; /* Ensures image sits "on top" if elements overlap */
+    z-index: 2; 
     
-    /* Push it slightly into the card for that "connected" look */
+    /* The overlap trick */
     margin-right: -40px; 
   }
 
-  /* 5. THE TEXT CARD */
+  /* 6. THE TEXT CARD */
   .team-info { 
     flex: 1; 
     min-width: 0;
@@ -88,7 +84,7 @@ classes: wide
   }
 
   /* Typography */
-  .team-name { margin-top: 0; margin-bottom: 0.25rem; font-size: 1.8em; line-height: 1.2; }
+  .team-name { margin-top: 0; margin-bottom: 0.25rem; font-size: 1.75em; line-height: 1.2; }
   .team-role { color: #1e90ff; font-weight: 700; margin-bottom: 1rem; text-transform: uppercase; font-size: 0.85em; letter-spacing: 0.5px; }
   .team-bio { margin-bottom: 1.5rem; line-height: 1.7; color: #4b5563; font-size: 1.05rem; }
   
@@ -98,6 +94,8 @@ classes: wide
     font-size: 0.95em;
     padding-top: 1rem;
     border-top: 1px solid #f0f0f0; 
+    display: flex;
+    align-items: center;
   }
   .email-label {
     font-weight: 600;
@@ -148,18 +146,18 @@ classes: wide
     .team-photo-left {
       width: 140px; 
       height: 140px;
-      margin-right: 0;      /* Remove negative margin */
-      margin-bottom: -50px; /* Pull image down into card */
+      margin-right: 0;      
+      margin-bottom: -50px; 
     }
     
     .team-info { 
       width: 100%; 
-      padding: 4rem 2rem 2rem 2rem; /* Restore normal padding */
+      padding: 4rem 2rem 2rem 2rem; 
       text-align: center; 
     }
     
     .team-social { justify-content: center; }
-    .team-email { justify-content: center; display: flex; } 
+    .team-email { justify-content: center; } 
   }
 </style>
 
