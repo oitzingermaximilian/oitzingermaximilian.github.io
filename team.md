@@ -2,10 +2,19 @@
 title: "Meet the Team"
 layout: single
 permalink: /team/
+classes: wide
 ---
 
 <style>
-  /* HIDE THE PAGE TITLE (Per your request) */
+  /* 1. FORCE WIDE LAYOUT (Fixes the "narrow" issue) */
+  .page__inner-wrap {
+    width: 95% !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding-right: 0 !important;
+  }
+  
+  /* HIDE THE PAGE TITLE */
   .page__title { display: none; }
 
   /* Main Grid Container */
@@ -14,10 +23,10 @@ permalink: /team/
     flex-direction: column; 
     gap: 2rem; 
     width: 100%;
-    margin-top: 2rem; /* Add space since we removed the title */
+    margin-top: 2rem;
   }
   
-  /* The Container (Transparent now, just holds Image + Card) */
+  /* The Container */
   .team-row {
     display: flex;
     align-items: center; 
@@ -27,7 +36,7 @@ permalink: /team/
     background: transparent;
     box-shadow: none;
     
-    /* OFFSET FOR ANCHOR LINKS (Prevents header from covering face when jumping) */
+    /* OFFSET FOR ANCHOR LINKS */
     scroll-margin-top: 100px; 
   }
 
