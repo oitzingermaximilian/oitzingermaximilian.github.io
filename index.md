@@ -4,11 +4,41 @@ permalink: /
 ---
 
 <style>
+  /* --- 1. BACKGROUND WATERMARK --- */
+  body {
+    /* Uses the file you saved: es3m-logo-bw.png */
+    background-image: url('/assets/images/ES3M_Logo.jpg');
+    background-repeat: no-repeat;
+    background-position: center 150px; /* Center horizontally, 150px from top */
+    background-size: 50%; /* Adjust this % if the logo is too big/small */
+    background-attachment: fixed; /* Keeps logo still while you scroll */
+  }
+
+  /* --- 2. SECTION STYLING (The "Glass" Effect) --- */
+  /* I added these properties to your existing sections so they 
+     have a semi-transparent white background. This makes the text 
+     readable while letting the logo shine through the edges.
+  */
+  .home-intro, 
+  .home-team-section, 
+  .home-thesis-section, 
+  .home-pubs-section {
+    background: rgba(255, 255, 255, 0.92); /* 92% opaque white */
+    backdrop-filter: blur(3px); /* Subtle blur behind the box */
+    border-radius: 15px;       /* Rounded corners */
+    padding: 2.5rem;           /* Space inside the box */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03); /* Soft shadow for depth */
+    
+    /* Ensure they are centered and have space */
+    margin: 0 auto 3rem auto;
+    max-width: 900px; /* Slightly wider to fit the new padding */
+  }
+
+  /* --- 3. ORIGINAL STYLES (Preserved) --- */
+
   /* Hero / Intro */
   .home-intro {
     text-align: center;
-    max-width: 800px;
-    margin: 0 auto 3rem auto;
   }
   .home-intro h2 { font-size: 2.2rem; margin-bottom: 0.5rem; color: #1e90ff; }
   .home-intro p { font-size: 1.2rem; color: #666; line-height: 1.6; }
@@ -16,9 +46,8 @@ permalink: /
   /* Team Grid */
   .home-team-section {
     text-align: center;
-    padding: 2rem 0;
-    border-bottom: 1px solid #eee;
-    margin-bottom: 3rem;
+    /* Removed border-bottom since we now use the "box" look */
+    border-bottom: none; 
   }
   .home-team-grid {
     display: flex;
@@ -59,11 +88,8 @@ permalink: /
 
   /* Publications Preview */
   .home-pubs-section {
-    max-width: 800px;
-    margin: 0 auto;
-    margin-bottom: 3rem;
     padding-bottom: 2rem;
-    border-bottom: 1px solid #eee;
+    border-bottom: none;
   }
   .pub-preview-card {
     background: #fff;
@@ -84,8 +110,6 @@ permalink: /
   /* Thesis Section */
   .home-thesis-section {
     text-align: center;
-    max-width: 800px;
-    margin: 0 auto 3rem auto;
   }
 
   /* UNIFORM BUTTON STYLE */
@@ -147,4 +171,3 @@ permalink: /
     <a href="/publications/" class="btn-main">View All Publications</a>
   </div>
 </section>
-
