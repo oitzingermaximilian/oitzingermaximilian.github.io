@@ -102,7 +102,7 @@
 - id: marcus
   name: "Marcus Otti"
   role: "Researcher"
-  bio: "Short bio for Marcus."
+  bio: "Marcus is a Doctoral Researcher in the Energy Economics Group at the Institute of Energy Systems and Electrical Drives at the Technische Universität Wien (TU Wien), where he is part of the Energy System Modeling team 'From Minerals to Megawatts' (ES3M).His PhD research focuses on the transformation of energy-intensive industries, with a particular emphasis on the European steel sector and the energy and material requirements for its decarbonization.He holds a B.Sc. in Electrical Engineering from TU Graz and M.Sc. in Electrical Engineering from TU Wien."
   image: "/assets/images/team/marcus.jpg"
   email: "otti@eeg.tuwien.ac.at"
   social_links:
@@ -110,11 +110,11 @@
       url: "https://github.com/marcusotti"
       icon: "fab fa-github"
     - platform: "LinkedIn"
-      url: "https://www.linkedin.com/in/marcus-otti"
+      url: "https://www.linkedin.com/in/marcus-otti-325ba8244"
       icon: "fab fa-linkedin"
     - platform: "ORCID"
-      url: "https://orcid.org/0000-0000-0000-0000"
+      url: "https://orcid.org/0009-0004-2778-1182"
       icon: "fab fa-orcid"
     - platform: "Google Scholar"
-      url: "https://scholar.google.com"
+      url: "https://scholar.google.com/citations?user=RYL56loAAAAJ&hl=de"
       icon: "fas fa-graduation-cap"
