@@ -34,21 +34,34 @@ permalink: /
     width: 140px;
     text-decoration: none !important;
   }
-  .home-member-photo {
+  /* Wrapper for circular masking */
+  .home-member-photo-wrapper {
     width: 100px;
     height: 100px;
-    object-fit: cover;
     border-radius: 50%;
     border: 3px solid #fff;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     transition: all 0.2s ease;
     margin-bottom: 0.75rem;
     background-color: #f0f0f0;
+    overflow: hidden; /* Key for masking */
+    position: relative;
   }
-  .home-member:hover .home-member-photo {
+  
+  /* The image inside */
+  .home-member-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* Hover effect targets the wrapper */
+  .home-member:hover .home-member-photo-wrapper {
     transform: scale(1.1);
     border-color: #1e90ff;
   }
+
   .home-member-name {
     font-size: 0.95rem;
     font-weight: 700;
@@ -117,7 +130,9 @@ permalink: /
   <div class="home-team-grid">
     {% for member in site.data.team %}
     <a href="/team/#{{ member.id }}" class="home-member">
-      <img src="{{ member.image }}" alt="{{ member.name }}" class="home-member-photo" onerror="this.style.display='none'">
+      <div class="home-member-photo-wrapper">
+        <img src="{{ member.image }}" alt="{{ member.name }}" class="home-member-photo" style="object-position: {{ member.object_position | default: 'center' }};" onerror="this.style.display='none'">
+      </div>
       <span class="home-member-name">{{ member.name }}</span>
     </a>
     {% endfor %}
