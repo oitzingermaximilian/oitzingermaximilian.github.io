@@ -151,4 +151,138 @@ permalink: /
   <a href="/thesis/" class="btn-main">View Current Theses</a>
 </section>
 
+<!-- LinkedIn Carousel -->
+<style>
+  .linkedin-carousel-section {
+    max-width: 700px;
+    margin: 0 auto 3rem auto;
+    text-align: center;
+  }
+  .linkedin-carousel-section h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+  }
+  .linkedin-carousel {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    min-height: 400px;
+  }
+  .linkedin-slide {
+    display: none;
+    width: 100%;
+    justify-content: center;
+    padding: 1rem;
+  }
+  .linkedin-slide.active {
+    display: flex;
+  }
+  .linkedin-slide iframe {
+    border: none;
+    width: 100%;
+    max-width: 504px;
+    height: 600px;
+  }
+  .carousel-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  .carousel-btn {
+    background: #e5e7eb;
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1rem;
+    color: #333;
+    transition: background 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .carousel-btn:hover {
+    background: #1e90ff;
+    color: #fff;
+  }
+  .carousel-dots {
+    display: flex;
+    gap: 8px;
+  }
+  .carousel-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #d1d5db;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s;
+    padding: 0;
+  }
+  .carousel-dot.active {
+    background: #1e90ff;
+  }
+</style>
 
+{% if site.data.linkedin_posts.size > 0 %}
+<section class="linkedin-carousel-section">
+  <h3>Latest Updates</h3>
+  <div class="linkedin-carousel" id="linkedinCarousel">
+    {% for post in site.data.linkedin_posts %}
+    <div class="linkedin-slide {% if forloop.first %}active{% endif %}">
+      <iframe src="{{ post.src }}" height="600" width="504" frameborder="0" allowfullscreen="" title="{{ post.title }}"></iframe>
+    </div>
+    {% endfor %}
+  </div>
+  <div class="carousel-controls">
+    <button class="carousel-btn" onclick="changeSlide(-1)">&#8249;</button>
+    <div class="carousel-dots" id="carouselDots">
+      {% for post in site.data.linkedin_posts %}
+      <button class="carousel-dot {% if forloop.first %}active{% endif %}" onclick="goToSlide({{ forloop.index0 }})"></button>
+      {% endfor %}
+    </div>
+    <button class="carousel-btn" onclick="changeSlide(1)">&#8250;</button>
+  </div>
+</section>
+{% endif %}
+
+<script>
+(function() {
+  var currentSlide = 0;
+  var slides = document.querySelectorAll('.linkedin-slide');
+  var dots = document.querySelectorAll('.carousel-dot');
+  var total = slides.length;
+  if (total === 0) return;
+
+  var autoTimer = setInterval(function() { changeSlide(1); }, 8000);
+
+  function resetTimer() {
+    clearInterval(autoTimer);
+    autoTimer = setInterval(function() { changeSlide(1); }, 8000);
+  }
+
+  window.changeSlide = function(dir) {
+    slides[currentSlide].classList.remove('active');
+    dots[currentSlide].classList.remove('active');
+    currentSlide = (currentSlide + dir + total) % total;
+    slides[currentSlide].classList.add('active');
+    dots[currentSlide].classList.add('active');
+    resetTimer();
+  };
+
+  window.goToSlide = function(idx) {
+    slides[currentSlide].classList.remove('active');
+    dots[currentSlide].classList.remove('active');
+    currentSlide = idx;
+    slides[currentSlide].classList.add('active');
+    dots[currentSlide].classList.add('active');
+    resetTimer();
+  };
+})();
+</script>

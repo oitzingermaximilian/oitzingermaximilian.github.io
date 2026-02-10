@@ -1,0 +1,17 @@
+# LinkedIn Posts to feature on the home page carousel.
+# To add a new post:
+#   1. Go to the LinkedIn post
+#   2. Click the "..." menu -> "Embed this post"
+#   3. Copy the "src" URL from the iframe code
+#   4. Add a new entry below with title and src
+#
+# Example src format: https://www.linkedin.com/embed/feed/update/urn:li:share:1234567890
+
+- title: "Sample Post 1"
+  src: "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7295023879750549504"
+
+- title: "Sample Post 2"
+  src: "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7295023879750549504"
+
+- title: "Sample Post 3"
+  src: "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7295023879750549504"
