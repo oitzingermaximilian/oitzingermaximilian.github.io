@@ -53,8 +53,8 @@ header:
     font-size: 1.2rem;
     font-weight: 700;
   }
-  .pub-accordion-header.papers .pub-accordion-label { color: #0369a1; }
-  .pub-accordion-header.activities .pub-accordion-label { color: #1e40af; }
+  .pub-accordion-header.papers .pub-accordion-label { color: #1e90ff; }
+  .pub-accordion-header.activities .pub-accordion-label { color: #1e90ff; }
 
   .pub-accordion-count {
     font-size: 0.85rem;
@@ -66,8 +66,8 @@ header:
     font-size: 1.2rem;
     transition: transform 0.3s ease;
   }
-  .pub-accordion-header.papers .pub-accordion-icon { color: #0369a1; }
-  .pub-accordion-header.activities .pub-accordion-icon { color: #1e40af; }
+  .pub-accordion-header.papers .pub-accordion-icon { color: #1e90ff; }
+  .pub-accordion-header.activities .pub-accordion-icon { color: #1e90ff; }
 
   .pub-accordion-section.collapsed .pub-accordion-icon {
     transform: rotate(-90deg);
@@ -109,7 +109,7 @@ header:
   }
 
   .work-item.paper:hover { border-color: #1e90ff; }
-  .work-item.activity:hover { border-color: #3b82f6; }
+  .work-item.activity:hover { border-color: #1e90ff; }
 
   .work-title {
     font-size: 1.15rem;
@@ -156,7 +156,7 @@ header:
     align-items: center;
     gap: 5px;
   }
-  .work-meta-item i { color: #3b82f6; font-size: 0.8rem; }
+  .work-meta-item i { color: #1e90ff; font-size: 0.8rem; }
 
   .work-abstract {
     margin-top: 0.75rem;

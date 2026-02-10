@@ -116,9 +116,23 @@ permalink: /
     cursor: pointer;
   }
   .btn-main:hover { background-color: #0056b3; }
+
+  /* Enlarge navbar logo */
+  .site-logo img {
+    max-height: 50px !important;
+  }
+
+  /* Hero Logo */
+  .home-logo {
+    display: block;
+    margin: 0 auto 1rem auto;
+    max-width: 180px;
+    height: auto;
+  }
 </style>
 
 <section class="home-intro">
+  <img src="/assets/images/ES3M_Logo.jpg" alt="ES3M Logo" class="home-logo">
   <h2>From Minerals to Megawatts</h2>
   <p>
     We are the Energy System Modeling team (ES3M) at TU Wien. 
