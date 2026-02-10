@@ -36,10 +36,14 @@ header:
     flex-direction: column;
   }
 
+  /* Hover Border Colors */
   .thesis-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-    border-color: #1e90ff;
+    border-color: #1e90ff; /* Default Blue */
+  }
+  .thesis-card.finished:hover {
+    border-color: #28a745; /* Green for finished */
   }
 
   .thesis-type {
@@ -127,7 +131,7 @@ header:
 
 <div class="thesis-grid">
   {% for topic in site.data.thesis %}
-  <div class="thesis-card">
+  <div class="thesis-card {{ topic.status | default: 'ongoing' }}">
     <div class="thesis-header">
       <span class="thesis-type">{{ topic.type }}</span>
       <div class="thesis-status {{ topic.status | default: 'ongoing' }}">
