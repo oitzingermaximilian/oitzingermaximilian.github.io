@@ -7,11 +7,11 @@
 #
 # Example src format: https://www.linkedin.com/embed/feed/update/urn:li:share:1234567890
 
-- title: "Sample Post 1"
-  src: "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7295023879750549504"
+- title: "My Post Title 1"
+  src: "https://www.linkedin.com/embed/feed/update/urn:li:share:7352968170720100352"
 
-- title: "Sample Post 2"
-  src: "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7295023879750549504"
+- title: "My Post Title 2"
+  src: "https://www.linkedin.com/embed/feed/update/urn:li:share:7352968170720100352"
 
-- title: "Sample Post 3"
-  src: "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7295023879750549504"
+- title: "My Post Title 3"
+  src: "https://www.linkedin.com/embed/feed/update/urn:li:share:7352968170720100352"
