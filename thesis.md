@@ -44,16 +44,43 @@ header:
 
   .thesis-type {
     display: inline-block;
-    background-color: #e0f2fe;
-    color: #0369a1;
     padding: 0.25rem 0.75rem;
+    background-color: #f3f4f6; /* Neutral gray */
+    color: #4b5563;
     border-radius: 50px;
-    font-size: 0.8rem;
-    font-weight: 700;
+    font-size: 0.75rem;
+    font-weight: 600;
     text-transform: uppercase;
-    margin-bottom: 1rem;
-    align-self: flex-start;
   }
+  
+  .thesis-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  .thesis-status {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+
+  .status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+  /* Status Colors */
+  .status-dot.ongoing { background-color: #007bff; } /* Blue */
+  .thesis-status.ongoing { color: #007bff; }
+
+  .status-dot.finished { background-color: #28a745; } /* Green */
+  .thesis-status.finished { color: #28a745; }
 
   .thesis-title {
     font-size: 1.25rem;
@@ -101,7 +128,13 @@ header:
 <div class="thesis-grid">
   {% for topic in site.data.thesis %}
   <div class="thesis-card">
-    <span class="thesis-type">{{ topic.type }}</span>
+    <div class="thesis-header">
+      <span class="thesis-type">{{ topic.type }}</span>
+      <div class="thesis-status {{ topic.status | default: 'ongoing' }}">
+        <span class="status-dot {{ topic.status | default: 'ongoing' }}"></span>
+        {{ topic.status | capitalize | default: 'Ongoing' }}
+      </div>
+    </div>
     <h3 class="thesis-title">{{ topic.title }}</h3>
     <p class="thesis-desc">{{ topic.description }}</p>
     
