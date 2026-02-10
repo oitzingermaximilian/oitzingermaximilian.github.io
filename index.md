@@ -145,11 +145,11 @@ permalink: /
   <p style="color: #666; margin-bottom: 1rem;">
     We are always looking for motivated students for Bachelor and Master theses.
   </p>
-  <a href="/thesis/" class="btn-main">View Available Thesis Topics</a>
+  <a href="/thesis/" class="btn-main">View Current Theses</a>
 </section>
 
 <section class="home-pubs-section">
-  <h3 style="text-align: center; margin-bottom: 1.5rem;">Recent Research & Publications</h3>
+  <h3 style="text-align: center; margin-bottom: 1.5rem;">Our Work</h3>
   {% for paper in site.data.papers limit:3 %}
   <div class="pub-preview-card">
     <a href="{{ paper.url }}" target="_blank" class="pub-title">{{ paper.title }}</a>
@@ -159,6 +159,6 @@ permalink: /
   </div>
   {% endfor %}
   <div style="text-align: center;">
-    <a href="/publications/" class="btn-main">View All Publications</a>
+    <a href="/publications/" class="btn-main">View Recent Research Activities and Publications</a>
   </div>
 </section>
