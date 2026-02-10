@@ -27,14 +27,14 @@ permalink: /
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 400px;
-    height: 400px;
+    width: 850px;
+    height: 850px;
     transform: translate(-50%, -50%);
     background-image: url('/assets/images/ES3M_Logo.jpg');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    opacity: 0.06;
+    opacity: 0.15;
     pointer-events: none;
     z-index: 0;
   }
