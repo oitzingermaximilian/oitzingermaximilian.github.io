@@ -18,3 +18,66 @@
   description: "Test"
   supervisor: "Daniel CÃ¤sar"
   contact: "caesar@eeg.tuwien.ac.at"
+
+- title: 'Analysis of Renewable Energy Communities'
+  type: 'Master Thesis'
+  status: 'ongoing'
+  description: 'Test'
+  supervisor: 'Sebastian Zwickl-Bernhard'
+  contact: 'zwickl@eeg.tuwien.ac.at'
+
+- title: 'Optimization of District Heating Networks'
+  type: 'Bachelor Thesis'
+  status: 'ongoing'
+  description: 'Test'
+  supervisor: 'Maximilian Oitzinger'
+  contact: 'oitzinger@eeg.tuwien.ac.at'
+
+- title: 'Global LNG Market Trends'
+  type: 'Master Thesis'
+  status: 'finished'
+  description: 'Test'
+  supervisor: 'Daniel Cäsar'
+  contact: 'caesar@eeg.tuwien.ac.at'
+
+- title: 'Hydrogen Storage Potentials'
+  type: 'Master Thesis'
+  status: 'ongoing'
+  description: 'Test'
+  supervisor: 'Sebastian Zwickl-Bernhard'
+  contact: 'zwickl@eeg.tuwien.ac.at'
+
+- title: 'Solar PV Recycling Strategies'
+  type: 'Bachelor Thesis'
+  status: 'ongoing'
+  description: 'Test'
+  supervisor: 'Alexander Csekö'
+  contact: 'csekoe@eeg.tuwien.ac.at'
+
+- title: 'Decarbonization of Steel Industry'
+  type: 'Master Thesis'
+  status: 'finished'
+  description: 'Test'
+  supervisor: 'Marcus Otti'
+  contact: 'otti@eeg.tuwien.ac.at'
+
+- title: 'Impact of E-Mobility on Grid Stability'
+  type: 'Master Thesis'
+  status: 'ongoing'
+  description: 'Test'
+  supervisor: 'Sebastian Zwickl-Bernhard'
+  contact: 'zwickl@eeg.tuwien.ac.at'
+
+- title: 'Life Cycle Assessment of Wind Turbines'
+  type: 'Bachelor Thesis'
+  status: 'finished'
+  description: 'Test'
+  supervisor: 'Daniel Cäsar'
+  contact: 'caesar@eeg.tuwien.ac.at'
+
+- title: 'Future of Nuclear Power in Europe'
+  type: 'Master Thesis'
+  status: 'ongoing'
+  description: 'Test'
+  supervisor: 'Helen Anais Fischer'
+  contact: 'fischer@eeg.tuwien.ac.at'

@@ -118,6 +118,9 @@ header:
     color: #1e90ff;
     font-weight: 500;
   }
+  .thesis-card.finished .supervisor-name {
+    color: #28a745; /* Green for finished */
+  }
   
   .contact-btn {
     display: inline-block;
