@@ -61,7 +61,7 @@ header:
     background-color: #fff;
     /* Clean border, no overlap shadows */
     border: 5px solid #fff; 
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
+    box-shadow: 0 0 0 1px rgba(0,0,0,0.1), 0 4px 10px rgba(0,0,0,0.1); 
     
     /* Removed negative margin - Image stands alone now */
     margin: 0; 
