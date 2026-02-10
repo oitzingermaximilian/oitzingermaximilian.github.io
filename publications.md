@@ -189,9 +189,11 @@ header:
     text-align: center;
   }
   .linkedin-carousel-section h3 {
-    font-size: 1.3rem;
-    color: #333;
+    font-size: 1.4rem;
+    color: #1e90ff;
     margin-bottom: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
   }
   .linkedin-carousel {
     position: relative;
