@@ -190,7 +190,7 @@ header:
   {% for member in site.data.team %}
   <div class="team-row" id="{{ member.id }}">
     <div class="team-photo-wrapper">
-      <img src="{{ member.image }}" class="team-photo-img" alt="{{ member.name }}" onerror="this.style.display='none'">
+      <img src="{{ member.image }}" class="team-photo-img" style="object-position: {{ member.object_position | default: 'center' }};" alt="{{ member.name }}" onerror="this.style.display='none'">
     </div>
     
     <div class="team-info">

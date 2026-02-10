@@ -44,6 +44,7 @@
   role: "Researcher"
   bio: "Alexander is a student research assistant at the Energy Economics Group (EEG) and a master’s student in Power Engineering and Sustainable Energy Systems at TU Wien. His work is part of the energy system modelling team, where he focuses on equilibrium and complementarity-based modelling approaches. Alexander is currently working on modelling the global solar PV module supply chain."
   image: "/assets/images/team/alexander.jpg"
+  object_position: "top"
   email: "csekoe@eeg.tuwien.ac.at"
   social_links:
     - platform: "GitHub"
