@@ -1,4 +1,5 @@
 - id: strategic-solar-stockpiling
+  type: "paper"
   title: "Strategic solar module stockpiling in the EU: A scenario-based analysis of costs and benefits beyond 2030"
   authors: "Sebastian Zwickl-Bernhard, Maximilian Oitzinger, Helen Anais Fischer, Stian Backe"
   year: 2025
@@ -7,9 +8,30 @@
   description: "Analyzes the optimal levels of strategic solar module stockpiles in the EU to achieve climate neutrality by 2050. The study finds that stockpiling is cost-effective in specific scenarios, particularly under unfavorable import conditions, and can reduce import dependency by introducing temporal flexibility."
 
 - id: securing-eu-supply-chains
+  type: "paper"
   title: "Securing EU Clean Technology Supply Chains: Learning Rates in Material Recycling and Strategic Stockpiling"
   authors: "Sebastian Zwickl-Bernhard, Maximilian Oitzinger"
   year: 2025
   doi: "10.1109/EEM60825.2025.11050187"
   url: "https://ieeexplore.ieee.org/document/11050187/"
   description: "Examines how the EU can meet its 2030 domestic sourcing targets for solar PV modules. The study models learning rates for material recycling and finds that strategic stockpiling is crucial for meeting benchmarks in the late 2020s and early 2040s, complementing domestic remanufacturing."
+
+- id: eem-2025-conference
+  type: "activity"
+  title: "Presentation at the 21st European Energy Market Conference (EEM 2025)"
+  authors: "Sebastian Zwickl-Bernhard, Maximilian Oitzinger"
+  year: 2025
+  event: "European Energy Market Conference (EEM)"
+  location: "Istanbul, Turkey"
+  date: "June 2025"
+  description: "Presented research on securing EU clean technology supply chains through learning rates in material recycling and strategic stockpiling."
+
+- id: iewt-2025
+  type: "activity"
+  title: "Participation at the 14th International Energy Economics Workshop (IEWT 2025)"
+  authors: "Maximilian Oitzinger, Sebastian Zwickl-Bernhard"
+  year: 2025
+  event: "International Energy Economics Workshop (IEWT)"
+  location: "Vienna, Austria"
+  date: "February 2025"
+  description: "Participated in the biennial energy economics workshop at TU Wien, contributing to discussions on modelling approaches for energy system transformation."
