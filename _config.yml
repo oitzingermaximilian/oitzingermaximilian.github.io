@@ -1,6 +1,7 @@
 remote_theme: "mmistakes/minimal-mistakes"
 
 title: "From Minerals to Megawatts"
+logo: "/assets/images/ES3M_Logo.jpg"
 description: "Team page for our work and publications"
 
 # Required for correct absolute URLs on a user site
