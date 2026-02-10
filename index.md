@@ -19,6 +19,28 @@ permalink: /
     padding: 2rem 0;
     border-bottom: 1px solid #eee;
     margin-bottom: 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .home-team-section::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 400px;
+    transform: translate(-50%, -50%);
+    background-image: url('/assets/images/ES3M_Logo.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.06;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .home-team-section > * {
+    position: relative;
+    z-index: 1;
   }
   .home-team-grid {
     display: flex;
@@ -132,7 +154,6 @@ permalink: /
 </style>
 
 <section class="home-intro">
-  <img src="/assets/images/ES3M_Logo.jpg" alt="ES3M Logo" class="home-logo">
   <h2>From Minerals to Megawatts</h2>
   <p>
     We are the Energy System Modeling team (ES3M) at TU Wien. 
