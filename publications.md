@@ -38,12 +38,12 @@ header:
   }
 
   .pub-accordion-header.papers {
-    background: linear-gradient(135deg, #ede9fe 0%, #ddd6fe 100%);
-    border: 1px solid #c4b5fd;
+    background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%);
+    border: 1px solid #7dd3fc;
   }
   .pub-accordion-header.activities {
-    background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
-    border: 1px solid #fcd34d;
+    background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+    border: 1px solid #93c5fd;
   }
 
   .pub-accordion-label {
@@ -53,8 +53,8 @@ header:
     font-size: 1.2rem;
     font-weight: 700;
   }
-  .pub-accordion-header.papers .pub-accordion-label { color: #5b21b6; }
-  .pub-accordion-header.activities .pub-accordion-label { color: #92400e; }
+  .pub-accordion-header.papers .pub-accordion-label { color: #0369a1; }
+  .pub-accordion-header.activities .pub-accordion-label { color: #1e40af; }
 
   .pub-accordion-count {
     font-size: 0.85rem;
@@ -66,8 +66,8 @@ header:
     font-size: 1.2rem;
     transition: transform 0.3s ease;
   }
-  .pub-accordion-header.papers .pub-accordion-icon { color: #5b21b6; }
-  .pub-accordion-header.activities .pub-accordion-icon { color: #92400e; }
+  .pub-accordion-header.papers .pub-accordion-icon { color: #0369a1; }
+  .pub-accordion-header.activities .pub-accordion-icon { color: #1e40af; }
 
   .pub-accordion-section.collapsed .pub-accordion-icon {
     transform: rotate(-90deg);
@@ -108,8 +108,8 @@ header:
     box-shadow: 0 8px 16px rgba(0,0,0,0.08);
   }
 
-  .work-item.paper:hover { border-color: #8b5cf6; }
-  .work-item.activity:hover { border-color: #f59e0b; }
+  .work-item.paper:hover { border-color: #1e90ff; }
+  .work-item.activity:hover { border-color: #3b82f6; }
 
   .work-title {
     font-size: 1.15rem;
@@ -135,7 +135,7 @@ header:
     margin: 0.25rem 0;
   }
   .work-links a {
-    color: #8b5cf6;
+    color: #1e90ff;
     text-decoration: none;
   }
   .work-links a:hover {
@@ -156,7 +156,7 @@ header:
     align-items: center;
     gap: 5px;
   }
-  .work-meta-item i { color: #f59e0b; font-size: 0.8rem; }
+  .work-meta-item i { color: #3b82f6; font-size: 0.8rem; }
 
   .work-abstract {
     margin-top: 0.75rem;
@@ -175,9 +175,7 @@ header:
     line-height: 1.6;
   }
 
-  .section-icon {
-    font-size: 1.1rem;
-  }
+
 </style>
 
 {% assign papers = site.data.publications | where: "type", "paper" %}
@@ -187,7 +185,7 @@ header:
 <div class="pub-accordion-section" id="papers-section">
   <div class="pub-accordion-header papers" onclick="togglePubAccordion('papers-section')">
     <div class="pub-accordion-label">
-      <span class="section-icon">📄</span>
+
       Peer-Reviewed Publications
       <span class="pub-accordion-count">({{ papers.size }})</span>
     </div>
@@ -221,7 +219,7 @@ header:
 <div class="pub-accordion-section" id="activities-section">
   <div class="pub-accordion-header activities" onclick="togglePubAccordion('activities-section')">
     <div class="pub-accordion-label">
-      <span class="section-icon">🎤</span>
+
       Research Activities
       <span class="pub-accordion-count">({{ activities.size }})</span>
     </div>
