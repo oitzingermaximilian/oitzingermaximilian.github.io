@@ -51,10 +51,10 @@ header:
   }
 
   /* 5. THE IMAGE */
-  .team-photo-left {
-    width: 180px !important;        
-    height: 180px !important;
-    object-fit: cover;
+  /* 5. THE IMAGE WRAPPER (Enforces Circle) */
+  .team-photo-wrapper {
+    width: 180px;        
+    height: 180px;
     border-radius: 50%;
     flex-shrink: 0; 
     
@@ -63,8 +63,21 @@ header:
     border: 5px solid #fff; 
     box-shadow: 0 0 0 1px rgba(0,0,0,0.1), 0 4px 10px rgba(0,0,0,0.1); 
     
+    /* MASKING: This cuts off anything outside the circle */
+    overflow: hidden;
+    position: relative;
+    
     /* Removed negative margin - Image stands alone now */
     margin: 0; 
+  }
+
+  /* The actual image inside */
+  .team-photo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Crucial: crops to fill */
+    object-position: center;
+    display: block;
   }
 
   /* 6. THE TEXT CARD */
@@ -153,7 +166,7 @@ header:
       margin-bottom: 3rem;
     }
     
-    .team-photo-left {
+    .team-photo-wrapper {
       width: 140px; 
       height: 140px;
     }
@@ -176,7 +189,9 @@ header:
 <div class="team-list">
   {% for member in site.data.team %}
   <div class="team-row" id="{{ member.id }}">
-    <img src="{{ member.image }}" class="team-photo-left" alt="{{ member.name }}" onerror="this.style.display='none'">
+    <div class="team-photo-wrapper">
+      <img src="{{ member.image }}" class="team-photo-img" alt="{{ member.name }}" onerror="this.style.display='none'">
+    </div>
     
     <div class="team-info">
       <h3 class="team-name">{{ member.name }}</h3>
