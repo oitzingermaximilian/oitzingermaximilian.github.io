@@ -52,8 +52,8 @@ header:
 
   /* 5. THE IMAGE */
   .team-photo-left {
-    width: 180px;        
-    height: 180px;
+    width: 180px !important;        
+    height: 180px !important;
     object-fit: cover;
     border-radius: 50%;
     flex-shrink: 0; 
