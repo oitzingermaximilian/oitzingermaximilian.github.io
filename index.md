@@ -119,14 +119,14 @@ permalink: /
 
   /* Enlarge navbar logo */
   .site-logo img {
-    max-height: 50px !important;
+    max-height: 60px !important;
   }
 
   /* Hero Logo */
   .home-logo {
     display: block;
     margin: 0 auto 1rem auto;
-    max-width: 180px;
+    max-width: 280px;
     height: auto;
   }
 </style>
