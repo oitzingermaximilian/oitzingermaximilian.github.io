@@ -126,7 +126,7 @@ permalink: /
   .home-logo {
     display: block;
     margin: 0 auto 1rem auto;
-    max-width: 280px;
+    max-width: 500px;
     height: auto;
   }
 </style>

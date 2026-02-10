@@ -42,8 +42,8 @@ header:
     border: 1px solid #7dd3fc;
   }
   .pub-accordion-header.activities {
-    background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
-    border: 1px solid #93c5fd;
+    background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%);
+    border: 1px solid #7dd3fc;
   }
 
   .pub-accordion-label {
