@@ -1,3 +1,4 @@
+# Thesis Topics Data
 - title: "Modeling of Hydrogen Supply Chains in Austria"
   type: "Master Thesis"
   status: "ongoing"
@@ -16,7 +17,7 @@
   type: "Master Thesis"
   status: "finished"
   description: "Test"
-  supervisor: "Daniel Cäsar"
+  supervisor: "Daniel CÃ¤sar"
   contact: "caesar@eeg.tuwien.ac.at"
 
 - title: 'Analysis of Renewable Energy Communities'
@@ -37,7 +38,7 @@
   type: 'Master Thesis'
   status: 'finished'
   description: 'Test'
-  supervisor: 'Daniel C�sar'
+  supervisor: 'Daniel Cäsar'
   contact: 'caesar@eeg.tuwien.ac.at'
 
 - title: 'Hydrogen Storage Potentials'
@@ -51,7 +52,7 @@
   type: 'Bachelor Thesis'
   status: 'ongoing'
   description: 'Test'
-  supervisor: 'Alexander Csek�'
+  supervisor: 'Alexander Csekö'
   contact: 'csekoe@eeg.tuwien.ac.at'
 
 - title: 'Decarbonization of Steel Industry'
@@ -72,7 +73,7 @@
   type: 'Bachelor Thesis'
   status: 'finished'
   description: 'Test'
-  supervisor: 'Daniel C�sar'
+  supervisor: 'Daniel Cäsar'
   contact: 'caesar@eeg.tuwien.ac.at'
 
 - title: 'Future of Nuclear Power in Europe'
