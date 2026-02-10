@@ -151,14 +151,4 @@ permalink: /
   <a href="/thesis/" class="btn-main">View Current Theses</a>
 </section>
 
-<section class="home-pubs-section">
-  <h3 style="text-align: center; margin-bottom: 1.5rem;">Our Work</h3>
-  {% for paper in site.data.papers limit:3 %}
-  <div class="pub-preview-card">
-    <a href="{{ paper.url }}" target="_blank" class="pub-title">{{ paper.title }}</a>
-    <div class="pub-meta">
-      {{ paper.year }} • {{ paper.authors }}
-    </div>
-  </div>
-  {% endfor %}
-</section>
+
