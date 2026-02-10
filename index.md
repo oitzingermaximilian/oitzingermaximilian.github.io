@@ -137,7 +137,10 @@ permalink: /
     </a>
     {% endfor %}
   </div>
-  <a href="/team/" class="btn-main">Meet the Team</a>
+  <div style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
+    <a href="/team/" class="btn-main">Meet the Team</a>
+    <a href="/publications/" class="btn-main">View Recent Research Activities and Publications</a>
+  </div>
 </section>
 
 <section class="home-thesis-section">
@@ -158,7 +161,4 @@ permalink: /
     </div>
   </div>
   {% endfor %}
-  <div style="text-align: center;">
-    <a href="/publications/" class="btn-main">View Recent Research Activities and Publications</a>
-  </div>
 </section>
