@@ -27,8 +27,8 @@ permalink: /
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 850px;
-    height: 850px;
+    width: 800px;
+    height: 800px;
     transform: translate(-50%, -50%);
     background-image: url('/assets/images/ES3M_Logo.jpg');
     background-size: contain;
