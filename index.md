@@ -52,7 +52,7 @@ permalink: /
     position: absolute;
     top: 50%;
     left: 50%;
-    /* Keep each card upright while placing it on a circular ring around center. */
+    /* Rotate to placement angle, move out by radius, then counter-rotate so cards stay upright. */
     transform: translate(-50%, -50%) rotate(var(--angle)) translateY(calc(-1 * var(--ring-radius))) rotate(calc(-1 * var(--angle)));
     display: inline-flex;
     flex-direction: column;
@@ -192,7 +192,7 @@ permalink: /
 
 <section class="home-team-section">
   <div class="home-team-grid">
-    <!-- -90deg starts the first avatar at the top of the circle. -->
+    <!-- Evenly distribute avatars over 360°, starting at negative 90 degrees (top). -->
     {% for member in site.data.team %}
     <a href="/team/#{{ member.id }}" class="home-member" style="--angle: calc(-90deg + ({{ forloop.index0 }} * 360deg / {{ site.data.team | size }}));">
       <div class="home-member-photo-wrapper">
