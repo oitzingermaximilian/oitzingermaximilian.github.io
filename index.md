@@ -44,7 +44,7 @@ permalink: /
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    opacity: 0.2;
+    opacity: 0.5;
     pointer-events: none;
     z-index: 0;
   }
