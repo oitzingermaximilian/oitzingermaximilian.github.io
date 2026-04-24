@@ -19,47 +19,53 @@ permalink: /
     padding: 2rem 0;
     border-bottom: 1px solid #eee;
     margin-bottom: 3rem;
-    position: relative;
-    overflow: hidden;
-  }
-  .home-team-section::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 520px;
-    height: 520px;
-    transform: translate(-50%, -50%);
-    background-image: url('/assets/images/ES3M_Logo.jpg');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    opacity: 0.15;
-    pointer-events: none;
-    z-index: 0;
   }
   .home-team-section > * {
     position: relative;
     z-index: 1;
   }
   .home-team-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2rem;
-    margin: 2rem 0;
+    --ring-size: min(90vw, 640px);
+    --ring-radius: min(34vw, 230px);
+    position: relative;
+    width: var(--ring-size);
+    aspect-ratio: 1 / 1;
+    margin: 2rem auto 3rem auto;
+  }
+  .home-team-grid::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: min(54vw, 320px);
+    height: min(54vw, 320px);
+    transform: translate(-50%, -50%);
+    background-image: url('/assets/images/ES3M_Logo.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.2;
+    pointer-events: none;
+    z-index: 0;
   }
   .home-member {
-    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /* Rotate to placement angle, move out by radius, then counter-rotate so cards stay upright. */
+    transform: translate(-50%, -50%) rotate(var(--angle)) translateY(calc(-1 * var(--ring-radius))) rotate(calc(-1 * var(--angle)));
+    display: inline-flex;
     flex-direction: column;
     align-items: center;
-    width: 140px;
+    width: 120px;
     text-decoration: none !important;
+    z-index: 1;
   }
+
   /* Wrapper for circular masking */
   .home-member-photo-wrapper {
-    width: 100px;
-    height: 100px;
+    width: 96px;
+    height: 96px;
     border-radius: 50%;
     border: 3px solid #fff;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
@@ -85,11 +91,34 @@ permalink: /
   }
 
   .home-member-name {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     font-weight: 700;
     color: #333;
     line-height: 1.2;
     text-align: center;
+  }
+
+  @media (max-width: 680px) {
+    .home-team-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.25rem;
+      width: 100%;
+      aspect-ratio: auto;
+      margin: 2rem 0;
+    }
+    .home-team-grid::before {
+      width: min(70vw, 260px);
+      height: min(70vw, 260px);
+    }
+    .home-member {
+      position: relative;
+      top: auto;
+      left: auto;
+      transform: none;
+      width: 120px;
+    }
   }
 
   /* Publications Preview */
@@ -163,8 +192,9 @@ permalink: /
 
 <section class="home-team-section">
   <div class="home-team-grid">
+    <!-- Evenly distribute avatars over 360°, starting at negative 90 degrees (top). -->
     {% for member in site.data.team %}
-    <a href="/team/#{{ member.id }}" class="home-member">
+    <a href="/team/#{{ member.id }}" class="home-member" style="--angle: calc(-90deg + ({{ forloop.index0 }} * 360deg / {{ site.data.team | size }}));">
       <div class="home-member-photo-wrapper">
         <img src="{{ member.image }}" alt="{{ member.name }}" class="home-member-photo" style="object-position: {{ member.object_position | default: 'center' }};" onerror="this.style.display='none'">
       </div>
