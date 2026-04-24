@@ -185,7 +185,7 @@ permalink: /
 <section class="home-intro">
   <h2>From Minerals to Megawatts</h2>
   <p>
-    Embedded within the Faculty of Electrical Engineering at TU Wien, and affiliated with the Department of Net-Zero Energy Systems, the research group ES3M emerged from initial discussions on energy system modelling spanning “minerals to megawatts” at the Young Energy Economists and Engineers Seminar in 2023. Since then, ES3M has established itself at the intersection of energy systems and material supply chains, applying methodologies from operations research and advanced energy system modelling. The group’s research portfolio covers a broad range of topics, including market dynamics of critical raw materials, transformation pathways for energy-intensive industries, material recycling, and energy security and risk assessment. In addition, ES3M focuses on the deployment of energy technologies, addressing key questions related to siting, technology selection, and sourcing strategies – such as imports, domestic manufacturing, and remanufacturing.
+    Embedded within the Faculty of Electrical Engineering at TU Wien, and affiliated with the Department of Net-Zero Energy Systems, the research group ES3M emerged from initial discussions on energy system modelling spanning “minerals to megawatts” at the Young Energy Economists and Engineers Seminar in 2023. Since then, ES3M has established itself at the intersection of energy systems and material supply chains, applying methodologies from operations research and advanced energy system modelling.
   </p>
 </section>
 
@@ -206,6 +206,12 @@ permalink: /
     <a href="/publications/" class="btn-main">Publications</a>
     <a href="/thesis/" class="btn-main">Student Supervision</a>
   </div>
+</section>
+
+<section class="home-intro" style="margin-top: 2rem;">
+  <p>
+    The group’s research portfolio covers a broad range of topics, including market dynamics of critical raw materials, transformation pathways for energy-intensive industries, material recycling, and energy security and risk assessment. In addition, ES3M focuses on the deployment of energy technologies, addressing key questions related to siting, technology selection, and sourcing strategies – such as imports, domestic manufacturing, and remanufacturing.
+  </p>
 </section>
 
 <!-- ═══ LinkedIn Carousel ═══ -->
