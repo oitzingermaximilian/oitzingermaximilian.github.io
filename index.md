@@ -266,7 +266,7 @@ permalink: /
   <div class="linkedin-carousel" id="linkedinCarousel">
     {% for post in site.data.linkedin_posts %}
     <div class="linkedin-slide {% if forloop.first %}active{% endif %}">
-      <iframe src="{{ post.src }}" height="600" width="504" frameborder="0" allowfullscreen="" title="{{ post.title }}"></iframe>
+      <iframe src="{{ post.src }}" height="600" width="504" allowfullscreen="" title="{{ post.title }}"></iframe>
     </div>
     {% endfor %}
   </div>
