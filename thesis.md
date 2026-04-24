@@ -208,7 +208,7 @@ header:
   <div class="accordion-header ongoing" onclick="toggleAccordion('ongoing-section')">
     <div class="accordion-label">
       <span class="status-dot ongoing" style="width:12px;height:12px;"></span>
-      Ongoing Theses
+      Ongoing Supervision
       <span class="accordion-count">({{ ongoing_topics.size }})</span>
     </div>
     <span class="accordion-icon">▼</span>
@@ -245,7 +245,7 @@ header:
   <div class="accordion-header finished" onclick="toggleAccordion('finished-section')">
     <div class="accordion-label">
       <span class="status-dot finished" style="width:12px;height:12px;"></span>
-      Finished Theses
+      Finished Supervision
       <span class="accordion-count">({{ finished_topics.size }})</span>
     </div>
     <span class="accordion-icon">▼</span>
