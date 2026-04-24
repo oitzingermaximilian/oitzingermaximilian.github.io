@@ -7,7 +7,7 @@ permalink: /
   /* Hero / Intro */
   .home-intro {
     text-align: center;
-    max-width: 800px;
+    max-width: 1100px;
     margin: 0 auto 3rem auto;
   }
   .home-intro h2 { font-size: 2.2rem; margin-bottom: 0.5rem; color: #1e90ff; }
