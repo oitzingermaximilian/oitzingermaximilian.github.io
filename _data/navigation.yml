@@ -1,7 +1,9 @@
 main:
   - title: "Home"
     url: / 
-  - title: "Meet the Team"
+  - title: "Team"
     url: /team/
-  - title: "Our Work"
+  - title: "Publications"
     url: /publications/
+  - title: "Supervision"
+    url: /thesis/
