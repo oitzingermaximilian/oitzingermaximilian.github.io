@@ -179,7 +179,6 @@ header:
 </style>
 
 {% assign papers = site.data.publications | where: "type", "paper" %}
-{% assign activities = site.data.publications | where: "type", "activity" %}
 
 <!-- ═══ LinkedIn Carousel ═══ -->
 <style>
@@ -346,47 +345,6 @@ header:
           <details class="work-abstract">
             <summary>Abstract</summary>
             <div class="work-abstract-body">{{ abstract }}</div>
-          </details>
-        {% endif %}
-      </article>
-      {% endfor %}
-    </div>
-  </div>
-</div>
-
-<!-- ═══ Research Activities ═══ -->
-<div class="pub-accordion-section" id="activities-section">
-  <div class="pub-accordion-header activities" onclick="togglePubAccordion('activities-section')">
-    <div class="pub-accordion-label">
-
-      Research Activities
-      <span class="pub-accordion-count">({{ activities.size }})</span>
-    </div>
-    <span class="pub-accordion-icon">▼</span>
-  </div>
-  <div class="pub-accordion-body">
-    <div class="work-list">
-      {% for act in activities %}
-      <article class="work-item activity">
-        <h3 class="work-title">
-          {{ act.title }}{% if act.year %} <span class="work-year">({{ act.year }})</span>{% endif %}
-        </h3>
-        {% if act.authors %}<p class="work-authors">{{ act.authors }}</p>{% endif %}
-        <div class="work-meta">
-          {% if act.event %}
-          <span class="work-meta-item"><i class="fas fa-calendar-alt"></i> {{ act.event }}</span>
-          {% endif %}
-          {% if act.location %}
-          <span class="work-meta-item"><i class="fas fa-map-marker-alt"></i> {{ act.location }}</span>
-          {% endif %}
-          {% if act.date %}
-          <span class="work-meta-item"><i class="fas fa-clock"></i> {{ act.date }}</span>
-          {% endif %}
-        </div>
-        {% if act.description %}
-          <details class="work-abstract">
-            <summary>Details</summary>
-            <div class="work-abstract-body">{{ act.description }}</div>
           </details>
         {% endif %}
       </article>

@@ -27,8 +27,8 @@ permalink: /
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 800px;
-    height: 800px;
+    width: 520px;
+    height: 520px;
     transform: translate(-50%, -50%);
     background-image: url('/assets/images/ES3M_Logo.jpg');
     background-size: contain;
@@ -174,14 +174,7 @@ permalink: /
   </div>
   <div style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
     <a href="/team/" class="btn-main">Meet the Team</a>
-    <a href="/publications/" class="btn-main">View Recent Research Activities and Publications</a>
+    <a href="/publications/" class="btn-main">Publications</a>
+    <a href="/thesis/" class="btn-main">Student Supervision</a>
   </div>
-</section>
-
-<section class="home-thesis-section">
-  <h3>Interested in working with us?</h3>
-  <p style="color: #666; margin-bottom: 1rem;">
-    We are always looking for motivated students for Bachelor and Master theses.
-  </p>
-  <a href="/thesis/" class="btn-main">View Current Theses</a>
 </section>
