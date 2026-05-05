@@ -1,4 +1,5 @@
 # Thesis Topics Data
+
 - title: "Comparison of overhead lines and underground cables for high voltage AC power transmission"
   type: "Bachelor Thesis"
   status: "finished"
@@ -16,7 +17,7 @@
   status: "ongoing"
   supervisor: "Marcus Otti"
   contact: "otti@eeg.tuwien.ac.at"
-  
+
 - title: "Hydrogen cogeneration plants as backup generation technology in net-zero power systems: the case of Germany"
   type: "Bachelor Thesis"
   status: "finished"
@@ -83,7 +84,7 @@
   supervisor: "Sebastian Zwickl-Bernhard"
   contact: "zwickl@eeg.tuwien.ac.at"
 
-  - title: "Coordinated capacity calculation and allocation in a highly meshed transmission network"
+- title: "Coordinated capacity calculation and allocation in a highly meshed transmission network"
   type: "Master Thesis"
   status: "finished"
   supervisor: "Sebastian Zwickl-Bernhard"
