@@ -16,22 +16,11 @@
   url: "https://ieeexplore.ieee.org/document/11050187/"
   description: "Examines how the EU can meet its 2030 domestic sourcing targets for solar PV modules. The study models learning rates for material recycling and finds that strategic stockpiling is crucial for meeting benchmarks in the late 2020s and early 2040s, complementing domestic remanufacturing."
 
-- id: eem-2025-conference
-  type: "activity"
-  title: "Presentation at the 21st European Energy Market Conference (EEM 2025)"
-  authors: "Sebastian Zwickl-Bernhard, Maximilian Oitzinger"
+- id: transformation-eei
+  type: "paper"
+  title: "Net-zero emissions in the energy-intensive industrial sector by 2040: Insights from a country with ambitious national renewable policies"
+  authors: "Marcus Otti, Sebastian Zwickl-Bernhard"
   year: 2025
-  event: "European Energy Market Conference (EEM)"
-  location: "Istanbul, Turkey"
-  date: "June 2025"
-  description: "Presented research on securing EU clean technology supply chains through learning rates in material recycling and strategic stockpiling."
-
-- id: iewt-2025
-  type: "activity"
-  title: "Participation at the 14th International Energy Economics Workshop (IEWT 2025)"
-  authors: "Maximilian Oitzinger, Sebastian Zwickl-Bernhard"
-  year: 2025
-  event: "International Energy Economics Workshop (IEWT)"
-  location: "Vienna, Austria"
-  date: "February 2025"
-  description: "Participated in the biennial energy economics workshop at TU Wien, contributing to discussions on modelling approaches for energy system transformation."
+  doi: "10.1016/j.esr.2025.101748"
+  url: "https://doi.org/10.1016/j.esr.2025.101748"
+  description: "This study identifies the cost-optimal transition technologies and energy carrier choices for achieving net-zero carbon emissions by 2040 in Austria’s energy-intensive industrial sectors: iron and steel, pulp and paper, and cement. It focuses on the impact of three national policies, such as the targeted decarbonization of the Austrian power and gas sectors, and the role of carbon capture Technologies. The results emphasize the importance of biomethane, electrification, and efficiency measures."
