@@ -1,11 +1,3 @@
-- id: strategic-solar-stockpiling
-  type: "paper"
-  title: "Strategic solar module stockpiling in the EU: A scenario-based analysis of costs and benefits beyond 2030"
-  authors: "Sebastian Zwickl-Bernhard, Maximilian Oitzinger, Helen Anais Fischer, Stian Backe"
-  year: 2025
-  doi: "10.1016/j.enpol.2025.114626"
-  url: "https://doi.org/10.1016/j.enpol.2025.114626"
-  description: "Analyzes the optimal levels of strategic solar module stockpiles in the EU to achieve climate neutrality by 2050. The study finds that stockpiling is cost-effective in specific scenarios, particularly under unfavorable import conditions, and can reduce import dependency by introducing temporal flexibility."
 
 - id: securing-eu-supply-chains
   type: "paper"
@@ -42,3 +34,30 @@
   doi: "10.1016/j.adapen.2024.100198"
   url: "https://doi.org/10.1016/j.adapen.2024.100198"
   description: "This study reviews material recycling and remanufacturing (MRR) in energy system modeling and introduces its endogenous integration into optimization frameworks. By evaluating cost-optimal MRR capacities, the research showcases the future lifecycle and deployment of EU solar modules up to 2050 across two distinct scenarios. Ultimately, it analyzes the specific energy policies required to effectively drive and scale recycling-based solar module remanufacturing within the clean energy transition."
+
+- id: strategic-solar-stockpiling
+  type: "paper"
+  title: "Strategic solar module stockpiling in the EU: A scenario-based analysis of costs and benefits beyond 2030"
+  authors: "Sebastian Zwickl-Bernhard, Maximilian Oitzinger, Helen Anais Fischer, Stian Backe"
+  year: 2025
+  doi: "10.1016/j.enpol.2025.114626"
+  url: "https://doi.org/10.1016/j.enpol.2025.114626"
+  description: "Analyzes the optimal levels of strategic solar module stockpiles in the EU to achieve climate neutrality by 2050. The study finds that stockpiling is cost-effective in specific scenarios, particularly under unfavorable import conditions, and can reduce import dependency by introducing temporal flexibility."
+
+- id: diversifying-eu-solar-pv
+  type: "paper"
+  title: "Diversifying EU's Solar PV Module Supply Chain: Multi-Objective Modeling of Economic and Geopolitical Dynamics"
+  authors: "Helen Anais Fischer, Sebastian Zwickl-Bernhard, Hans Auer"
+  year: 2025
+  doi: "10.1109/EEM64765.2025.11050253"
+  url: "https://ieeexplore.ieee.org/document/11050253"
+  description: "The European Union is expanding solar photovoltaic capacity at a rapid pace. However, the supply of PV modules is highly concentrated: 95% of solar PV module imports come from China, raising concerns about supply dependence and energy security. The core objective of this work is to model a cost and geopolitical risk minimizing strategy to diversify the EU's solar PV module imports across multiple export countries. A scenariobased analysis examines the impact of geopolitical tensions, such as price dumping, trade embargoes, and policy measures. The results indicate that geopolitical risk can be reduced, however, with additional costs ranging from 0.03 USD/W and 0.14 USD/W depending on the extent to which geopolitical risk is accounted for in the objective function. Minimizing the EU's geopolitical risk in solar PV module supply requires a diversification strategy, including long-term supply contracts with Malaysia and Vietnam."
+
+- id: grid-tariffs-prosumer-flexibility
+  type: "paper"
+  title: "Impact of Grid Tariff Design and Prosumer Flexibility Investments on Peak Load Reduction – Participation in Multiple Renewable Energy Communities"
+  authors: "Helen Anais Fischer, Sebastian Zwickl-Bernhard, Hans Auer"
+  year: 2025
+  doi: "10.2139/ssrn.5216602"
+  url: "https://ssrn.com/abstract=5216602"
+  description: "Examines how grid tariff design and prosumer flexibility investments affect peak load reduction when prosumers participate in multiple renewable energy communities. Available as an SSRN working paper."
