@@ -197,3 +197,27 @@
   status: "ongoing"
   supervisor: "Sebastian Zwickl-Bernhard"
   contact: "zwickl@eeg.tuwien.ac.at"
+
+  - title: "The role of solar module stockpiling in EU's clean energy transition"
+  type: "Bachelor Thesis"
+  status: "finished"
+  supervisor: "Sebastian Zwickl-Bernhard, Helen Anais Fischer"
+  contact: "fischer@eeg.tuwien.ac.at"
+
+- title: "Evaluation of the economic viability of different investment strategies in varying storage sizes to increase self-consumption in an energy community"
+  type: "Bachelor Thesis"
+  status: "ongoing"
+  supervisor: "Sebastian Zwickl-Bernhard, Helen Anais Fischer"
+  contact: "fischer@eeg.tuwien.ac.at"
+
+- title: "Techno-Economic Analysis of a 24-hour Continuous Solar-Powered Energy Supply System for Tropical Islands: A Case Study and Market Potential Assessment"
+  type: "Bachelor Thesis"
+  status: "ongoing"
+  supervisor: "Sebastian Zwickl-Bernhard, Helen Anais Fischer"
+  contact: "fischer@eeg.tuwien.ac.at"
+
+- title: "Reshoring Key Supply Chain Steps into the EU: Supply Risk Assessment for Wind and Electrolyser Technologies"
+  type: "Master Thesis"
+  status: "ongoing"
+  supervisor: "Hans Auer, Helen Anais Fischer"
+  contact: "fischer@eeg.tuwien.ac.at"
