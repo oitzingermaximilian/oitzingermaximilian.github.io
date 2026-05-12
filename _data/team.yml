@@ -36,7 +36,7 @@
       url: "https://orcid.org/0009-0008-6840-0453"
       icon: "fab fa-orcid"
     - platform: "Google Scholar"
-      url: ""
+      url: "https://scholar.google.com/citations?user=Y6o6J2UAAAAJ&hl=de"
       icon: "fas fa-graduation-cap"
 
 - id: alexander
