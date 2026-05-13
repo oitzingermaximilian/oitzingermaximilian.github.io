@@ -102,6 +102,7 @@ header:
     transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
     display: flex;
     flex-direction: column;
+    justify-content: space-between; /* Drückt den Footer immer ganz nach unten */
   }
 
   /* Hover Border Colors */
@@ -166,7 +167,7 @@ header:
     font-size: 0.95rem;
     line-height: 1.6;
     margin-bottom: 1.5rem;
-    flex-grow: 1;
+    flex-grow: 1; /* Lässt die Beschreibung den verfügbaren Platz ausfüllen */
   }
 
   .thesis-footer {
@@ -175,6 +176,7 @@ header:
     font-size: 0.9rem;
   }
 
+  /* Korrigiertes Supervisor Styling für lange und mehrere Namen */
   .supervisor-label {
     font-weight: 600;
     color: #4b5563;
@@ -185,7 +187,11 @@ header:
   .supervisor-name {
     color: #1e90ff;
     font-weight: 500;
+    display: inline-block; 
+    line-height: 1.4;
+    word-wrap: break-word; /* Bricht den Text um, wenn er zu lang wird */
   }
+  
   .thesis-card.finished .supervisor-name {
     color: #28a745;
   }
@@ -227,7 +233,7 @@ header:
         <h3 class="thesis-title">{{ topic.title }}</h3>
         <p class="thesis-desc">{{ topic.description }}</p>
         <div class="thesis-footer">
-          <span class="supervisor-label">Supervisor:</span>
+          <span class="supervisor-label">Supervisors:</span>
           <span class="supervisor-name">{{ topic.supervisor }}</span>
           <br>
           <a href="mailto:{{ topic.contact }}" class="contact-btn">
@@ -264,7 +270,7 @@ header:
         <h3 class="thesis-title">{{ topic.title }}</h3>
         <p class="thesis-desc">{{ topic.description }}</p>
         <div class="thesis-footer">
-          <span class="supervisor-label">Supervisor:</span>
+          <span class="supervisor-label">Supervisors:</span>
           <span class="supervisor-name">{{ topic.supervisor }}</span>
           <br>
           <a href="mailto:{{ topic.contact }}" class="contact-btn">
