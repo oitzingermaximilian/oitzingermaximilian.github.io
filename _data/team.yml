@@ -119,3 +119,26 @@
     - platform: "Google Scholar"
       url: "https://scholar.google.com/citations?user=RYL56loAAAAJ&hl=de"
       icon: "fas fa-graduation-cap"
+
+- id: mona
+  name: "Mona Marie Wurz"
+  role: "Researcher"
+  bio: "Mona is a student research assistant at the Energy Economics Group (EEG) and a master's student in Physical Energy Engineering at TU Wien. As part of her thesis, she investigates a potential fuel bottleneck in nuclear fusion technology using optimization models, examining its economic, ecological, and supply-risk implications. She holds a B.Sc. in Energy and Process Engineering from TU Berlin and a second B.Sc. in Environmental System Science from TU Graz."
+  image: "/assets/images/team/mona.jpg"
+  object_position: "top"
+  email: "wurz@eeg.tuwien.ac.at"
+  social_links:
+    - platform: "GitHub"
+      url: "https://github.com/MMWurz"
+      icon: "fab fa-github"
+    - platform: "LinkedIn"
+      url: "https://www.linkedin.com/in/mona-m-wurz-3926523b1/"
+      icon: "fab fa-linkedin"
+    - platform: "ORCID"
+      url: "https://orcid.org/0009-0007-6465-5697"
+      icon: "fab fa-orcid"
+    - platform: "Google Scholar"
+      url: "https://scholar.google.com"
+      icon: "fas fa-graduation-cap"
+
+
