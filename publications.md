@@ -200,7 +200,10 @@ header:
         </h3>
         {% if pub.authors %}<p class="work-authors">{{ pub.authors }}</p>{% endif %}
         {% if pub.doi %}
-          <p class="work-links">DOI: <a href="{{ pub.url | default: 'https://doi.org/' | append: pub.doi }}" target="_blank">{{ pub.doi }}</a></p>
+          <p class="work-links">DOI: <a href="https://doi.org/{{ pub.doi }}" target="_blank">{{ pub.doi }}</a></p>
+        {% endif %}
+        {% if pub.url %}
+          <p class="work-links"><a href="{{ pub.url }}" target="_blank">View Publication</a></p>
         {% endif %}
         {% assign abstract = pub.abstract | default: pub.description %}
         {% if abstract %}
