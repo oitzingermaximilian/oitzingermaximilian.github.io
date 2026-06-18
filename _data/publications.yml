@@ -1,3 +1,20 @@
+- id: extending-energy-system-models
+  type: "paper"
+  title: "Extending energy system models to assess technology sourcing and resilience"
+  authors: "Sebastian Zwickl-Bernhard, Maximilian Oitzinger, Helen Anais Fischer, Marzia Sesini, Benjamin F. Hobbs"
+  year: 2026
+  doi: "10.1016/j.checir.2026.100034"
+  url: "https://doi.org/10.1016/j.checir.2026.100034"
+  description: "This study presents a novel energy system optimization framework that endogenizes technology-sourcing decisions—manufacturing, remanufacturing, or imports—into cost-optimal system design under the Net-Zero Industry Act. Examining 243 scenarios for solar PV, wind, and grid-scale batteries, the findings reveal that sourcing strategies polarize toward either manufacturing or remanufacturing, and that domestic sourcing introduces measurable short-term trade-offs, such as a temporary increase in the use of flexible fossil fuels (LNG)."
+
+- id: lng-cbam
+  type: "paper"
+  title: "The EU’s CBAM trinity in LNG supply: Modeling global trade flows, supply risks and upstream emissions"
+  authors: "Sebastian Zwickl-Bernhard, Anna Creti, Anne Neumann"
+  year: 2026
+  doi: "10.1016/j.eneco.2026.109252"
+  url: "https://doi.org/10.1016/j.eneco.2026.109252"
+  description: "This study presents a multi-objective mixed-integer linear programming (MILP) model that optimizes global liquefied natural gas (LNG) supply by balancing costs, risks, and greenhouse gas emissions. A central innovation of the research is the endogenous integration of the EU's Carbon Border Adjustment Mechanism (CBAM) into global LNG trade flows. By establishing a novel link between exporters' supply risks and their upstream emissions, the framework explores how recycling CBAM revenues can effectively incentivize emission reductions at the source. Ultimately, this work delivers the first quantitative assessment of the CBAM's impact on the LNG sector, providing actionable policy insights for future energy and climate strategies."
 
 - id: securing-eu-supply-chains
   type: "paper"
@@ -16,24 +33,6 @@
   doi: "10.1016/j.esr.2025.101748"
   url: "https://doi.org/10.1016/j.esr.2025.101748"
   description: "This study identifies the cost-optimal transition technologies and energy carrier choices for achieving net-zero carbon emissions by 2040 in Austria’s energy-intensive industrial sectors: iron and steel, pulp and paper, and cement. It focuses on the impact of three national policies, such as the targeted decarbonization of the Austrian power and gas sectors, and the role of carbon capture Technologies. The results emphasize the importance of biomethane, electrification, and efficiency measures."
-
-- id: lng-cbam
-  type: "paper"
-  title: "The EU’s CBAM trinity in LNG supply: Modeling global trade flows, supply risks and upstream emissions"
-  authors: "Sebastian Zwickl-Bernhard, Anna Creti, Anne Neumann"
-  year: 2026
-  doi: "10.1016/j.eneco.2026.109252"
-  url: "https://doi.org/10.1016/j.eneco.2026.109252"
-  description: "This study presents a multi-objective mixed-integer linear programming (MILP) model that optimizes global liquefied natural gas (LNG) supply by balancing costs, risks, and greenhouse gas emissions. A central innovation of the research is the endogenous integration of the EU's Carbon Border Adjustment Mechanism (CBAM) into global LNG trade flows. By establishing a novel link between exporters' supply risks and their upstream emissions, the framework explores how recycling CBAM revenues can effectively incentivize emission reductions at the source. Ultimately, this work delivers the first quantitative assessment of the CBAM's impact on the LNG sector, providing actionable policy insights for future energy and climate strategies."
-
-- id: integrating-paper
-  type: "paper"
-  title: "Integrating material recycling and remanufacturing in energy system optimization modeling: A review and showcase"
-  authors: "Sebastian Zwickl-Bernhard"
-  year: 2024
-  doi: "10.1016/j.adapen.2024.100198"
-  url: "https://doi.org/10.1016/j.adapen.2024.100198"
-  description: "This study reviews material recycling and remanufacturing (MRR) in energy system modeling and introduces its endogenous integration into optimization frameworks. By evaluating cost-optimal MRR capacities, the research showcases the future lifecycle and deployment of EU solar modules up to 2050 across two distinct scenarios. Ultimately, it analyzes the specific energy policies required to effectively drive and scale recycling-based solar module remanufacturing within the clean energy transition."
 
 - id: strategic-solar-stockpiling
   type: "paper"
@@ -61,3 +60,12 @@
   doi: "10.2139/ssrn.5216602"
   url: "https://ssrn.com/abstract=5216602"
   description: "Examines how grid tariff design and prosumer flexibility investments affect peak load reduction when prosumers participate in multiple renewable energy communities. Available as an SSRN working paper."
+
+- id: integrating-paper
+  type: "paper"
+  title: "Integrating material recycling and remanufacturing in energy system optimization modeling: A review and showcase"
+  authors: "Sebastian Zwickl-Bernhard"
+  year: 2024
+  doi: "10.1016/j.adapen.2024.100198"
+  url: "https://doi.org/10.1016/j.adapen.2024.100198"
+  description: "This study reviews material recycling and remanufacturing (MRR) in energy system modeling and introduces its endogenous integration into optimization frameworks. By evaluating cost-optimal MRR capacities, the research showcases the future lifecycle and deployment of EU solar modules up to 2050 across two distinct scenarios. Ultimately, it analyzes the specific energy policies required to effectively drive and scale recycling-based solar module remanufacturing within the clean energy transition."
