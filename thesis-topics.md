@@ -14,22 +14,15 @@ header:
   }
 
   .page__title {
-    margin-bottom: 1.5rem !important;
+    display: none !important;
   }
 
   .intro-box {
-    background: #f8fafc;
-    border: 1px solid #e5e7eb;
-    border-radius: 14px;
-    padding: 1.25rem 1.5rem;
-    margin-bottom: 2rem;
-    color: #334155;
+    display: none !important;
   }
 
   .section-title {
-    font-size: 1.6rem;
-    margin: 1.25rem 0 1rem;
-    color: #0f172a;
+    display: none !important;
   }
 
   .supervisor-grid {
@@ -248,13 +241,6 @@ header:
 
 {% assign supervisors = site.data.supervisors %}
 {% assign finished_topics = site.data.thesis | where: "status", "finished" %}
-
-<div class="intro-box">
-  <strong>How to use this page:</strong> Browse supervisors and their research directions below.
-  If a topic matches your interests, contact the supervisor directly to discuss scope, method, and expected outcomes.
-</div>
-
-<h2 class="section-title">Supervision & Topic Directions</h2>
 
 <div class="supervisor-grid">
   {% for s in supervisors %}
