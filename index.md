@@ -195,7 +195,7 @@ permalink: /
     {% for member in site.data.team %}
     <a href="/team/#{{ member.id }}" class="home-member" style="--angle: calc(-90deg + ({{ forloop.index0 }} * 360deg / {{ site.data.team | size }}));">
       <div class="home-member-photo-wrapper">
-        <img src="{{ member.image }}" alt="{{ member.name }}" class="home-member-photo" style="object-position: {{ member.object_position | default: 'center' }};" onerror="this.style.display='non[...]
+        <img src="{{ member.image }}" alt="{{ member.name }}" class="home-member-photo" style="object-position: {{ member.object_position | default: 'center' }};">
       </div>
       <span class="home-member-name">{{ member.name }}</span>
     </a>
