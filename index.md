@@ -204,7 +204,7 @@ permalink: /
   <div style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
     <a href="/team/" class="btn-main">Meet the Team</a>
     <a href="/publications/" class="btn-main">Publications</a>
-    <a href="/thesis/" class="btn-main">Student Supervision</a>
+    <a href="/supervisions/" class="btn-main">Student Supervision</a>
   </div>
 </section>
 
