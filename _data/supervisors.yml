@@ -1,0 +1,40 @@
+- name: "Sebastian Zwickl-Bernhard"
+  role: "Group Lead"
+  contact: "zwickl@eeg.tuwien.ac.at"
+  image: "/assets/images/team/sebastian.jpg"
+  offer_topics:
+    - "Critical raw materials in the energy transition"
+    - "Hydrogen and gas infrastructure transformation"
+    - "Cross-sectoral energy system modeling"
+    - "Industrial decarbonization pathways"
+  directions:
+    - "Scenario analysis of decommissioning versus repurposing gas grid assets for hydrogen and biomethane."
+    - "Assessing supply chain bottlenecks for clean-energy technologies under different geopolitical assumptions."
+    - "Market design and policy instruments for resilient critical-material sourcing in Europe."
+
+- name: "Daniel Cäsar"
+  role: "Doctoral Researcher"
+  contact: "caesar@eeg.tuwien.ac.at"
+  image: "/assets/images/team/daniel.JPEG"
+  offer_topics:
+    - "Energy system optimization and dual prices"
+    - "Hydrogen market design"
+    - "Life cycle assessment in energy systems"
+    - "Token-based energy communities"
+  directions:
+    - "Interpreting dual variables in large-scale optimization models for policy-relevant insights."
+    - "Comparative evaluation of hydrogen market configurations and infrastructure rollout strategies."
+    - "Coupling techno-economic optimization with parametric LCA to identify robust decarbonization options."
+
+- name: "Alexander Csekö"
+  role: "Researcher"
+  contact: "contact@eeg.tuwien.ac.at"
+  image: "/assets/images/team/alexander.jpg"
+  offer_topics:
+    - "Power system transformation"
+    - "Electricity market analytics"
+    - "Data-driven energy policy evaluation"
+  directions:
+    - "Quantifying flexibility needs under high shares of variable renewable generation."
+    - "Designing and testing market indicators for short-term scarcity and long-term investment signals."
+    - "Building reproducible data pipelines for energy market monitoring and policy assessment."
