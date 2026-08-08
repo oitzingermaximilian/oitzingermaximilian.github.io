@@ -185,7 +185,7 @@ permalink: /
 <section class="home-intro">
   <h2>From Minerals to Megawatts</h2>
   <p>
-    Embedded within the Faculty of Electrical Engineering at TU Wien, and affiliated with the Department of Net-Zero Energy Systems, the research group ES3M emerged from initial discussions on energy system modelling spanning “minerals to megawatts” at the Young Energy Economists and Engineers Seminar in 2023. Since then, ES3M has established itself at the intersection of energy systems and material supply chains, applying methodologies from operations research and advanced energy system modelling.
+    Embedded within the Faculty of Electrical Engineering at TU Wien, and affiliated with the Department of Net-Zero Energy Systems, the research group ES3M emerged from initial discussions on en[...]
   </p>
 </section>
 
@@ -195,7 +195,7 @@ permalink: /
     {% for member in site.data.team %}
     <a href="/team/#{{ member.id }}" class="home-member" style="--angle: calc(-90deg + ({{ forloop.index0 }} * 360deg / {{ site.data.team | size }}));">
       <div class="home-member-photo-wrapper">
-        <img src="{{ member.image }}" alt="{{ member.name }}" class="home-member-photo" style="object-position: {{ member.object_position | default: 'center' }};" onerror="this.style.display='none'">
+        <img src="{{ member.image }}" alt="{{ member.name }}" class="home-member-photo" style="object-position: {{ member.object_position | default: 'center' }};" onerror="this.style.display='non[...]
       </div>
       <span class="home-member-name">{{ member.name }}</span>
     </a>
@@ -204,13 +204,13 @@ permalink: /
   <div style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
     <a href="/team/" class="btn-main">Meet the Team</a>
     <a href="/publications/" class="btn-main">Publications</a>
-    <a href="/supervisions/" class="btn-main">Student Supervision</a>
+    <a href="/thesis-topics/" class="btn-main">Student Supervision</a>
   </div>
 </section>
 
 <section class="home-intro" style="margin-top: 2rem;">
   <p>
-    The group’s research portfolio covers a broad range of topics, including market dynamics of critical raw materials, transformation pathways for energy-intensive industries, material recycling, and energy security and risk assessment. In addition, ES3M focuses on the deployment of energy technologies, addressing key questions related to siting, technology selection, and sourcing strategies – such as imports, domestic manufacturing, and remanufacturing.
+    The group's research portfolio covers a broad range of topics, including market dynamics of critical raw materials, transformation pathways for energy-intensive industries, material recycli[...]
   </p>
 </section>
 
