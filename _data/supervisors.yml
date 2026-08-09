@@ -30,7 +30,7 @@
 
 - name: "Alexander Csekö"
   role: "Researcher"
-  contact: "contact@eeg.tuwien.ac.at"
+  contact: "csekoe@eeg.tuwien.ac.at"
   image: "/assets/images/team/alexander.jpg"
   offer_topics:
     - "Power system transformation"
