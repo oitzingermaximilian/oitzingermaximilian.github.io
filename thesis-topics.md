@@ -123,9 +123,12 @@ header:
     align-items: flex-start;
   }
 
-  /* INCREASED HEIGHTS: These ensure everything perfectly aligns horizontally */
-  .topics-wrapper { min-height: 125px; }
-  .thesis-section { min-height: 120px; }
+  /* 
+   * SAFE HEIGHTS: Increased to safely contain multi-line topics 
+   * like Sebastian's without pushing the layout out of sync.
+   */
+  .topics-wrapper { min-height: 170px; }
+  .thesis-section { min-height: 160px; }
 
   .label {
     display: inline-block;
