@@ -50,7 +50,6 @@ header:
     box-shadow: 0 12px 22px rgba(15, 23, 42, 0.10);
   }
 
-  /* Redesigned top section to allow email to span full width */
   .supervisor-top {
     display: flex;
     flex-direction: column;
@@ -102,7 +101,7 @@ header:
     font-size: 0.9rem;
     text-decoration: none;
     color: #1d4ed8;
-    word-break: break-all; /* Forces long emails to break instead of cutting off */
+    word-break: break-all; 
     margin-top: auto; 
   }
   
@@ -124,9 +123,9 @@ header:
     align-items: flex-start;
   }
 
-  /* Ensure exactly matching heights for the sections */
-  .topics-wrapper { min-height: 80px; }
-  .thesis-section { min-height: 95px; }
+  /* INCREASED HEIGHTS: These ensure everything perfectly aligns horizontally */
+  .topics-wrapper { min-height: 125px; }
+  .thesis-section { min-height: 120px; }
 
   .label {
     display: inline-block;
@@ -349,7 +348,6 @@ header:
 </div>
 
 <div class="accordion-section collapsed" id="finished-section">
-  <!-- ... Accordion section remains exactly the same ... -->
   <div class="accordion-header" onclick="toggleAccordion('finished-section')">
     <div class="accordion-label">
       <span style="width:12px;height:12px;border-radius:50%;background:#16a34a;display:inline-block;"></span>
@@ -381,7 +379,6 @@ function toggleAccordion(sectionId) {
   section.classList.toggle('collapsed');
 }
 
-// Logic for extending/collapsing chips
 function toggleChips(id, btn, count) {
   var elements = document.querySelectorAll('.more-chip-' + id);
   var isHidden = elements[0].classList.contains('hidden');
@@ -397,7 +394,6 @@ function toggleChips(id, btn, count) {
   }
 }
 
-// Logic for extending/collapsing bullets
 function toggleBullets(id, btn, count) {
   var elements = document.querySelectorAll('.more-bullet-' + id);
   var isHidden = elements[0].classList.contains('hidden');
