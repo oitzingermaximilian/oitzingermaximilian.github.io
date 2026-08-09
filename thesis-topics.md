@@ -41,6 +41,7 @@ header:
     transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
     display: flex;
     flex-direction: column;
+    height: 100%; /* Ensures all cards stretch to equal height in the grid */
   }
 
   .supervisor-card:hover {
@@ -55,6 +56,7 @@ header:
     padding: 1.25rem 1.25rem 1rem;
     align-items: center;
     border-bottom: 1px solid #f1f5f9;
+    min-height: 125px; /* Keeps header areas consistent */
   }
 
   .supervisor-photo {
@@ -62,6 +64,8 @@ header:
     height: 82px;
     border-radius: 999px;
     object-fit: cover;
+    /* Shifts the image crop upwards to prevent heads from being cut off */
+    object-position: center 15%; 
     border: 2px solid #e2e8f0;
     flex-shrink: 0;
     background: #f8fafc;
@@ -86,14 +90,22 @@ header:
     text-decoration: none;
     color: #1d4ed8;
   }
+  
   .supervisor-contact:hover {
     text-decoration: underline;
   }
 
   .supervisor-body {
     padding: 1rem 1.25rem 1.2rem;
-    display: grid;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Pushes content to fill the remaining card height */
     gap: 1rem;
+  }
+
+  .topics-wrapper {
+    /* Ensures the next section starts at the exact same horizontal level on all cards */
+    min-height: 100px; 
   }
 
   .label {
@@ -120,6 +132,12 @@ header:
     background: #eff6ff;
     color: #1e3a8a;
   }
+  
+  .thesis-groups {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
 
   .bullets {
     margin: 0;
@@ -145,6 +163,7 @@ header:
     background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%);
     border: 1px solid #86efac;
   }
+  
   .accordion-header:hover {
     box-shadow: 0 4px 12px rgba(0,0,0,0.08);
   }
@@ -257,7 +276,7 @@ header:
     </div>
 
     <div class="supervisor-body">
-      <div>
+      <div class="topics-wrapper">
         <span class="label">Offers Topics In</span>
         <div class="chip-list">
           {% for area in s.offer_topics %}
@@ -266,13 +285,30 @@ header:
         </div>
       </div>
 
-      <div>
-        <span class="label">Possible Directions</span>
-        <ul class="bullets">
-          {% for d in s.directions %}
-          <li>{{ d }}</li>
-          {% endfor %}
-        </ul>
+      <div class="thesis-groups">
+        <!-- Renders only if there are Bachelor theses in your YAML data -->
+        {% if s.open_bachelor %}
+        <div>
+          <span class="label">Open Bachelor Theses</span>
+          <ul class="bullets">
+            {% for b in s.open_bachelor %}
+            <li>{{ b }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+        {% endif %}
+
+        <!-- Renders only if there are Master theses in your YAML data -->
+        {% if s.open_master %}
+        <div>
+          <span class="label">Open Master Theses</span>
+          <ul class="bullets">
+            {% for m in s.open_master %}
+            <li>{{ m }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+        {% endif %}
       </div>
     </div>
   </article>
