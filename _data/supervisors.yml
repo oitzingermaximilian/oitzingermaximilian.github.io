@@ -33,11 +33,15 @@
   contact: "csekoe@eeg.tuwien.ac.at"
   image: "/assets/images/team/alexander.jpg"
   offer_topics:
-    - "Power system transformation"
-    - "Electricity market analytics"
-    - "Data-driven energy policy evaluation"
-  open_bachelor:
-    - "Quantifying flexibility needs under high shares of variable renewable generation."
-  open_master:
-    - "Designing and testing market indicators for short-term scarcity and long-term investment signals."
-    - "Building reproducible data pipelines for energy market monitoring and policy assessment."
+    - "Game-Theoretic Modeling Approaches in Energy System Modeling"
+
+- name: "Maximilian Oitzinger"
+  role: "Researcher"
+  contact: "oitzinger@eeg.tuwien.ac.at"
+  image: "/assets/images/team/maximilian.jpg"
+  offer_topics:
+    - "Large Scale Energy System Modeling"
+    - "Critical Raw Materials"
+    - "Supply Chains"
+
+
