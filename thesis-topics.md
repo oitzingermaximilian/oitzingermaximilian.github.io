@@ -117,18 +117,25 @@ header:
     gap: 1.2rem;
   }
 
-  .topics-wrapper, .thesis-section {
+  .topics-wrapper, .bachelor-section, .master-section {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
   }
 
   /* 
-   * SAFE HEIGHTS: Increased to safely contain multi-line topics 
-   * like Sebastian's without pushing the layout out of sync.
+   * PERFECT ALIGNMENT HEIGHTS:
+   * These specific heights lock the next section into place. 
    */
-  .topics-wrapper { min-height: 170px; }
-  .thesis-section { min-height: 160px; }
+  .topics-wrapper { 
+    min-height: 150px; 
+  }
+  
+  .bachelor-section { 
+    min-height: 140px; /* Just enough space for the longest bachelor topic + button */
+  }
+
+  /* Master section doesn't need a min-height because it's the last item! */
 
   .label {
     display: inline-block;
@@ -301,7 +308,7 @@ header:
       </div>
 
       <!-- Open Bachelor Theses Section -->
-      <div class="thesis-section">
+      <div class="bachelor-section">
         <span class="label">Open Bachelor Theses</span>
         {% if s.open_bachelor and s.open_bachelor.size > 0 %}
           <ul class="bullets">
@@ -324,7 +331,7 @@ header:
       </div>
 
       <!-- Open Master Theses Section -->
-      <div class="thesis-section">
+      <div class="master-section">
         <span class="label">Open Master Theses</span>
         {% if s.open_master and s.open_master.size > 0 %}
           <ul class="bullets">
