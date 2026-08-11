@@ -30,7 +30,6 @@ permalink: /tv-display/
       justify-content: center;
       width: 90%;
       max-width: 1600px;
-      /* Ensures the container fills most of the screen nicely */
       min-height: 80vh; 
       background: #ffffff;
       border: 1px solid #e5e7eb;
@@ -38,50 +37,45 @@ permalink: /tv-display/
       padding: 5rem 6rem;
       box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.08);
       position: relative;
-      overflow: hidden; /* Keeps the watermark inside the box */
     }
 
-    /* Massive Background Watermark */
-    .slide-container::before {
-      content: '';
+    /* Crisp, visible logo anchored to the top left */
+    .corner-logo {
       position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 130%;
-      height: 130%;
-      background-image: url('/assets/images/ES3M_Logo.jpg');
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: contain;
-      /* Very faint so text is still perfectly readable */
-      opacity: 0.02; 
-      z-index: 0;
-      pointer-events: none;
+      top: 3.5rem;
+      left: 6rem;
+      height: 80px; 
+      border-radius: 8px;
     }
 
-    /* Ensures content stays above the watermark */
     .content-section {
-      position: relative;
-      z-index: 1;
       display: flex;
       align-items: center;
       justify-content: space-between;
       width: 100%;
       gap: 4rem;
+      margin-top: 5rem; /* Pushes content down so it doesn't overlap the logo */
     }
 
     .text-content {
-      max-width: 65%; /* Given a bit more room for the single-line title */
+      max-width: 65%;
     }
 
-    h1 {
-      font-size: 4.8rem; /* Scaled down slightly to fit on one row */
+    .main-title {
+      font-size: 4rem;
       line-height: 1.1;
-      margin: 0 0 2.5rem 0;
+      margin: 0 0 0.5rem 0;
       font-weight: 800;
-      color: #1e90ff; /* All Blue */
-      white-space: nowrap; /* Forces the text to stay on a single line */
+      color: #1e90ff; 
+      white-space: nowrap; 
+    }
+
+    .sub-title {
+      font-size: 3.2rem;
+      line-height: 1.2;
+      margin: 0 0 2.5rem 0;
+      font-weight: 700;
+      color: #111827;
     }
 
     .highlights {
@@ -191,12 +185,16 @@ permalink: /tv-display/
 
   <div class="slide-container">
     
+    <!-- Crisp corner logo -->
+    <img src="/assets/images/ES3M_Logo.jpg" alt="ES3M Logo" class="corner-logo">
+
     <!-- Main Content Row -->
     <div class="content-section">
       <div class="text-content">
         
-        <!-- Updated Heading: Single row, all blue -->
-        <h1>From Minerals to Megawatts.</h1>
+        <!-- Updated Headings -->
+        <h1 class="main-title">From Minerals to Megawatts.</h1>
+        <h2 class="sub-title">Write your thesis with us.</h2>
         
         <div class="highlights">
           <span class="highlight-chip">Bachelor Theses</span>
