@@ -20,7 +20,8 @@ permalink: /tv-display/
       display: flex;
       align-items: center;
       justify-content: center;
-      overflow: hidden;
+      /* Prevent scrolling on TV */
+      overflow: hidden; 
     }
 
     .slide-container {
@@ -58,7 +59,7 @@ permalink: /tv-display/
     }
 
     .text-content {
-      max-width: 65%;
+      max-width: 60%; /* Slightly reduced to give QR code absolute safety */
     }
 
     .main-title {
@@ -131,26 +132,26 @@ permalink: /tv-display/
       margin-left: 0;
     }
 
-    /* NEW: Styling for the Keywords / Topic Tags */
+    /* Fixed Topics Cloud */
     .topics-cloud {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.8rem;
+      gap: 0.6rem;
       margin-top: 0.5rem;
-      max-width: 90%;
+      max-width: 100%;
     }
 
     .topic-tag {
       background: #f8fafc;
-      color: #475569;
-      padding: 0.7rem 1.4rem;
+      color: #1e90ff; /* Blue text to match the theme */
+      padding: 0.6rem 1.2rem;
       border-radius: 8px;
-      font-size: 1.25rem;
+      font-size: 1.2rem;
       font-weight: 600;
-      border: 1px solid #e2e8f0;
+      border: 1px solid #cce5ff;
     }
 
-    /* QR Code Section */
+    /* QR Code Section - Added flex-shrink: 0 so it NEVER disappears! */
     .qr-section {
       background: #ffffff;
       padding: 3rem; 
@@ -159,10 +160,12 @@ permalink: /tv-display/
       border: 3px solid #1e90ff;
       box-shadow: 0 20px 25px -5px rgba(30, 144, 255, 0.15);
       animation: pulse 3s infinite; 
+      flex-shrink: 0; /* THE MAGIC FIX */
+      width: 380px; 
     }
 
     .qr-code {
-      width: 380px; 
+      width: 100%; 
       height: 380px;
       background: #f1f5f9;
       display: flex;
@@ -223,20 +226,20 @@ permalink: /tv-display/
         <div class="team-section">
           <p class="team-title">Meet your supervisors:</p>
           
-          <!-- Avatar Group -->
+          <!-- Avatar Group: Fixed to pull from team.yml again -->
           <div class="avatar-group">
-            {% for member in site.data.supervisors %}
+            {% for member in site.data.team %}
               <img src="{{ member.image }}" class="avatar" style="object-position: {{ member.object_position | default: 'center' }};" alt="{{ member.name }}">
             {% endfor %}
           </div>
 
-          <!-- NEW: Keywords Cloud extracted directly from YAML -->
+          <!-- Keywords Cloud: Safely extracts from supervisors.yml -->
           <div class="topics-cloud">
             {% assign all_topics_str = "" %}
             
-            {% for member in site.data.supervisors %}
-              {% if member.offers_topics %}
-                {% for topic in member.offers_topics %}
+            {% for sup in site.data.supervisors %}
+              {% if sup.offers_topics %}
+                {% for topic in sup.offers_topics %}
                   {% assign all_topics_str = all_topics_str | append: topic | append: "|||" %}
                 {% endfor %}
               {% endif %}
@@ -244,7 +247,8 @@ permalink: /tv-display/
             
             {% assign topics_array = all_topics_str | split: "|||" | uniq %}
 
-            {% for topic in topics_array %}
+            <!-- Limit to 10 topics so it doesn't break the layout -->
+            {% for topic in topics_array limit:10 %}
               {% if topic != "" %}
                 <span class="topic-tag">{{ topic }}</span>
               {% endif %}
@@ -254,6 +258,7 @@ permalink: /tv-display/
         </div>
       </div>
 
+      <!-- The QR Code is now locked in size and won't vanish! -->
       <div class="qr-section">
         <div class="qr-code">
           <!-- Replace this source with your actual QR code image -->
