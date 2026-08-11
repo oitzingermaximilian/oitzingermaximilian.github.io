@@ -39,12 +39,12 @@ permalink: /tv-display/
       position: relative;
     }
 
-    /* Crisp, visible logo anchored to the top left - NOW BIGGER */
+    /* Crisp, visible logo anchored to the top left */
     .corner-logo {
       position: absolute;
       top: 4rem;
       left: 6rem;
-      height: 250px; /* Increased from 80px */
+      height: 140px; 
       border-radius: 8px;
     }
 
@@ -54,7 +54,7 @@ permalink: /tv-display/
       justify-content: space-between;
       width: 100%;
       gap: 4rem;
-      margin-top: 8rem; /* Pushed down a bit more to accommodate the bigger logo */
+      margin-top: 8rem; 
     }
 
     .text-content {
@@ -82,7 +82,7 @@ permalink: /tv-display/
       display: flex;
       gap: 1.5rem;
       flex-wrap: wrap;
-      margin-bottom: 4rem;
+      margin-bottom: 3.5rem;
     }
 
     .highlight-chip {
@@ -95,7 +95,7 @@ permalink: /tv-display/
       font-weight: 700;
     }
 
-    /* Team Avatars Section */
+    /* Team Avatars & Keywords Section */
     .team-section {
       display: flex;
       flex-direction: column;
@@ -129,6 +129,25 @@ permalink: /tv-display/
     
     .avatar:first-child {
       margin-left: 0;
+    }
+
+    /* NEW: Styling for the Keywords / Topic Tags */
+    .topics-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-top: 0.5rem;
+      max-width: 90%;
+    }
+
+    .topic-tag {
+      background: #f8fafc;
+      color: #475569;
+      padding: 0.7rem 1.4rem;
+      border-radius: 8px;
+      font-size: 1.25rem;
+      font-weight: 600;
+      border: 1px solid #e2e8f0;
     }
 
     /* QR Code Section */
@@ -192,7 +211,7 @@ permalink: /tv-display/
     <div class="content-section">
       <div class="text-content">
         
-        <!-- Updated Headings -->
+        <!-- Headings -->
         <h1 class="main-title">From Minerals to Megawatts.</h1>
         <h2 class="sub-title">Write your thesis with us.</h2>
         
@@ -203,18 +222,42 @@ permalink: /tv-display/
 
         <div class="team-section">
           <p class="team-title">Meet your supervisors:</p>
+          
+          <!-- Avatar Group -->
           <div class="avatar-group">
-            {% for member in site.data.team %}
+            {% for member in site.data.supervisors %}
               <img src="{{ member.image }}" class="avatar" style="object-position: {{ member.object_position | default: 'center' }};" alt="{{ member.name }}">
             {% endfor %}
           </div>
+
+          <!-- NEW: Keywords Cloud extracted directly from YAML -->
+          <div class="topics-cloud">
+            {% assign all_topics_str = "" %}
+            
+            {% for member in site.data.supervisors %}
+              {% if member.offers_topics %}
+                {% for topic in member.offers_topics %}
+                  {% assign all_topics_str = all_topics_str | append: topic | append: "|||" %}
+                {% endfor %}
+              {% endif %}
+            {% endfor %}
+            
+            {% assign topics_array = all_topics_str | split: "|||" | uniq %}
+
+            {% for topic in topics_array %}
+              {% if topic != "" %}
+                <span class="topic-tag">{{ topic }}</span>
+              {% endif %}
+            {% endfor %}
+          </div>
+          
         </div>
       </div>
 
       <div class="qr-section">
         <div class="qr-code">
           <!-- Replace this source with your actual QR code image -->
-          <img src="/assets/images/qrcode_es3m.eu.png" alt="Scan to see open thesis topics">
+          <img src="/assets/images/qr-code.png" alt="Scan to see open thesis topics">
         </div>
         <p class="qr-text">Scan for Open Topics</p>
         <div class="qr-subtext">Point your camera here</div>
