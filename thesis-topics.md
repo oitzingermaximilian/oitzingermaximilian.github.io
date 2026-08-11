@@ -290,7 +290,7 @@ header:
     <div class="supervisor-body">
       <!-- Offers Topics In Section -->
       <div class="topics-wrapper">
-        <span class="label">Offers Topics In</span>
+        <span class="label">Offered Topics</span>
         <div class="chip-list">
           {% for area in s.offer_topics %}
             {% if forloop.first %}
