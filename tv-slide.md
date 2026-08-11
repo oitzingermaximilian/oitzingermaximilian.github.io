@@ -15,7 +15,6 @@ permalink: /tv-display/
       width: 100%;
       height: 100%;
       font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-      /* Soft off-white background so the white card pops */
       background: #f8fafc;
       color: #333;
       display: flex;
@@ -26,7 +25,7 @@ permalink: /tv-display/
 
     .slide-container {
       display: flex;
-      flex-direction: column; /* Stack header and content vertically */
+      flex-direction: column;
       align-items: center;
       justify-content: center;
       width: 90%;
@@ -35,8 +34,33 @@ permalink: /tv-display/
       border: 1px solid #e5e7eb;
       border-radius: 30px;
       padding: 4rem 5rem;
-      /* Soft, elegant shadow */
       box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.08);
+      position: relative;
+      overflow: hidden; /* Keeps the watermark inside the box */
+    }
+
+    /* Massive Background Watermark */
+    .slide-container::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 80%;
+      height: 80%;
+      background-image: url('/assets/images/ES3M_Logo.jpg');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      opacity: 0.04; /* Very faint so text is still readable */
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    /* Ensures content stays above the watermark */
+    .header-section, .content-section {
+      position: relative;
+      z-index: 1;
     }
 
     /* Top Centered Logo Section */
@@ -47,7 +71,7 @@ permalink: /tv-display/
     }
 
     .brand-logo {
-      max-height: 160px; /* Made the logo larger for more impact */
+      max-height: 240px; /* MASSIVELY INCREASED */
       border-radius: 8px;
     }
 
@@ -65,39 +89,31 @@ permalink: /tv-display/
     }
 
     h1 {
-      font-size: 5.5rem;
+      font-size: 6rem;
       line-height: 1.1;
-      margin: 0 0 1.5rem 0;
+      margin: 0 0 2.5rem 0;
       font-weight: 800;
       color: #111827;
     }
 
-    /* Accent color for specific text */
     .text-accent {
       color: #1e90ff;
-    }
-
-    p {
-      font-size: 2.2rem;
-      color: #555;
-      margin: 0 0 2.5rem 0;
-      line-height: 1.4;
     }
 
     .highlights {
       display: flex;
       gap: 1.5rem;
       flex-wrap: wrap;
-      margin-bottom: 3.5rem;
+      margin-bottom: 4rem;
     }
 
     .highlight-chip {
       background: #f0f7ff;
       border: 2px solid #1e90ff;
       color: #1e90ff;
-      padding: 1rem 2.2rem;
+      padding: 1.2rem 2.5rem;
       border-radius: 999px;
-      font-size: 1.5rem;
+      font-size: 1.8rem;
       font-weight: 700;
     }
 
@@ -105,11 +121,11 @@ permalink: /tv-display/
     .team-section {
       display: flex;
       flex-direction: column;
-      gap: 1rem;
+      gap: 1.5rem;
     }
 
     .team-title {
-      font-size: 1.4rem;
+      font-size: 1.6rem;
       color: #666;
       margin: 0;
       font-weight: 700;
@@ -122,16 +138,14 @@ permalink: /tv-display/
       align-items: center;
     }
 
-    /* Overlapping circular photos */
     .avatar {
-      width: 95px;
-      height: 95px;
+      width: 110px;
+      height: 110px;
       border-radius: 50%;
       object-fit: cover;
-      /* Thick white border to separate overlapping images */
-      border: 5px solid #ffffff;
+      border: 6px solid #ffffff;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      margin-left: -20px; 
+      margin-left: -25px; 
       background: #f0f0f0;
     }
     
@@ -145,7 +159,6 @@ permalink: /tv-display/
       padding: 2.5rem;
       border-radius: 24px;
       text-align: center;
-      /* Blue pulse border/shadow */
       border: 3px solid #1e90ff;
       box-shadow: 0 20px 25px -5px rgba(30, 144, 255, 0.15);
       animation: pulse 3s infinite; 
@@ -185,7 +198,7 @@ permalink: /tv-display/
 
     @keyframes pulse {
       0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(30, 144, 255, 0.3); }
-      70% { transform: scale(1.02); box-shadow: 0 0 0 25px rgba(30, 144, 255, 0); }
+      70% { transform: scale(1.02); box-shadow: 0 0 0 35px rgba(30, 144, 255, 0); }
       100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(30, 144, 255, 0); }
     }
   </style>
@@ -203,12 +216,10 @@ permalink: /tv-display/
     <div class="content-section">
       <div class="text-content">
         <h1>Write your Thesis<br><span class="text-accent">with us.</span></h1>
-        <p>Join the "From Minerals to Megawatts" team to research the future of clean energy, supply chains, and market design.</p>
         
         <div class="highlights">
           <span class="highlight-chip">Bachelor Theses</span>
           <span class="highlight-chip">Master Theses</span>
-          <span class="highlight-chip">Energy Modeling</span>
         </div>
 
         <div class="team-section">
@@ -224,7 +235,7 @@ permalink: /tv-display/
       <div class="qr-section">
         <div class="qr-code">
           <!-- Replace this source with your actual QR code image -->
-          <img src="/assets/images/qr-code-placeholder.png" alt="Scan to see open thesis topics">
+          <img src="/assets/images/qr-code.png" alt="Scan to see open thesis topics">
         </div>
         <p class="qr-text">Scan for Open Topics</p>
         <div class="qr-subtext">Point your camera here</div>
