@@ -44,4 +44,28 @@
     - "Critical Raw Materials"
     - "Supply Chains"
 
+- name: "Marcus Otti"
+  role: "Doctoral Researcher"
+  contact: "otti@eeg.tuwien.ac.at"
+  image: "/assets/images/team/marcus.jpg"
+  offer_topics:
+    - "Transformation pathways for energy-intensive industry"
+    - "Carbon capture, transport and storage"
+    - "Recycling and material efficiency"
+    - "Low-carbon steel production"
+  open_bachelor:
+    - "Assessing carbon sinks for the European energy and industrial sectors: geological storage and utilization potentials"
+  open_master:
+    - "Tariff and cost-allocation design for carbon transport and storage infrastructure"
+    - "Imported low-carbon iron and the renewables pull: Implications for European steel transformation and scrap use"
+
+- name: "Mona Wurz"
+  role: "Researcher"
+  contact: "wurz@eeg.tuwien.ac.at"
+  image: "/assets/images/team/mona.jpg"
+  offer_topics:
+    - "Bottom-up technology modeling: physics, chemistry, mechanics"
+    - "Multi-Objective-Optimization modeling"
+    - "Energy storage"
+    - "Nuclear Energy Systems"
 
