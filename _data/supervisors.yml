@@ -3,15 +3,15 @@
   contact: "zwickl@eeg.tuwien.ac.at"
   image: "/assets/images/team/sebastian.jpg"
   offer_topics:
-    - "Critical raw materials in the energy transition"
-    - "Hydrogen and gas infrastructure transformation"
-    - "Cross-sectoral energy system modeling"
-    - "Industrial decarbonization pathways"
+    - "Market Dynamics of CRMs and LNG"
+    - "Space Energy System Optimization"
+    - "High Electrification through Microgrids under Grid Failure "
   open_bachelor:
-    - "Market design and policy instruments for resilient critical-material sourcing in Europe."
+    - "Literature Review about Studies concerning Long-Term Price Forecasts for CRM"
+    - "Literature Review about Studies concerning Thermodynamic Considerations in Energy System Optimization Models"
   open_master:
-    - "Scenario analysis of decommissioning versus repurposing gas grid assets for hydrogen and biomethane."
-    - "Assessing supply chain bottlenecks for clean-energy technologies under different geopolitical assumptions."
+    - "Developing an Optimization-Based Model for Long-Term Price Forecasts of CRM (e.g., Copper, Lithium)"
+    - "Developing an Optimization Model with Focus on Thermodynamics for Space Energy Systems"
 
 - name: "Daniel Cäsar"
   role: "Doctoral Researcher"
