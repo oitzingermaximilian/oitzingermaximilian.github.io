@@ -325,11 +325,11 @@ permalink: /
   var total = slides.length;
   if (total === 0) return;
 
-  var autoTimer = setInterval(function() { changeSlide(1); }, 8000);
+  var autoTimer = setInterval(function() { changeSlide(1); }, 5000);
 
   function resetTimer() {
     clearInterval(autoTimer);
-    autoTimer = setInterval(function() { changeSlide(1); }, 8000);
+    autoTimer = setInterval(function() { changeSlide(1); }, 5000);
   }
 
   window.changeSlide = function(dir) {
