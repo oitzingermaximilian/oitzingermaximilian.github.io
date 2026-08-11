@@ -41,7 +41,7 @@
 
 - id: alexander
   name: "Alexander Csekö"
-  role: "Researcher"
+  role: "Research Assistant"
   bio: "Alexander is a student research assistant at the Energy Economics Group (EEG) and a master’s student in Power Engineering and Sustainable Energy Systems at TU Wien. His work is part of the energy system modelling team, where he focuses on equilibrium and complementarity-based modelling approaches. Alexander is currently working on modelling the global solar PV module supply chain."
   image: "/assets/images/team/alexander.jpg"
   object_position: "top"
@@ -82,7 +82,7 @@
 
 - id: maximilian
   name: "Maximilian Oitzinger"
-  role: "Researcher"
+  role: "Research Assistant"
   bio: "Maximilian is a research assistant in the Energy Economics Group at the Institute of Energy Systems and Electrical Drives at the Technische Universität Wien (TU Wien) since March 2025. His work focuses on large-scale energy system modeling with a focus on technology sourcing and raw materials. Maximilian is currently pursuing a Master's degree in Electrical Power Engineering and Sustainable Energy Systems at TU Wien, where he also completed his B.Sc. in Environmental Engineering."
   image: "/assets/images/team/maximilian.jpg"
   email: "oitzinger@eeg.tuwien.ac.at"
@@ -123,7 +123,7 @@
 
 - id: mona
   name: "Mona Marie Wurz"
-  role: "Researcher"
+  role: "Research Assistant"
   bio: "Mona is a student research assistant at the Energy Economics Group (EEG) and a master's student in Physical Energy Engineering at TU Wien. As part of her thesis, she investigates a potential fuel bottleneck in nuclear fusion technology using optimization models, examining its economic, ecological, and supply-risk implications. She holds a B.Sc. in Energy and Process Engineering from TU Berlin and a second B.Sc. in Environmental System Science from TU Graz."
   image: "/assets/images/team/mona.jpg"
   object_position: "top"
