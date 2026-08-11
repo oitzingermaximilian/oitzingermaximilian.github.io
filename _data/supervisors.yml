@@ -18,15 +18,17 @@
   contact: "caesar@eeg.tuwien.ac.at"
   image: "/assets/images/team/daniel.JPEG"
   offer_topics:
-    - "Energy system optimization and dual prices"
-    - "Hydrogen market design"
+    - "Long-term electricity price modelling" 
+    - "Energy system optimization modelling"
     - "Life cycle assessment in energy systems"
+    - "Hydrogen grid analysis"
     - "Token-based energy communities"
   open_bachelor:
-    - "Comparative evaluation of hydrogen market configurations and infrastructure rollout strategies."
+    - "Understanding the Shift: An Empirical Analysis of Structural Change in European Day-Ahead Electricity Prices"
   open_master:
-    - "Interpreting dual variables in large-scale optimization models for policy-relevant insights."
-    - "Coupling techno-economic optimization with parametric LCA to identify robust decarbonization options."
+    - "Capturing the Price Tails: Spikes and Negative Prices in Large-Scale Energy System Models"
+    - "Getting the Timing Right: Improving the Temporal Alignment of Modelled and Observed Day-Ahead Electricity Prices"
+    - "An Electricity Price Readiness Score for Energy System Optimization Models: Relating Model Features to Price-Indication Accuracy"
 
 - name: "Alexander Csekö"
   role: "Research Assistant"
