@@ -37,11 +37,10 @@ permalink: /tv-display/
       background: #ffffff;
       border: 1px solid #e5e7eb;
       border-radius: 30px;
-      padding: 5rem 6rem;
+      padding: 4rem 5rem;
       box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.08);
       display: flex;
       flex-direction: column;
-      position: relative;
     }
 
     /* Content Layout */
@@ -49,11 +48,11 @@ permalink: /tv-display/
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 5rem; /* Gap between left content and right column */
+      gap: 4rem; 
     }
 
     .text-content {
-      flex: 1; /* Takes up remaining space */
+      flex: 1; 
       padding-right: 2rem;
     }
 
@@ -121,9 +120,9 @@ permalink: /tv-display/
       background: #f0f7ff;
       border: 2px solid #1e90ff;
       color: #1e90ff;
-      padding: 1.2rem 2.5rem;
+      padding: 1rem 2.2rem;
       border-radius: 999px;
-      font-size: 1.8rem;
+      font-size: 1.7rem;
       font-weight: 700;
     }
 
@@ -145,38 +144,46 @@ permalink: /tv-display/
       background: #eff6ff;
       color: #1e3a8a;
     }
+    
+    /* Special styling for the "+ more..." tag */
+    .topic-tag.more-tag {
+      background: #f8fafc;
+      border: 1px dashed #94a3b8;
+      color: #64748b;
+    }
 
     /* Right Column: Logo + QR Code */
     .right-column {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 3rem; /* Space between Logo and QR Box */
-      width: 420px; /* Locks the width for both the logo and the QR box */
+      gap: 2rem; 
+      width: 380px; /* Locked width so it doesn't break */
       flex-shrink: 0;
     }
 
     .brand-logo {
-      width: 100%; /* Matches the 420px width of the column perfectly */
-      height: auto;
+      width: 100%; 
+      max-height: 150px; /* MAGIC FIX: Stops the logo from becoming too tall */
+      object-fit: contain; /* Keeps the logo proportional within the box */
       border-radius: 8px;
     }
 
     /* QR Code Section */
     .qr-section {
       background: #ffffff;
-      padding: 3rem; 
+      padding: 2.5rem; 
       border-radius: 24px;
       text-align: center;
       border: 3px solid #1e90ff;
       box-shadow: 0 20px 25px -5px rgba(30, 144, 255, 0.15);
       animation: pulse 3s infinite; 
-      width: 100%; /* Fills the 420px column */
+      width: 100%; 
     }
 
     .qr-code {
       width: 100%; 
-      height: 360px;
+      height: 320px;
       background: #f1f5f9;
       display: flex;
       align-items: center;
@@ -194,21 +201,21 @@ permalink: /tv-display/
 
     .qr-text {
       color: #1e90ff;
-      font-size: 2.2rem;
+      font-size: 2.1rem;
       font-weight: 800;
       margin: 0;
     }
     
     .qr-subtext {
       color: #666;
-      font-size: 1.4rem;
+      font-size: 1.3rem;
       margin-top: 0.5rem;
       font-weight: 600;
     }
 
     @keyframes pulse {
       0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(30, 144, 255, 0.3); }
-      70% { transform: scale(1.02); box-shadow: 0 0 0 35px rgba(30, 144, 255, 0); }
+      70% { transform: scale(1.02); box-shadow: 0 0 0 30px rgba(30, 144, 255, 0); }
       100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(30, 144, 255, 0); }
     }
   </style>
@@ -241,32 +248,14 @@ permalink: /tv-display/
             </div>
           </div>
 
-          <!-- Smart Keywords Cloud -->
+          <!-- Curated Keywords Cloud (Zwickl & Otti Highlights) -->
           <div class="topics-cloud">
-            {% assign topics_str = "" %}
-            
-            {% for sup in site.data.supervisors %}
-              {% if sup.offer_topics %}
-                {% for topic in sup.offer_topics %}
-                  {% assign topics_str = topics_str | append: topic | append: "|||" %}
-                {% endfor %}
-              {% endif %}
-            {% endfor %}
-            
-            {% if topics_str != "" %}
-              {% assign topics_array = topics_str | split: "|||" | uniq %}
-              {% for topic in topics_array limit:12 %}
-                {% if topic != "" %}
-                  <span class="topic-tag">{{ topic }}</span>
-                {% endif %}
-              {% endfor %}
-            {% else %}
-              <span class="topic-tag">Energy System Modeling</span>
-              <span class="topic-tag">Critical Raw Materials</span>
-              <span class="topic-tag">Industrial Decarbonization</span>
-              <span class="topic-tag">Hydrogen Market Design</span>
-              <span class="topic-tag">Nuclear Energy Systems</span>
-            {% endif %}
+            <span class="topic-tag">Critical Raw Materials</span>
+            <span class="topic-tag">Energy-Intensive Industry</span>
+            <span class="topic-tag">Hydrogen & Gas Infrastructure</span>
+            <span class="topic-tag">Carbon Capture & Storage</span>
+            <span class="topic-tag">Cross-Sectoral Modeling</span>
+            <span class="topic-tag more-tag">+ more...</span>
           </div>
           
         </div>
