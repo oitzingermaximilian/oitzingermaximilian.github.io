@@ -1,5 +1,5 @@
 ---
-layout: none
+layout: null
 permalink: /tv-display/
 ---
 <!DOCTYPE html>
@@ -30,10 +30,12 @@ permalink: /tv-display/
       justify-content: center;
       width: 90%;
       max-width: 1600px;
+      /* Ensures the container fills most of the screen nicely */
+      min-height: 80vh; 
       background: #ffffff;
       border: 1px solid #e5e7eb;
       border-radius: 30px;
-      padding: 4rem 5rem;
+      padding: 5rem 6rem;
       box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.08);
       position: relative;
       overflow: hidden; /* Keeps the watermark inside the box */
@@ -46,37 +48,22 @@ permalink: /tv-display/
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: 80%;
-      height: 80%;
+      width: 130%;
+      height: 130%;
       background-image: url('/assets/images/ES3M_Logo.jpg');
       background-repeat: no-repeat;
       background-position: center;
       background-size: contain;
-      opacity: 0.04; /* Very faint so text is still readable */
+      /* Very faint so text is still perfectly readable */
+      opacity: 0.02; 
       z-index: 0;
       pointer-events: none;
     }
 
     /* Ensures content stays above the watermark */
-    .header-section, .content-section {
+    .content-section {
       position: relative;
       z-index: 1;
-    }
-
-    /* Top Centered Logo Section */
-    .header-section {
-      text-align: center;
-      width: 100%;
-      margin-bottom: 3.5rem;
-    }
-
-    .brand-logo {
-      max-height: 240px; /* MASSIVELY INCREASED */
-      border-radius: 8px;
-    }
-
-    /* Bottom Split Content (Text + QR) */
-    .content-section {
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -85,19 +72,16 @@ permalink: /tv-display/
     }
 
     .text-content {
-      max-width: 60%;
+      max-width: 65%; /* Given a bit more room for the single-line title */
     }
 
     h1 {
-      font-size: 6rem;
+      font-size: 4.8rem; /* Scaled down slightly to fit on one row */
       line-height: 1.1;
       margin: 0 0 2.5rem 0;
       font-weight: 800;
-      color: #111827;
-    }
-
-    .text-accent {
-      color: #1e90ff;
+      color: #1e90ff; /* All Blue */
+      white-space: nowrap; /* Forces the text to stay on a single line */
     }
 
     .highlights {
@@ -139,8 +123,8 @@ permalink: /tv-display/
     }
 
     .avatar {
-      width: 110px;
-      height: 110px;
+      width: 120px; 
+      height: 120px;
       border-radius: 50%;
       object-fit: cover;
       border: 6px solid #ffffff;
@@ -156,7 +140,7 @@ permalink: /tv-display/
     /* QR Code Section */
     .qr-section {
       background: #ffffff;
-      padding: 2.5rem;
+      padding: 3rem; 
       border-radius: 24px;
       text-align: center;
       border: 3px solid #1e90ff;
@@ -165,8 +149,8 @@ permalink: /tv-display/
     }
 
     .qr-code {
-      width: 350px;
-      height: 350px;
+      width: 380px; 
+      height: 380px;
       background: #f1f5f9;
       display: flex;
       align-items: center;
@@ -184,14 +168,14 @@ permalink: /tv-display/
 
     .qr-text {
       color: #1e90ff;
-      font-size: 1.9rem;
+      font-size: 2.2rem;
       font-weight: 800;
       margin: 0;
     }
     
     .qr-subtext {
       color: #666;
-      font-size: 1.25rem;
+      font-size: 1.4rem;
       margin-top: 0.5rem;
       font-weight: 600;
     }
@@ -207,15 +191,12 @@ permalink: /tv-display/
 
   <div class="slide-container">
     
-    <!-- Prominent Centered Logo -->
-    <div class="header-section">
-      <img src="/assets/images/ES3M_Logo.jpg" alt="ES3M Logo" class="brand-logo">
-    </div>
-
     <!-- Main Content Row -->
     <div class="content-section">
       <div class="text-content">
-        <h1>Write your Thesis<br><span class="text-accent">with us.</span></h1>
+        
+        <!-- Updated Heading: Single row, all blue -->
+        <h1>From Minerals to Megawatts.</h1>
         
         <div class="highlights">
           <span class="highlight-chip">Bachelor Theses</span>
