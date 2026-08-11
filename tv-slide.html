@@ -37,19 +37,11 @@ permalink: /tv-display/
       background: #ffffff;
       border: 1px solid #e5e7eb;
       border-radius: 30px;
-      padding: 4rem 5rem;
+      padding: 5rem 6rem;
       box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.08);
       display: flex;
       flex-direction: column;
-    }
-
-    /* HUGE Logo at the top */
-    .top-bar {
-      margin-bottom: 2rem;
-    }
-    .brand-logo {
-      height: 200px; /* Sehr großes Logo! */
-      border-radius: 8px;
+      position: relative;
     }
 
     /* Content Layout */
@@ -57,51 +49,38 @@ permalink: /tv-display/
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 5rem;
+      gap: 5rem; /* Gap between left content and right column */
     }
 
     .text-content {
-      flex: 1; /* Nimmt sich den Platz, den es braucht */
+      flex: 1; /* Takes up remaining space */
+      padding-right: 2rem;
     }
 
+    /* Titles */
     .main-title {
-      font-size: 4.2rem;
+      font-size: 4.8rem;
       line-height: 1.1;
       margin: 0 0 0.5rem 0;
       font-weight: 800;
       color: #1e90ff; 
+      white-space: nowrap;
     }
 
     .sub-title {
-      font-size: 3.2rem;
+      font-size: 3.4rem;
       line-height: 1.2;
-      margin: 0 0 2rem 0;
+      margin: 0 0 2.5rem 0;
       font-weight: 700;
       color: #111827;
     }
 
-    .highlights {
-      display: flex;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-      margin-bottom: 3.5rem;
-    }
-
-    .highlight-chip {
-      background: #f0f7ff;
-      border: 2px solid #1e90ff;
-      color: #1e90ff;
-      padding: 1rem 2.2rem;
-      border-radius: 999px;
-      font-size: 1.8rem;
-      font-weight: 700;
-    }
-
-    /* Team & Keywords Section */
+    /* Team Avatars Section */
     .team-section {
       display: flex;
       flex-direction: column;
       gap: 1.5rem;
+      margin-bottom: 2.5rem;
     }
 
     .team-title {
@@ -130,25 +109,60 @@ permalink: /tv-display/
     }
     .avatar:first-child { margin-left: 0; }
 
+    /* Thesis Chips (Bachelor / Master) */
+    .highlights {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 3.5rem;
+    }
+
+    .highlight-chip {
+      background: #f0f7ff;
+      border: 2px solid #1e90ff;
+      color: #1e90ff;
+      padding: 1.2rem 2.5rem;
+      border-radius: 999px;
+      font-size: 1.8rem;
+      font-weight: 700;
+    }
+
     /* Topics Cloud */
     .topics-cloud {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.8rem;
-      margin-top: 1rem;
+      gap: 0.6rem;
+      max-width: 95%;
     }
 
     .topic-tag {
-      background: #ffffff;
-      color: #1e90ff; 
-      padding: 0.6rem 1.4rem;
-      border-radius: 8px;
-      font-size: 1.3rem;
-      font-weight: 700;
-      border: 2px solid #cce5ff;
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      border-radius: 999px;
+      font-size: 1.25rem; 
+      font-weight: 600;
+      border: 1px solid #dbeafe;
+      background: #eff6ff;
+      color: #1e3a8a;
     }
 
-    /* QR Code Section - Bulletproof sizing */
+    /* Right Column: Logo + QR Code */
+    .right-column {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 3rem; /* Space between Logo and QR Box */
+      width: 420px; /* Locks the width for both the logo and the QR box */
+      flex-shrink: 0;
+    }
+
+    .brand-logo {
+      width: 100%; /* Matches the 420px width of the column perfectly */
+      height: auto;
+      border-radius: 8px;
+    }
+
+    /* QR Code Section */
     .qr-section {
       background: #ffffff;
       padding: 3rem; 
@@ -157,13 +171,12 @@ permalink: /tv-display/
       border: 3px solid #1e90ff;
       box-shadow: 0 20px 25px -5px rgba(30, 144, 255, 0.15);
       animation: pulse 3s infinite; 
-      width: 400px; /* Feste Breite */
-      flex-shrink: 0; /* Verhindert das Zerquetschen! */
+      width: 100%; /* Fills the 420px column */
     }
 
     .qr-code {
       width: 100%; 
-      height: 340px;
+      height: 360px;
       background: #f1f5f9;
       display: flex;
       align-items: center;
@@ -204,16 +217,12 @@ permalink: /tv-display/
 
   <div class="tv-wrapper">
     <div class="slide-container">
-      
-      <!-- Huge Logo in normal flow -->
-      <div class="top-bar">
-        <img src="/assets/images/ES3M_Logo.jpg" alt="ES3M Logo" class="brand-logo">
-      </div>
 
       <!-- Main Content Row -->
       <div class="content-section">
+        
+        <!-- Left Side: Text, Avatars, and Keywords -->
         <div class="text-content">
-          
           <h1 class="main-title">From Minerals to Megawatts.</h1>
           <h2 class="sub-title">Write your thesis with us.</h2>
           
@@ -230,52 +239,53 @@ permalink: /tv-display/
                 <img src="{{ member.image }}" class="avatar" style="object-position: {{ member.object_position | default: 'center' }};" alt="{{ member.name }}">
               {% endfor %}
             </div>
+          </div>
 
-            <!-- Smart Keywords Cloud -->
-            <div class="topics-cloud">
-              {% assign topics_str = "" %}
-              
-              <!-- Try parsing supervisors.yml -->
-              {% for entry in site.data.supervisors %}
-                {% assign sup = entry %}
-                {% if entry[1] %} {% assign sup = entry[1] %} {% endif %}
-                
-                {% if sup.offers_topics %}
-                  {% for topic in sup.offers_topics %}
-                    {% assign topics_str = topics_str | append: topic | append: "|||" %}
-                  {% endfor %}
+          <!-- Smart Keywords Cloud -->
+          <div class="topics-cloud">
+            {% assign topics_str = "" %}
+            
+            {% for sup in site.data.supervisors %}
+              {% if sup.offer_topics %}
+                {% for topic in sup.offer_topics %}
+                  {% assign topics_str = topics_str | append: topic | append: "|||" %}
+                {% endfor %}
+              {% endif %}
+            {% endfor %}
+            
+            {% if topics_str != "" %}
+              {% assign topics_array = topics_str | split: "|||" | uniq %}
+              {% for topic in topics_array limit:12 %}
+                {% if topic != "" %}
+                  <span class="topic-tag">{{ topic }}</span>
                 {% endif %}
               {% endfor %}
-              
-              <!-- Check if we found anything -->
-              {% if topics_str != "" %}
-                {% assign topics_array = topics_str | split: "|||" | uniq %}
-                {% for topic in topics_array limit:8 %}
-                  {% if topic != "" %}
-                    <span class="topic-tag">{{ topic }}</span>
-                  {% endif %}
-                {% endfor %}
-              {% else %}
-                <!-- Fallback if YAML fails -->
-                <span class="topic-tag">Energy System Modeling</span>
-                <span class="topic-tag">Supply Chains</span>
-                <span class="topic-tag">Critical Raw Materials</span>
-                <span class="topic-tag">Market Dynamics</span>
-                <span class="topic-tag">Decarbonization</span>
-              {% endif %}
+            {% else %}
+              <span class="topic-tag">Energy System Modeling</span>
+              <span class="topic-tag">Critical Raw Materials</span>
+              <span class="topic-tag">Industrial Decarbonization</span>
+              <span class="topic-tag">Hydrogen Market Design</span>
+              <span class="topic-tag">Nuclear Energy Systems</span>
+            {% endif %}
+          </div>
+          
+        </div>
+
+        <!-- Right Side: Logo + QR Code exactly matched in width -->
+        <div class="right-column">
+          <!-- Logo -->
+          <img src="/assets/images/ES3M_Logo.jpg" alt="ES3M Logo" class="brand-logo">
+          
+          <!-- QR Box -->
+          <div class="qr-section">
+            <div class="qr-code">
+              <img src="/assets/images/qrcode_es3m.eu.png" alt="Scan to see open thesis topics">
             </div>
-            
+            <p class="qr-text">Scan for Topics</p>
+            <div class="qr-subtext">Point your camera here</div>
           </div>
         </div>
 
-        <!-- Solid QR Code Section -->
-        <div class="qr-section">
-          <div class="qr-code">
-            <img src="/assets/images/qr-code.png" alt="Scan to see open thesis topics">
-          </div>
-          <p class="qr-text">Scan for Topics</p>
-          <div class="qr-subtext">Point your camera here</div>
-        </div>
       </div>
 
     </div>
