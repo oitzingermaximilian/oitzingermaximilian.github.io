@@ -167,7 +167,7 @@ permalink: /tv-display/
       color: #1e90ff;
       text-transform: uppercase;
       letter-spacing: 0.1rem;
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem; /* Etwas mehr Platz nach unten, wegen dem Versatz */
       margin-top: auto; 
       display: flex;
       align-items: center;
@@ -188,7 +188,7 @@ permalink: /tv-display/
     .card-stack {
       position: relative;
       width: 100%;
-      height: 21rem; /* Zwingt den gesamten Stapel auf QR-Code-Höhe */
+      height: 21rem; 
     }
 
     /* Die Hintergrund-Karten */
@@ -197,26 +197,26 @@ permalink: /tv-display/
       top: 0; left: 0; right: 0; bottom: 0;
       background: #ffffff;
       border: 0.15rem solid #e5e7eb;
-      border-left: 0.6rem solid #93c5fd; /* Helleres Blau für Tiefe */
+      border-left: 0.6rem solid #93c5fd; 
       border-radius: 1.2rem;
-      box-shadow: 0 1rem 2rem -0.5rem rgba(0,0,0,0.05);
+      box-shadow: 0 0.5rem 1rem -0.2rem rgba(0,0,0,0.05);
     }
 
-    /* Unterste Karte */
+    /* Unterste Karte (am weitesten rechts oben) */
     .fake-card-1 {
-      transform: rotate(5deg) translate(0.6rem, 0.8rem);
+      transform: translate(0.8rem, -0.8rem);
       z-index: 1;
       background: #f8fafc;
     }
 
-    /* Mittlere Karte */
+    /* Mittlere Karte (leicht rechts oben) */
     .fake-card-2 {
-      transform: rotate(-3deg) translate(-0.4rem, 0.5rem);
+      transform: translate(0.4rem, -0.4rem);
       z-index: 2;
       background: #f1f5f9;
     }
 
-    /* Die oberste Karte, die animiert wird */
+    /* Die oberste Karte (Basisposition: x=0, y=0) */
     .showcase-card {
       position: relative;
       z-index: 3;
@@ -225,10 +225,11 @@ permalink: /tv-display/
       border-left: 0.6rem solid #1e90ff;
       border-radius: 1.2rem;
       padding: 2rem 1.5rem; 
-      box-shadow: 0 1rem 2rem -0.5rem rgba(0,0,0,0.1); /* Etwas mehr Schatten für die oberste Karte */
+      box-shadow: 0 1rem 2rem -0.5rem rgba(0,0,0,0.1); 
       height: 100%; 
       display: flex;
       flex-direction: column;
+      /* Saubere, gerade Transition */
       transition: transform 0.6s cubic-bezier(0.4, 0.0, 0.2, 1), opacity 0.6s ease-out;
     }
 
@@ -366,7 +367,7 @@ permalink: /tv-display/
           
           <!-- Der Kartenstapel (Wrapper) -->
           <div class="card-stack">
-            <!-- Die Dummy-Karten im Hintergrund -->
+            <!-- Die Dummy-Karten im Hintergrund (gerade nach rechts oben) -->
             <div class="fake-card-1"></div>
             <div class="fake-card-2"></div>
             
@@ -436,10 +437,10 @@ permalink: /tv-display/
     }
     currentIndex++;
 
-    // "Austeilen"-Animation
+    // "Austeilen"-Animation (komplett gerade)
     function dealNextCard() {
-      // Karte nach links wischen und ausblenden
-      card.style.transform = 'translateX(-3rem) rotate(-4deg) scale(0.95)';
+      // Karte flach nach links wegschieben
+      card.style.transform = 'translateX(-3rem)';
       card.style.opacity = '0';
       
       setTimeout(() => {
@@ -458,15 +459,15 @@ permalink: /tv-display/
           tSup.style.display = "none";
         }
         
-        // Karte unsichtbar auf die rechte Seite setzen
+        // Unsichtbare Karte gerade nach rechts positionieren
         card.style.transition = 'none'; 
-        card.style.transform = 'translateX(3rem) rotate(4deg) scale(0.95)';
+        card.style.transform = 'translateX(3rem)';
         
-        void card.offsetWidth; // Zwingt den Browser zur Aktualisierung
+        void card.offsetWidth; // Force Reflow
 
-        // Neue Karte von rechts in die Mitte wischen lassen
+        // Neue Karte gerade aus der Mitte reinschieben
         card.style.transition = 'transform 0.6s cubic-bezier(0.4, 0.0, 0.2, 1), opacity 0.6s ease-out';
-        card.style.transform = 'translateX(0) rotate(0) scale(1)';
+        card.style.transform = 'translateX(0)';
         card.style.opacity = '1';
         
         currentIndex = (currentIndex + 1) % finishedTheses.length;
