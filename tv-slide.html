@@ -184,17 +184,51 @@ permalink: /tv-display/
       animation: blink 2s infinite;
     }
 
+    /* Der neue Kartenstapel (Wrapper) */
+    .card-stack {
+      position: relative;
+      width: 100%;
+      height: 21rem; /* Zwingt den gesamten Stapel auf QR-Code-Höhe */
+    }
+
+    /* Die Hintergrund-Karten */
+    .fake-card-1, .fake-card-2 {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: #ffffff;
+      border: 0.15rem solid #e5e7eb;
+      border-left: 0.6rem solid #93c5fd; /* Helleres Blau für Tiefe */
+      border-radius: 1.2rem;
+      box-shadow: 0 1rem 2rem -0.5rem rgba(0,0,0,0.05);
+    }
+
+    /* Unterste Karte */
+    .fake-card-1 {
+      transform: rotate(5deg) translate(0.6rem, 0.8rem);
+      z-index: 1;
+      background: #f8fafc;
+    }
+
+    /* Mittlere Karte */
+    .fake-card-2 {
+      transform: rotate(-3deg) translate(-0.4rem, 0.5rem);
+      z-index: 2;
+      background: #f1f5f9;
+    }
+
+    /* Die oberste Karte, die animiert wird */
     .showcase-card {
+      position: relative;
+      z-index: 3;
       background: #ffffff;
       border: 0.15rem solid #e5e7eb;
       border-left: 0.6rem solid #1e90ff;
       border-radius: 1.2rem;
       padding: 2rem 1.5rem; 
-      box-shadow: 0 1rem 2rem -0.5rem rgba(0,0,0,0.05);
-      height: 21rem; 
+      box-shadow: 0 1rem 2rem -0.5rem rgba(0,0,0,0.1); /* Etwas mehr Schatten für die oberste Karte */
+      height: 100%; 
       display: flex;
       flex-direction: column;
-      /* Base transition for the "dealing card" effect */
       transition: transform 0.6s cubic-bezier(0.4, 0.0, 0.2, 1), opacity 0.6s ease-out;
     }
 
@@ -326,15 +360,22 @@ permalink: /tv-display/
           </div>
         </div>
 
-        <!-- COLUMN 2: Finished Theses Showcase (Animated) -->
+        <!-- COLUMN 2: Finished Theses Showcase (Animated Stack) -->
         <div class="showcase-column">
           <div class="showcase-label">Recently Finished</div>
           
-          <!-- Card Deck Element -->
-          <div class="showcase-card" id="thesis-card">
-            <span class="t-type" id="t-type">Loading...</span>
-            <h3 class="t-title" id="t-title">Loading recent topics...</h3>
-            <p class="t-sup" id="t-sup"></p>
+          <!-- Der Kartenstapel (Wrapper) -->
+          <div class="card-stack">
+            <!-- Die Dummy-Karten im Hintergrund -->
+            <div class="fake-card-1"></div>
+            <div class="fake-card-2"></div>
+            
+            <!-- Die animierte, echte Karte im Vordergrund -->
+            <div class="showcase-card" id="thesis-card">
+              <span class="t-type" id="t-type">Loading...</span>
+              <h3 class="t-title" id="t-title">Loading recent topics...</h3>
+              <p class="t-sup" id="t-sup"></p>
+            </div>
           </div>
           
         </div>
@@ -357,7 +398,6 @@ permalink: /tv-display/
 
   <!-- JavaScript to run the Animated Showcase -->
   <script>
-    // 1. Pull data directly from Jekyll YAML using jsonify to handle apostrophes
     const finishedTheses = [
       {% assign finished_topics = site.data.thesis | where: "status", "finished" %}
       {% for thesis in finished_topics %}
@@ -369,7 +409,6 @@ permalink: /tv-display/
       {% endfor %}
     ];
 
-    // Fallback data in case the YAML is empty
     if (finishedTheses.length === 0) {
       finishedTheses.push(
         { type: "Master Thesis", title: "Optimizing Hydrogen Supply Chains in Central Europe", supervisor: "Sebastian Zwickl-Bernhard" },
@@ -378,7 +417,6 @@ permalink: /tv-display/
       );
     }
 
-    // 2. Shuffle the array
     finishedTheses.sort(() => 0.5 - Math.random());
 
     let currentIndex = 0;
@@ -387,7 +425,7 @@ permalink: /tv-display/
     const tTitle = document.getElementById('t-title');
     const tSup = document.getElementById('t-sup');
 
-    // Load the first card immediately without animation
+    // Erste Karte laden
     const first = finishedTheses[currentIndex];
     tType.textContent = first.type;
     tTitle.textContent = first.title;
@@ -398,14 +436,13 @@ permalink: /tv-display/
     }
     currentIndex++;
 
-    // 3. Logic for the "Card Dealing" animation
+    // "Austeilen"-Animation
     function dealNextCard() {
-      // Step A: Swipe the current card off to the left
+      // Karte nach links wischen und ausblenden
       card.style.transform = 'translateX(-3rem) rotate(-4deg) scale(0.95)';
       card.style.opacity = '0';
       
       setTimeout(() => {
-        // Step B: Update the text content
         const current = finishedTheses[currentIndex];
         tType.textContent = current.type;
         tTitle.textContent = current.title;
@@ -421,24 +458,21 @@ permalink: /tv-display/
           tSup.style.display = "none";
         }
         
-        // Step C: Instantly move the invisible card to the right side
-        card.style.transition = 'none'; // Turn off transition temporarily
+        // Karte unsichtbar auf die rechte Seite setzen
+        card.style.transition = 'none'; 
         card.style.transform = 'translateX(3rem) rotate(4deg) scale(0.95)';
         
-        // Step D: Force the browser to register the new position
-        void card.offsetWidth; 
+        void card.offsetWidth; // Zwingt den Browser zur Aktualisierung
 
-        // Step E: Slide the new card into the center
+        // Neue Karte von rechts in die Mitte wischen lassen
         card.style.transition = 'transform 0.6s cubic-bezier(0.4, 0.0, 0.2, 1), opacity 0.6s ease-out';
         card.style.transform = 'translateX(0) rotate(0) scale(1)';
         card.style.opacity = '1';
         
-        // Advance the index
         currentIndex = (currentIndex + 1) % finishedTheses.length;
-      }, 600); // Wait for the swipe-out animation to finish
+      }, 600); 
     }
 
-    // Deal a new card every 5 seconds
     setInterval(dealNextCard, 5000);
   </script>
 
