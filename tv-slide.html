@@ -35,11 +35,11 @@ permalink: /tv-display/
     }
 
     .slide-container {
-      width: 92vw; /* Made the card slightly wider to give more internal room */
+      width: 92vw; 
       background: #ffffff;
       border: 0.1rem solid #e5e7eb;
       border-radius: 2rem;
-      padding: 3.5rem 4rem; /* Slightly reduced top/bottom padding to fit better */
+      padding: 3.5rem 4rem; 
       box-shadow: 0 1.5rem 3rem -0.5rem rgba(0, 0, 0, 0.08);
       display: flex;
       flex-direction: column;
@@ -48,15 +48,15 @@ permalink: /tv-display/
     /* 3-Column Layout */
     .content-section {
       display: flex;
-      align-items: stretch; 
+      align-items: stretch; /* Forces all columns to be the exact same height */
       justify-content: space-between;
-      gap: 2.5rem; /* Tighter gap to pull everything inwards */
+      gap: 2.5rem; 
     }
 
     /* --- LEFT COLUMN: TEXT & TEAM --- */
     .text-content {
       flex: 1; 
-      max-width: 48%; /* STOPS the left side from pushing the middle panel too far right */
+      max-width: 48%; 
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -74,7 +74,7 @@ permalink: /tv-display/
     .sub-title {
       font-size: 2.6rem;
       line-height: 1.2;
-      margin: 0 0 2rem 0; /* Slightly tighter */
+      margin: 0 0 2rem 0; 
       font-weight: 700;
       color: #111827;
     }
@@ -155,10 +155,9 @@ permalink: /tv-display/
 
     /* --- MIDDLE COLUMN: THESIS SHOWCASE --- */
     .showcase-column {
-      width: 26rem; /* SMALLER! Was 32rem. This gives lots of room back to the QR code */
+      width: 26rem; 
       display: flex;
       flex-direction: column;
-      justify-content: center;
       flex-shrink: 0;
     }
 
@@ -169,6 +168,7 @@ permalink: /tv-display/
       text-transform: uppercase;
       letter-spacing: 0.1rem;
       margin-bottom: 1rem;
+      margin-top: auto; /* Pushes the label and card to the absolute bottom */
       display: flex;
       align-items: center;
       gap: 0.6rem;
@@ -189,9 +189,9 @@ permalink: /tv-display/
       border: 0.15rem solid #e5e7eb;
       border-left: 0.6rem solid #1e90ff;
       border-radius: 1.2rem;
-      padding: 2rem 1.5rem; /* Tighter padding for the smaller box */
+      padding: 2rem 1.5rem; 
       box-shadow: 0 1rem 2rem -0.5rem rgba(0,0,0,0.05);
-      min-height: 18rem; /* Adjusted for smaller text */
+      height: 21rem; /* Matches the exact height of the QR code box */
       display: flex;
       flex-direction: column;
       transition: opacity 0.5s ease-in-out;
@@ -212,7 +212,7 @@ permalink: /tv-display/
     }
 
     .t-title {
-      font-size: 1.5rem; /* Smaller text so it fits the new width perfectly */
+      font-size: 1.5rem;
       font-weight: 700;
       color: #0f172a;
       margin: 0 0 1.2rem 0;
@@ -236,9 +236,8 @@ permalink: /tv-display/
       flex-direction: column;
       align-items: center;
       gap: 2.5rem; 
-      width: 21rem; /* Slightly slimmer to guarantee it fits on the screen */
+      width: 21rem; 
       flex-shrink: 0;
-      justify-content: center;
     }
 
     .brand-logo {
@@ -246,6 +245,7 @@ permalink: /tv-display/
       max-height: 14rem; 
       object-fit: contain; 
       border-radius: 0.5rem;
+      margin-bottom: auto; /* Pushes the logo to the absolute top */
     }
 
     .qr-section {
@@ -255,11 +255,12 @@ permalink: /tv-display/
       border: 0.2rem solid #1e90ff;
       box-shadow: 0 1.25rem 1.5rem -0.3rem rgba(30, 144, 255, 0.15);
       width: 100%; 
+      /* Height totals exactly 21rem (0.4 border + 2.4 padding + 18.2 inner) */
     }
 
     .qr-code {
       width: 100%; 
-      height: 18.2rem; /* Adjusted down slightly */
+      height: 18.2rem; 
       background: #f1f5f9;
       display: flex;
       align-items: center;
