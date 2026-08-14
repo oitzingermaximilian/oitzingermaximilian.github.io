@@ -354,14 +354,14 @@ permalink: /tv-display/
 
   <!-- JavaScript to run the Animated Showcase -->
   <script>
-    // 1. Pull data directly from Jekyll YAML
+    // 1. Pull data directly from Jekyll YAML using jsonify to handle apostrophes correctly
     const finishedTheses = [
       {% assign finished_topics = site.data.thesis | where: "status", "finished" %}
       {% for thesis in finished_topics %}
       {
-        type: "{{ thesis.type | default: 'Thesis' | escape }}",
-        title: "{{ thesis.title | escape }}",
-        supervisor: "{{ thesis.supervisor | escape }}"
+        type: {{ thesis.type | default: 'Thesis' | jsonify }},
+        title: {{ thesis.title | jsonify }},
+        supervisor: {{ thesis.supervisor | jsonify }}
       }{% unless forloop.last %},{% endunless %}
       {% endfor %}
     ];
