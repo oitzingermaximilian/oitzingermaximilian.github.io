@@ -374,6 +374,9 @@ header:
         <h3 class="thesis-title">{{ topic.title }}</h3>
         <p class="thesis-desc">{{ topic.description }}</p>
         <div class="thesis-meta">
+          {% if topic.student %}
+            <strong>Student:</strong> {{ topic.student }}<br>
+          {% endif %}
           <strong>Supervisors:</strong> {{ topic.supervisor }}<br>
           <a href="mailto:{{ topic.contact }}">Contact Supervisor</a>
         </div>
