@@ -25,7 +25,7 @@ header:
     display: none !important;
   }
 
-  /* --- NEW: STATS BAR STYLES --- */
+  /* --- STATS BAR STYLES --- */
   .stats-container {
     display: flex;
     gap: 1.5rem;
@@ -89,7 +89,6 @@ header:
       flex-direction: column;
     }
   }
-  /* ---------------------------- */
 
   .supervisor-grid {
     display: grid;
@@ -306,6 +305,8 @@ header:
     border-radius: 12px;
     padding: 1.35rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.04);
+    display: flex;
+    flex-direction: column;
   }
   .thesis-type {
     display: inline-block;
@@ -317,6 +318,7 @@ header:
     color: #475569;
     text-transform: uppercase;
     margin-bottom: 0.7rem;
+    width: fit-content;
   }
   .thesis-title {
     margin: 0 0 0.6rem;
@@ -325,15 +327,41 @@ header:
     color: #111827;
   }
   .thesis-desc { margin: 0 0 0.8rem; font-size: 0.92rem; color: #4b5563; line-height: 1.55; }
-  .thesis-meta { font-size: 0.86rem; color: #334155; }
+  
+  .thesis-meta { 
+    font-size: 0.86rem; 
+    color: #334155; 
+    margin-top: auto; 
+  }
+
+  /* --- NEW: REPOSITUM BUTTON STYLES --- */
+  .repo-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-top: 0.8rem;
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: #166534;
+    background: #dcfce7;
+    padding: 0.4rem 0.9rem;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background 0.2s ease, color 0.2s ease;
+    border: 1px solid #bbf7d0;
+  }
+  .repo-link:hover {
+    background: #bbf7d0;
+    color: #14532d;
+    text-decoration: none;
+  }
 </style>
 
 {% assign supervisors = site.data.supervisors %}
 {% assign finished_topics = site.data.thesis | where: "status", "finished" %}
 
-<!-- NEW: STATS BAR ROW -->
+<!-- STATS BAR ROW -->
 <div class="stats-container">
-  
   <div class="stat-card">
     <div class="stat-icon">
       <!-- Checkmark Icon -->
@@ -359,7 +387,6 @@ header:
       <p class="stat-value" id="stat-avg-duration">-</p>
     </div>
   </div>
-
 </div>
 
 <div class="supervisor-grid">
@@ -448,6 +475,7 @@ header:
   {% endfor %}
 </div>
 
+<!-- FINISHED THESES SECTION -->
 <div class="accordion-section collapsed" id="finished-section">
   <div class="accordion-header" onclick="toggleAccordion('finished-section')">
     <div class="accordion-label">
@@ -464,13 +492,26 @@ header:
         <span class="thesis-type">{{ topic.type }}</span>
         <h3 class="thesis-title">{{ topic.title }}</h3>
         <p class="thesis-desc">{{ topic.description }}</p>
+        
         <div class="thesis-meta">
           {% if topic.student %}
             <strong>Student:</strong> {{ topic.student }}<br>
           {% endif %}
           <strong>Supervisors:</strong> {{ topic.supervisor }}<br>
           <a href="mailto:{{ topic.contact }}">Contact Supervisor</a>
+          
+          <!-- NEW: REPOSITUM BUTTON -->
+          {% if topic.repo_link %}
+            <br>
+            <a href="{{ topic.repo_link }}" target="_blank" rel="noopener noreferrer" class="repo-link">
+              View in reposiTUm 
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+              </svg>
+            </a>
+          {% endif %}
         </div>
+
       </div>
       {% endfor %}
     </div>
@@ -510,10 +551,9 @@ function toggleBullets(id, btn, count) {
   }
 }
 
-// --- NEW: DYNAMIC STATS CALCULATOR ---
+// --- DYNAMIC STATS CALCULATOR ---
 document.addEventListener("DOMContentLoaded", function() {
   
-  // Load raw data from Jekyll safely
   const thesesData = [
     {% for t in site.data.thesis %}
     {
@@ -534,11 +574,9 @@ document.addEventListener("DOMContentLoaded", function() {
     // 1. Count finished theses since 2023
     if (t.status === 'finished') {
       if (t.finish_date) {
-        // If a date is provided, check if it's 2023 or later
         const fYear = new Date(t.finish_date).getFullYear();
         if (fYear >= 2023) finishedSince2023++;
       } else {
-        // Fallback: If marked as finished but no date is present in YAML, count it anyway.
         finishedSince2023++;
       }
     }
@@ -548,10 +586,8 @@ document.addEventListener("DOMContentLoaded", function() {
       const start = new Date(t.start_date);
       const end = new Date(t.finish_date);
       
-      // Ensure both dates are valid
       if (!isNaN(start) && !isNaN(end)) {
         const diffTime = Math.abs(end - start);
-        // Calculate difference in months (roughly 30.44 days per month)
         const diffMonths = diffTime / (1000 * 60 * 60 * 24 * 30.44);
         
         totalMonths += diffMonths;
