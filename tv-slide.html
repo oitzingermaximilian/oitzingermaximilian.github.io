@@ -74,30 +74,44 @@ permalink: /tv-display/
     .sub-title {
       font-size: 2.6rem;
       line-height: 1.2;
-      margin: 0 0 1.5rem 0; 
+      margin: 0 0 2.5rem 0; 
       font-weight: 700;
       color: #111827;
     }
 
-    /* --- NEW STATS CHIPS --- */
+    /* --- NEW HIGH-IMPACT STATS CARDS --- */
     .tv-stats-chips {
       display: flex;
-      gap: 1.2rem;
+      gap: 1.5rem;
       flex-wrap: wrap;
-      margin-bottom: 2.5rem; /* Abstand zu den Gesichtern */
+      margin-bottom: 3rem; /* Etwas mehr Luft zu den Avataren */
     }
 
     .tv-stat-chip {
-      background: #f0f7ff;
-      border: 0.15rem solid #1e90ff;
-      color: #1e90ff;
-      padding: 0.8rem 1.6rem;
-      border-radius: 50rem;
-      font-size: 1.3rem;
-      font-weight: 700;
+      background: linear-gradient(135deg, #1e90ff 0%, #0369a1 100%);
+      color: #ffffff;
+      padding: 1.2rem 2rem;
+      border-radius: 1.2rem;
+      box-shadow: 0 0.8rem 1.5rem -0.4rem rgba(30, 144, 255, 0.4);
       display: flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: 1.2rem;
+    }
+
+    .tv-stat-chip .number {
+      font-size: 3.2rem;
+      font-weight: 900;
+      line-height: 1;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .tv-stat-chip .label {
+      font-size: 1.05rem;
+      font-weight: 700;
+      line-height: 1.3;
+      text-transform: uppercase;
+      letter-spacing: 0.05rem;
+      color: #e0f2fe; /* Leichtes hellblau für perfekten Kontrast */
     }
 
     /* --- TEAM SECTION --- */
@@ -351,14 +365,16 @@ permalink: /tv-display/
           <h1 class="main-title">From Minerals to Megawatts.</h1>
           <h2 class="sub-title">Write your thesis with us.</h2>
           
-          <!-- NEW: STATS CHIPS (Replacing Bachelor/Master Chips) -->
+          <!-- NEW: HIGH-IMPACT STATS CARDS -->
           <div class="tv-stats-chips">
-            <span class="tv-stat-chip">
-              <span id="tv-stat-count">-</span> Finished Theses (Since 2023)
-            </span>
-            <span class="tv-stat-chip">
-              Avg. Master Duration: <span id="tv-stat-duration">-</span>
-            </span>
+            <div class="tv-stat-chip">
+              <span class="number" id="tv-stat-count">-</span>
+              <span class="label">Finished Theses<br>(Since 2023)</span>
+            </div>
+            <div class="tv-stat-chip">
+              <span class="number" id="tv-stat-duration">-</span>
+              <span class="label">Months Avg.<br>Master Duration</span>
+            </div>
           </div>
 
           <div class="team-section">
@@ -467,9 +483,9 @@ permalink: /tv-display/
       }
     });
 
-    // Update the DOM with Stats
+    // Update the DOM with Stats - "Months" is now in the HTML label!
     document.getElementById('tv-stat-count').innerText = finishedSince2023;
-    document.getElementById('tv-stat-duration').innerText = (validDurationsCount > 0) ? Math.round(totalMonths / validDurationsCount) + " Months" : "N/A";
+    document.getElementById('tv-stat-duration').innerText = (validDurationsCount > 0) ? Math.round(totalMonths / validDurationsCount) : "-";
 
 
     // --- B. CAROUSEL ANIMATION ---
@@ -510,7 +526,7 @@ permalink: /tv-display/
     
     currentIndex++;
 
-    // "Austeilen"-Animation (komplett gerade)
+    // "Austeilen"-Animation
     function dealNextCard() {
       card.style.transform = 'translateX(-3rem)';
       card.style.opacity = '0';
