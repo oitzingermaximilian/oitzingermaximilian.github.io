@@ -79,40 +79,33 @@ permalink: /tv-display/
       color: #111827;
     }
 
-    /* --- NEW STATS ROW --- */
-    .tv-stats-row {
+    /* --- NEW STATS CHIPS --- */
+    .tv-stats-chips {
       display: flex;
-      gap: 3.5rem;
-      margin-bottom: 2rem;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+      margin-bottom: 2.5rem; /* Abstand zu den Gesichtern */
     }
 
-    .tv-stat-item {
+    .tv-stat-chip {
+      background: #f0f7ff;
+      border: 0.15rem solid #1e90ff;
+      color: #1e90ff;
+      padding: 0.8rem 1.6rem;
+      border-radius: 50rem;
+      font-size: 1.3rem;
+      font-weight: 700;
       display: flex;
       align-items: center;
-      gap: 1rem;
+      gap: 0.5rem;
     }
 
-    .tv-stat-number {
-      font-size: 3.2rem;
-      font-weight: 800;
-      color: #1e90ff;
-      line-height: 1;
-    }
-
-    .tv-stat-label {
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: #475569;
-      text-transform: uppercase;
-      letter-spacing: 0.05rem;
-      line-height: 1.25;
-    }
-
+    /* --- TEAM SECTION --- */
     .team-section {
       display: flex;
       flex-direction: column;
       gap: 1.2rem;
-      margin-bottom: 1.5rem; /* Etwas enger gezogen */
+      margin-bottom: 1.5rem; 
     }
 
     .team-title {
@@ -141,24 +134,7 @@ permalink: /tv-display/
     }
     .avatar:first-child { margin-left: 0; }
 
-    /* --- BA/MA CHIPS (Moved down) --- */
-    .highlights {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-      margin-bottom: 1rem; /* Näher an den Keywords */
-    }
-
-    .highlight-chip {
-      background: #f0f7ff;
-      border: 0.15rem solid #1e90ff;
-      color: #1e90ff;
-      padding: 0.6rem 1.4rem;
-      border-radius: 50rem;
-      font-size: 1.2rem;
-      font-weight: 700;
-    }
-
+    /* --- KEYWORDS CLOUD --- */
     .topics-cloud {
       display: flex;
       flex-wrap: wrap;
@@ -214,14 +190,12 @@ permalink: /tv-display/
       animation: blink 2s infinite;
     }
 
-    /* Der neue Kartenstapel (Wrapper) */
     .card-stack {
       position: relative;
       width: 100%;
       height: 21rem; 
     }
 
-    /* Die Hintergrund-Karten */
     .fake-card-1, .fake-card-2 {
       position: absolute;
       top: 0; left: 0; right: 0; bottom: 0;
@@ -244,7 +218,6 @@ permalink: /tv-display/
       background: #f1f5f9;
     }
 
-    /* Die oberste Karte */
     .showcase-card {
       position: relative;
       z-index: 3;
@@ -282,7 +255,6 @@ permalink: /tv-display/
       line-height: 1.35;
     }
 
-    /* Gruppe für Student & Betreuer */
     .t-meta-group {
       margin-top: auto;
       display: flex;
@@ -379,16 +351,14 @@ permalink: /tv-display/
           <h1 class="main-title">From Minerals to Megawatts.</h1>
           <h2 class="sub-title">Write your thesis with us.</h2>
           
-          <!-- NEW: STATS ROW -->
-          <div class="tv-stats-row">
-            <div class="tv-stat-item">
-              <span class="tv-stat-number" id="tv-stat-count">-</span>
-              <span class="tv-stat-label">Finished Theses<br>(Since 2023)</span>
-            </div>
-            <div class="tv-stat-item">
-              <span class="tv-stat-number" id="tv-stat-duration">-</span>
-              <span class="tv-stat-label">Avg. Master Theses<br>Duration</span>
-            </div>
+          <!-- NEW: STATS CHIPS (Replacing Bachelor/Master Chips) -->
+          <div class="tv-stats-chips">
+            <span class="tv-stat-chip">
+              <span id="tv-stat-count">-</span> Finished Theses (Since 2023)
+            </span>
+            <span class="tv-stat-chip">
+              Avg. Master Duration: <span id="tv-stat-duration">-</span>
+            </span>
           </div>
 
           <div class="team-section">
@@ -398,12 +368,6 @@ permalink: /tv-display/
                 <img src="{{ member.image }}" class="avatar" style="object-position: {{ member.object_position | default: 'center' }};" alt="{{ member.name }}">
               {% endfor %}
             </div>
-          </div>
-
-          <!-- MOVED: BA/MA Chips -->
-          <div class="highlights">
-            <span class="highlight-chip">Bachelor Theses</span>
-            <span class="highlight-chip">Master Theses</span>
           </div>
 
           <!-- Curated Keywords Cloud -->
