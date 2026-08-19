@@ -74,44 +74,52 @@ permalink: /tv-display/
     .sub-title {
       font-size: 2.6rem;
       line-height: 1.2;
-      margin: 0 0 2.5rem 0; 
+      margin: 0 0 2rem 0; 
       font-weight: 700;
       color: #111827;
     }
 
-    /* --- NEW HIGH-IMPACT STATS CARDS --- */
-    .tv-stats-chips {
+    /* --- NEW CLEAN STATS DASHBOARD --- */
+    .tv-stats-row {
       display: flex;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-      margin-bottom: 3rem; /* Etwas mehr Luft zu den Avataren */
+      align-items: center;
+      gap: 2.5rem;
+      margin-bottom: 2.5rem;
+      background: #ffffff;
+      padding: 1.2rem 2rem;
+      border-radius: 1.5rem;
+      border: 0.15rem solid #e5e7eb;
+      box-shadow: 0 0.8rem 1.5rem -0.2rem rgba(0,0,0,0.04);
+      width: fit-content;
     }
 
-    .tv-stat-chip {
-      background: linear-gradient(135deg, #1e90ff 0%, #0369a1 100%);
-      color: #ffffff;
-      padding: 1.2rem 2rem;
-      border-radius: 1.2rem;
-      box-shadow: 0 0.8rem 1.5rem -0.4rem rgba(30, 144, 255, 0.4);
+    .tv-stat-item {
       display: flex;
       align-items: center;
       gap: 1.2rem;
     }
 
-    .tv-stat-chip .number {
-      font-size: 3.2rem;
-      font-weight: 900;
-      line-height: 1;
-      text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    .tv-stat-divider {
+      width: 0.15rem;
+      height: 3rem;
+      background: #e5e7eb;
     }
 
-    .tv-stat-chip .label {
+    .tv-stat-number {
+      font-size: 3.2rem;
+      font-weight: 900;
+      color: #1e90ff;
+      line-height: 1;
+      letter-spacing: -0.05rem;
+    }
+
+    .tv-stat-label {
       font-size: 1.05rem;
       font-weight: 700;
-      line-height: 1.3;
+      color: #475569;
       text-transform: uppercase;
       letter-spacing: 0.05rem;
-      color: #e0f2fe; /* Leichtes hellblau für perfekten Kontrast */
+      line-height: 1.3;
     }
 
     /* --- TEAM SECTION --- */
@@ -365,15 +373,16 @@ permalink: /tv-display/
           <h1 class="main-title">From Minerals to Megawatts.</h1>
           <h2 class="sub-title">Write your thesis with us.</h2>
           
-          <!-- NEW: HIGH-IMPACT STATS CARDS -->
-          <div class="tv-stats-chips">
-            <div class="tv-stat-chip">
-              <span class="number" id="tv-stat-count">-</span>
-              <span class="label">Finished Theses<br>(Since 2023)</span>
+          <!-- NEW: CLEAN STATS DASHBOARD -->
+          <div class="tv-stats-row">
+            <div class="tv-stat-item">
+              <span class="tv-stat-number" id="tv-stat-count">20+</span>
+              <span class="tv-stat-label">Finished<br>Theses</span>
             </div>
-            <div class="tv-stat-chip">
-              <span class="number" id="tv-stat-duration">-</span>
-              <span class="label">Months Avg.<br>Master Duration</span>
+            <div class="tv-stat-divider"></div>
+            <div class="tv-stat-item">
+              <span class="tv-stat-number" id="tv-stat-duration">-</span>
+              <span class="tv-stat-label">Months Avg.<br>Master Duration</span>
             </div>
           </div>
 
@@ -436,7 +445,6 @@ permalink: /tv-display/
 
   <!-- JavaScript to run the Animated Showcase AND the Stats -->
   <script>
-    // 1. Pull ALL data to calculate stats correctly
     const allThesesData = [
       {% for t in site.data.thesis %}
       {
@@ -452,23 +460,15 @@ permalink: /tv-display/
     ];
 
     // --- A. CALCULATE STATS ---
-    let finishedSince2023 = 0;
+    let finishedTotal = 0;
     let totalMonths = 0;
     let validDurationsCount = 0;
     const finishedForCarousel = [];
 
     allThesesData.forEach(function(t) {
       if (t.status === 'finished') {
-        // Collect for the carousel
         finishedForCarousel.push(t);
-
-        // Calculate count since 2023
-        if (t.finish_date) {
-          const fYear = new Date(t.finish_date).getFullYear();
-          if (fYear >= 2023) finishedSince2023++;
-        } else {
-          finishedSince2023++; // Count if finished but no date provided
-        }
+        finishedTotal++;
       }
 
       // Calculate avg duration for Master Theses
@@ -483,8 +483,8 @@ permalink: /tv-display/
       }
     });
 
-    // Update the DOM with Stats - "Months" is now in the HTML label!
-    document.getElementById('tv-stat-count').innerText = finishedSince2023;
+    // Update the DOM with Stats (Displays "20+" if 20 or more)
+    document.getElementById('tv-stat-count').innerText = (finishedTotal >= 20) ? "20+" : finishedTotal;
     document.getElementById('tv-stat-duration').innerText = (validDurationsCount > 0) ? Math.round(totalMonths / validDurationsCount) : "-";
 
 
@@ -505,7 +505,6 @@ permalink: /tv-display/
     const tStudent = document.getElementById('t-student');
     const tSup = document.getElementById('t-sup');
 
-    // Erste Karte laden
     const first = finishedForCarousel[currentIndex];
     tType.textContent = first.type;
     tTitle.textContent = first.title;
@@ -526,7 +525,6 @@ permalink: /tv-display/
     
     currentIndex++;
 
-    // "Austeilen"-Animation
     function dealNextCard() {
       card.style.transform = 'translateX(-3rem)';
       card.style.opacity = '0';
