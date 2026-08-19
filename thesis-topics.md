@@ -25,6 +25,72 @@ header:
     display: none !important;
   }
 
+  /* --- NEW: STATS BAR STYLES --- */
+  .stats-container {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+    margin-top: 1rem;
+  }
+
+  .stat-card {
+    flex: 1;
+    background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+    border: 1px solid #bfdbfe;
+    border-radius: 16px;
+    padding: 1.5rem 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    box-shadow: 0 4px 6px rgba(15, 23, 42, 0.03);
+    transition: transform 0.2s ease;
+  }
+  
+  .stat-card:hover {
+    transform: translateY(-2px);
+  }
+
+  .stat-icon {
+    width: 55px;
+    height: 55px;
+    background: #2563eb;
+    color: white;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .stat-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .stat-content h4 {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #475569;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05rem;
+  }
+
+  .stat-content .stat-value {
+    margin: 0.2rem 0 0;
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #1e3a8a;
+    line-height: 1;
+  }
+  
+  @media (max-width: 768px) {
+    .stats-container {
+      flex-direction: column;
+    }
+  }
+  /* ---------------------------- */
+
   .supervisor-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
@@ -123,19 +189,13 @@ header:
     align-items: flex-start;
   }
 
-  /* 
-   * PERFECT ALIGNMENT HEIGHTS:
-   * These specific heights lock the next section into place. 
-   */
   .topics-wrapper { 
     min-height: 150px; 
   }
   
   .bachelor-section { 
-    min-height: 140px; /* Just enough space for the longest bachelor topic + button */
+    min-height: 140px; 
   }
-
-  /* Master section doesn't need a min-height because it's the last item! */
 
   .label {
     display: inline-block;
@@ -271,6 +331,37 @@ header:
 {% assign supervisors = site.data.supervisors %}
 {% assign finished_topics = site.data.thesis | where: "status", "finished" %}
 
+<!-- NEW: STATS BAR ROW -->
+<div class="stats-container">
+  
+  <div class="stat-card">
+    <div class="stat-icon">
+      <!-- Checkmark Icon -->
+      <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
+      </svg>
+    </div>
+    <div class="stat-content">
+      <h4>Finished Theses (Since 2023)</h4>
+      <p class="stat-value" id="stat-finished-count">-</p>
+    </div>
+  </div>
+
+  <div class="stat-card">
+    <div class="stat-icon">
+      <!-- Clock Icon -->
+      <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+      </svg>
+    </div>
+    <div class="stat-content">
+      <h4>Avg. Master Thesis Duration</h4>
+      <p class="stat-value" id="stat-avg-duration">-</p>
+    </div>
+  </div>
+
+</div>
+
 <div class="supervisor-grid">
   {% for s in supervisors %}
   <article class="supervisor-card">
@@ -387,6 +478,7 @@ header:
 </div>
 
 <script>
+// --- UI TOGGLES ---
 function toggleAccordion(sectionId) {
   var section = document.getElementById(sectionId);
   section.classList.toggle('collapsed');
@@ -396,9 +488,7 @@ function toggleChips(id, btn, count) {
   var elements = document.querySelectorAll('.more-chip-' + id);
   var isHidden = elements[0].classList.contains('hidden');
   
-  elements.forEach(function(el) {
-    el.classList.toggle('hidden');
-  });
+  elements.forEach(function(el) { el.classList.toggle('hidden'); });
   
   if (isHidden) {
     btn.innerText = "Show less";
@@ -411,9 +501,7 @@ function toggleBullets(id, btn, count) {
   var elements = document.querySelectorAll('.more-bullet-' + id);
   var isHidden = elements[0].classList.contains('hidden');
   
-  elements.forEach(function(el) {
-    el.classList.toggle('hidden');
-  });
+  elements.forEach(function(el) { el.classList.toggle('hidden'); });
   
   if (isHidden) {
     btn.innerText = "Show less";
@@ -421,4 +509,68 @@ function toggleBullets(id, btn, count) {
     btn.innerText = "Show " + count + " more...";
   }
 }
+
+// --- NEW: DYNAMIC STATS CALCULATOR ---
+document.addEventListener("DOMContentLoaded", function() {
+  
+  // Load raw data from Jekyll safely
+  const thesesData = [
+    {% for t in site.data.thesis %}
+    {
+      type: {{ t.type | default: '' | jsonify }},
+      status: {{ t.status | default: '' | jsonify }},
+      start_date: {{ t.start_date | default: '' | jsonify }},
+      finish_date: {{ t.finish_date | default: '' | jsonify }}
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ];
+
+  let finishedSince2023 = 0;
+  let totalMonths = 0;
+  let validDurationsCount = 0;
+
+  thesesData.forEach(function(t) {
+    
+    // 1. Count finished theses since 2023
+    if (t.status === 'finished') {
+      if (t.finish_date) {
+        // If a date is provided, check if it's 2023 or later
+        const fYear = new Date(t.finish_date).getFullYear();
+        if (fYear >= 2023) finishedSince2023++;
+      } else {
+        // Fallback: If marked as finished but no date is present in YAML, count it anyway.
+        finishedSince2023++;
+      }
+    }
+
+    // 2. Calculate average Master Thesis duration
+    if (t.type === 'Master Thesis' && t.start_date && t.finish_date) {
+      const start = new Date(t.start_date);
+      const end = new Date(t.finish_date);
+      
+      // Ensure both dates are valid
+      if (!isNaN(start) && !isNaN(end)) {
+        const diffTime = Math.abs(end - start);
+        // Calculate difference in months (roughly 30.44 days per month)
+        const diffMonths = diffTime / (1000 * 60 * 60 * 24 * 30.44);
+        
+        totalMonths += diffMonths;
+        validDurationsCount++;
+      }
+    }
+  });
+
+  // Render Finished Count
+  document.getElementById('stat-finished-count').innerText = finishedSince2023;
+
+  // Render Average Duration
+  const durationEl = document.getElementById('stat-avg-duration');
+  if (validDurationsCount > 0) {
+    const avg = Math.round(totalMonths / validDurationsCount);
+    durationEl.innerText = avg + " Months";
+  } else {
+    durationEl.innerText = "N/A";
+  }
+
+});
 </script>
