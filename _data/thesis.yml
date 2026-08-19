@@ -11,6 +11,8 @@
   student: "Regina Kéri"
   supervisor: "Marcus Otti"
   contact: "otti@eeg.tuwien.ac.at"
+  start_date: "2025-03-05"
+  finish_date: "2026-04-23"
 
 - title: "Cost-Optimized Planning of Carbon Transport Infrastructure"
   type: "Master Thesis"
@@ -101,6 +103,8 @@
   student: "Alexander Ebner"
   supervisor: "Sebastian Zwickl-Bernhard"
   contact: "zwickl@eeg.tuwien.ac.at"
+  start_date: "2024-04-01"
+  finish_date: "2024-12-15"
 
 - title: "A loop flow analysis in the power transmission grid using Power Flow Colouring and Generation Shift Key optimisation"
   type: "Master Thesis"
@@ -108,6 +112,8 @@
   student: "Martin Kröll"
   supervisor: "Sebastian Zwickl-Bernhard"
   contact: "zwickl@eeg.tuwien.ac.at"
+  start_date: "2022-08-01"
+  finish_date: "2024-09-27"
 
 - title: "Optimal Dispatch of an Electrolyzer with Multiple Offtake Locations"
   type: "Master Thesis"
@@ -115,6 +121,8 @@
   student: "Lena Torlutter"
   supervisor: "Sebastian Zwickl-Bernhard"
   contact: "zwickl@eeg.tuwien.ac.at"
+  start_date: "2023-07-01"
+  finish_date: "2024-10-14"
 
 - title: "Two-stage stochastic optimization of district energy systems: a case study from Norway"
   type: "Master Thesis"
@@ -122,6 +130,8 @@
   student: "Felix Bauer"
   supervisor: "Sebastian Zwickl-Bernhard"
   contact: "zwickl@eeg.tuwien.ac.at"
+  start_date: "2024-04-01"
+  finish_date: "2025-03-03"
 
 - title: "Two-stage stochastic optimization of district energy systems: a case study from the United States"
   type: "Master Thesis"
@@ -129,6 +139,8 @@
   student: "Simon Jordan"
   supervisor: "Sebastian Zwickl-Bernhard"
   contact: "zwickl@eeg.tuwien.ac.at"
+  start_date: "2024-06-10"
+  finish_date: "2025-03-03"
 
 - title: "Optimization-based Insights on Renewable Integration in Fossil-Fuel-Powered Microgrids under Market Power Conditions: A Lebanese Case Study"
   type: "Master Thesis"
@@ -136,6 +148,8 @@
   student: "Jakob Svolba"
   supervisor: "Sebastian Zwickl-Bernhard"
   contact: "zwickl@eeg.tuwien.ac.at"
+  start_date: "2024-08-01"
+  finish_date: "2025-03-03"
 
 - title: "Decentralized Energy Systems Optimization and European Wholesale Electricity Prices: Insights from Spain and Norway"
   type: "Master Thesis"
@@ -143,6 +157,8 @@
   student: "Leopold Riedl"
   supervisor: "Sebastian Zwickl-Bernhard"
   contact: "zwickl@eeg.tuwien.ac.at"
+  start_date: "2024-11-01"
+  finish_date: "2025-02-28"
 
 - title: "Optimal Investment and Dispatch of District Heating Technologies with Participation in Electricity Day-Ahead, Intraday, and Balancing Markets"
   type: "Master Thesis"
@@ -150,6 +166,8 @@
   student: "Andreas Zimmer"
   supervisor: "Sebastian Zwickl-Bernhard"
   contact: "zwickl@eeg.tuwien.ac.at"
+  start_date: "2024-07-01"
+  finish_date: "2025-08-26"
 
 - title: "Cost-Optimised CO2 Transport Infrastructure for the Peninsula Island"
   type: "Master Thesis"
@@ -157,6 +175,8 @@
   student: "Pau Fiol Vicens"
   supervisor: "Sebastian Zwickl-Bernhard"
   contact: "zwickl@eeg.tuwien.ac.at"
+  start_date: "2025-02-01"
+  finish_date: "2025-09-12"
 
 - title: "On the cost-optimal allocation of battery storage systems in European electricity networks"
   type: "Master Thesis"
@@ -164,6 +184,8 @@
   student: "Daniel Horvath"
   supervisor: "Sebastian Zwickl-Bernhard"
   contact: "zwickl@eeg.tuwien.ac.at"
+  start_date: "2025-06-01"
+  finish_date: "2026-06-01"
 
 - title: "Stochastic Modeling of the Market Organisation in Low-Income Countries' Microgrids: A Focus on the Public Grid"
   type: "Master Thesis"
@@ -171,6 +193,7 @@
   student: "Hanspeter Bauer"
   supervisor: "Sebastian Zwickl-Bernhard"
   contact: "zwickl@eeg.tuwien.ac.at"
+  start_date: "2025-05-23"
 
 - title: "Quantifying the effect of forecast uncertainty and stochastic planning on the techno-economic performance of virtual power plants"
   type: "Master Thesis"
