@@ -13,6 +13,7 @@
   contact: "otti@eeg.tuwien.ac.at"
   start_date: "2025-03-05"
   finish_date: "2026-04-23"
+  repo_link: "https://repositum.tuwien.at/handle/20.500.12708/229429"
 
 - title: "Cost-Optimized Planning of Carbon Transport Infrastructure"
   type: "Master Thesis"
@@ -105,6 +106,7 @@
   contact: "zwickl@eeg.tuwien.ac.at"
   start_date: "2024-04-01"
   finish_date: "2024-12-15"
+  repo_link: "https://repositum.tuwien.at/handle/20.500.12708/209158"
 
 - title: "A loop flow analysis in the power transmission grid using Power Flow Colouring and Generation Shift Key optimisation"
   type: "Master Thesis"
@@ -114,6 +116,7 @@
   contact: "zwickl@eeg.tuwien.ac.at"
   start_date: "2022-08-01"
   finish_date: "2024-09-27"
+  repo_link: "https://repositum.tuwien.at/handle/20.500.12708/201104"
 
 - title: "Optimal Dispatch of an Electrolyzer with Multiple Offtake Locations"
   type: "Master Thesis"
@@ -123,6 +126,9 @@
   contact: "zwickl@eeg.tuwien.ac.at"
   start_date: "2023-07-01"
   finish_date: "2024-10-14"
+  repo_link: "https://repositum.tuwien.at/handle/20.500.12708/203504"
+
+  
 
 - title: "Two-stage stochastic optimization of district energy systems: a case study from Norway"
   type: "Master Thesis"
@@ -132,6 +138,7 @@
   contact: "zwickl@eeg.tuwien.ac.at"
   start_date: "2024-04-01"
   finish_date: "2025-03-03"
+  repo_link: "https://repositum.tuwien.at/handle/20.500.12708/213796"
 
 - title: "Two-stage stochastic optimization of district energy systems: a case study from the United States"
   type: "Master Thesis"
@@ -141,6 +148,7 @@
   contact: "zwickl@eeg.tuwien.ac.at"
   start_date: "2024-06-10"
   finish_date: "2025-03-03"
+  repo_link: "https://repositum.tuwien.at/handle/20.500.12708/213803"
 
 - title: "Optimization-based Insights on Renewable Integration in Fossil-Fuel-Powered Microgrids under Market Power Conditions: A Lebanese Case Study"
   type: "Master Thesis"
@@ -150,6 +158,7 @@
   contact: "zwickl@eeg.tuwien.ac.at"
   start_date: "2024-08-01"
   finish_date: "2025-03-03"
+  repo_link: "https://repositum.tuwien.at/handle/20.500.12708/213802"
 
 - title: "Decentralized Energy Systems Optimization and European Wholesale Electricity Prices: Insights from Spain and Norway"
   type: "Master Thesis"
@@ -159,6 +168,7 @@
   contact: "zwickl@eeg.tuwien.ac.at"
   start_date: "2024-11-01"
   finish_date: "2025-02-28"
+  repo_link: "https://repositum.tuwien.at/handle/20.500.12708/213850"
 
 - title: "Optimal Investment and Dispatch of District Heating Technologies with Participation in Electricity Day-Ahead, Intraday, and Balancing Markets"
   type: "Master Thesis"
@@ -168,6 +178,7 @@
   contact: "zwickl@eeg.tuwien.ac.at"
   start_date: "2024-07-01"
   finish_date: "2025-08-26"
+  repo_link: "https://repositum.tuwien.at/handle/20.500.12708/219629"
 
 - title: "Cost-Optimised CO2 Transport Infrastructure for the Peninsula Island"
   type: "Master Thesis"
@@ -177,6 +188,7 @@
   contact: "zwickl@eeg.tuwien.ac.at"
   start_date: "2025-02-01"
   finish_date: "2025-09-12"
+
 
 - title: "On the cost-optimal allocation of battery storage systems in European electricity networks"
   type: "Master Thesis"
