@@ -79,47 +79,63 @@ permalink: /tv-display/
       color: #111827;
     }
 
-    /* --- NEW CLEAN STATS DASHBOARD --- */
-    .tv-stats-row {
+    /* --- NEW: STATS CARDS (Copied from Website Layout) --- */
+    .tv-stats-container {
       display: flex;
-      align-items: center;
-      gap: 2.5rem;
+      gap: 1.2rem;
       margin-bottom: 2.5rem;
-      background: #ffffff;
-      padding: 1.2rem 2rem;
-      border-radius: 1.5rem;
-      border: 0.15rem solid #e5e7eb;
-      box-shadow: 0 0.8rem 1.5rem -0.2rem rgba(0,0,0,0.04);
-      width: fit-content;
     }
 
-    .tv-stat-item {
+    .tv-stat-card {
+      flex: 1;
+      background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+      border: 0.12rem solid #bfdbfe;
+      border-radius: 1.2rem;
+      padding: 1.2rem 1.5rem;
       display: flex;
       align-items: center;
       gap: 1.2rem;
+      box-shadow: 0 0.4rem 0.8rem rgba(15, 23, 42, 0.04);
     }
 
-    .tv-stat-divider {
-      width: 0.15rem;
-      height: 3rem;
-      background: #e5e7eb;
+    .tv-stat-icon {
+      width: 4.2rem;
+      height: 4.2rem;
+      background: #2563eb;
+      color: white;
+      border-radius: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
     }
 
-    .tv-stat-number {
-      font-size: 3.2rem;
-      font-weight: 900;
-      color: #1e90ff;
-      line-height: 1;
-      letter-spacing: -0.05rem;
+    .tv-stat-icon svg {
+      width: 2.2rem;
+      height: 2.2rem;
+    }
+
+    .tv-stat-content {
+      display: flex;
+      flex-direction: column;
     }
 
     .tv-stat-label {
-      font-size: 1.05rem;
-      font-weight: 700;
+      margin: 0;
+      font-size: 0.95rem;
       color: #475569;
+      font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.05rem;
       line-height: 1.3;
+    }
+
+    .tv-stat-number {
+      margin: 0.2rem 0 0;
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: #1e3a8a;
+      line-height: 1;
     }
 
     /* --- TEAM SECTION --- */
@@ -373,16 +389,32 @@ permalink: /tv-display/
           <h1 class="main-title">From Minerals to Megawatts.</h1>
           <h2 class="sub-title">Write your thesis with us.</h2>
           
-          <!-- NEW: CLEAN STATS DASHBOARD -->
-          <div class="tv-stats-row">
-            <div class="tv-stat-item">
-              <span class="tv-stat-number" id="tv-stat-count">20+</span>
-              <span class="tv-stat-label">Finished<br>Theses</span>
+          <!-- NEW: STATS CARDS (Matching the website design) -->
+          <div class="tv-stats-container">
+            <div class="tv-stat-card">
+              <div class="tv-stat-icon">
+                <!-- Checkmark Icon -->
+                <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
+                </svg>
+              </div>
+              <div class="tv-stat-content">
+                <span class="tv-stat-label">Finished Theses</span>
+                <span class="tv-stat-number" id="tv-stat-count">-</span>
+              </div>
             </div>
-            <div class="tv-stat-divider"></div>
-            <div class="tv-stat-item">
-              <span class="tv-stat-number" id="tv-stat-duration">-</span>
-              <span class="tv-stat-label">Months Avg.<br>Master Duration</span>
+
+            <div class="tv-stat-card">
+              <div class="tv-stat-icon">
+                <!-- Clock Icon -->
+                <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+              </div>
+              <div class="tv-stat-content">
+                <span class="tv-stat-label">Avg. Master Theses Duration</span>
+                <span class="tv-stat-number" id="tv-stat-duration">-</span>
+              </div>
             </div>
           </div>
 
@@ -485,7 +517,7 @@ permalink: /tv-display/
 
     // Update the DOM with Stats (Displays "20+" if 20 or more)
     document.getElementById('tv-stat-count').innerText = (finishedTotal >= 20) ? "20+" : finishedTotal;
-    document.getElementById('tv-stat-duration').innerText = (validDurationsCount > 0) ? Math.round(totalMonths / validDurationsCount) : "-";
+    document.getElementById('tv-stat-duration').innerText = (validDurationsCount > 0) ? Math.round(totalMonths / validDurationsCount) + " Months" : "-";
 
 
     // --- B. CAROUSEL ANIMATION ---
