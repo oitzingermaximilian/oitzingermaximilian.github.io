@@ -37,6 +37,21 @@
   offer_topics:
     - "Game-Theoretic Modeling Approaches in Energy System Modeling"
 
+- name: "Helen Anais Fischer"
+  role: "Doctoral Researcher"
+  contact: "fischer@eeg.tuwien.ac.at"
+  image: "/assets/images/team/helen.jpg"
+  offer_topics:
+    - "Geopolitical Risk Quantification"
+    - "Cross-Border Dependencies"
+    - "Supply Chain Modeling"
+  open_bachelor:
+    - "Criticality Assessment of Critical Raw Materials in Energy System Models"
+    - "Geopolitical Risk Indicators for Energy System Models: A Comparative Review"
+  open_master:
+    - "Modeling the Cost of Switching Commodity Suppliers"
+    - "Advanced Methods for Quantifying Geopolitical Supply Risk"
+
 - name: "Maximilian Oitzinger"
   role: "Research Assistant"
   contact: "oitzinger@eeg.tuwien.ac.at"
