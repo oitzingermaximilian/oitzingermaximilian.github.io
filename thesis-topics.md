@@ -37,13 +37,14 @@ header:
     flex: 1;
     background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
     border: 1px solid #bfdbfe;
-    border-radius: 16px;
-    padding: 1.5rem 2rem;
+    border-radius: 14px;
+    padding: 1.25rem 1.5rem; /* Reduced padding for less height */
     display: flex;
     align-items: center;
-    gap: 1.5rem;
+    gap: 1.2rem;
     box-shadow: 0 4px 6px rgba(15, 23, 42, 0.03);
     transition: transform 0.2s ease;
+    min-height: 100px; /* Keeps all cards uniformly sized */
   }
   
   .stat-card:hover {
@@ -51,11 +52,11 @@ header:
   }
 
   .stat-icon {
-    width: 55px;
-    height: 55px;
+    width: 50px; /* Slightly reduced */
+    height: 50px; /* Slightly reduced */
     background: #2563eb;
     color: white;
-    border-radius: 14px;
+    border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -68,20 +69,22 @@ header:
   }
 
   .stat-content h4 {
-    margin: 0;
-    font-size: 0.9rem;
+    margin: 0 0 0.3rem 0;
+    font-size: 0.85rem;
     color: #475569;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.05rem;
+    line-height: 1.3;
   }
 
   .stat-content .stat-value {
-    margin: 0.2rem 0 0;
-    font-size: 2.2rem;
+    margin: 0;
+    font-size: 1.75rem; /* Reduced size to fit text */
     font-weight: 800;
     color: #1e3a8a;
     line-height: 1;
+    white-space: nowrap; /* Forces "12 Months" to stay on one row */
   }
   
   @media (max-width: 768px) {
@@ -365,7 +368,7 @@ header:
   <div class="stat-card">
     <div class="stat-icon">
       <!-- Checkmark Icon -->
-      <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+      <svg width="26" height="26" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
       </svg>
     </div>
@@ -379,7 +382,7 @@ header:
   <div class="stat-card">
     <div class="stat-icon">
       <!-- Activity/Sync Icon -->
-      <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+      <svg width="26" height="26" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
       </svg>
     </div>
@@ -392,7 +395,7 @@ header:
   <div class="stat-card">
     <div class="stat-icon">
       <!-- Clock Icon -->
-      <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+      <svg width="26" height="26" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
       </svg>
     </div>
