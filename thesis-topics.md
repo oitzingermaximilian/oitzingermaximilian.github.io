@@ -370,8 +370,22 @@ header:
       </svg>
     </div>
     <div class="stat-content">
-      <h4>Finished Theses (Since 2023)</h4>
-      <p class="stat-value" id="stat-finished-count">-</p>
+      <h4>Finished Theses</h4>
+      <p class="stat-value">20+</p>
+    </div>
+  </div>
+
+  <!-- NEW ONGOING THESES CARD -->
+  <div class="stat-card">
+    <div class="stat-icon">
+      <!-- Activity/Sync Icon -->
+      <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+      </svg>
+    </div>
+    <div class="stat-content">
+      <h4>Ongoing Theses</h4>
+      <p class="stat-value" id="stat-ongoing-count">-</p>
     </div>
   </div>
 
@@ -565,20 +579,15 @@ document.addEventListener("DOMContentLoaded", function() {
     {% endfor %}
   ];
 
-  let finishedSince2023 = 0;
+  let ongoingCount = 0;
   let totalMonths = 0;
   let validDurationsCount = 0;
 
   thesesData.forEach(function(t) {
     
-    // 1. Count finished theses since 2023
-    if (t.status === 'finished') {
-      if (t.finish_date) {
-        const fYear = new Date(t.finish_date).getFullYear();
-        if (fYear >= 2023) finishedSince2023++;
-      } else {
-        finishedSince2023++;
-      }
+    // 1. Count ongoing theses
+    if (t.status === 'ongoing') {
+      ongoingCount++;
     }
 
     // 2. Calculate average Master Thesis duration
@@ -596,8 +605,8 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   });
 
-  // Render Finished Count
-  document.getElementById('stat-finished-count').innerText = finishedSince2023;
+  // Render Ongoing Count
+  document.getElementById('stat-ongoing-count').innerText = ongoingCount;
 
   // Render Average Duration
   const durationEl = document.getElementById('stat-avg-duration');
