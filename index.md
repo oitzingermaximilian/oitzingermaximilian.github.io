@@ -185,7 +185,7 @@ permalink: /
 <section class="home-intro">
   <h2>From Minerals to Megawatts</h2>
   <p>
-    Embedded within the Faculty of Electrical Engineering at TU Wien, and affiliated with the Department of Net-Zero Energy Systems, the research group ES3M emerged from initial discussions on energy system modelling spanning “minerals to megawatts” at the Young Energy Economists and Engineers Seminar in 2023. Since then, ES3M has established itself at the intersection of energy systems and material supply chains, applying methodologies from operations research and advanced energy system modelling.
+    Embedded within the Faculty of Electrical Engineering at TU Wien, and affiliated with the Institute of Net-Zero Energy Systems, the research group ES3M emerged from initial discussions on energy system modelling spanning “minerals to megawatts” at the Young Energy Economists and Engineers Seminar in 2023. Since then, ES3M has established itself at the intersection of energy systems and material supply chains, applying methodologies from operations research and advanced energy system modelling.
   </p>
 </section>
 
