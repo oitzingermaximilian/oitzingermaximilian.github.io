@@ -1,7 +1,7 @@
 - id: sebastian
   name: "Sebastian Zwickl-Bernhard"
   role: "Group Lead"
-  bio: "Sebastian Zwickl-Bernhard is a Postdoctoral Researcher in the Energy Economics Group at the Institute of Energy Systems and Electrical Drives at the Technische Universität Wien (TU Wien), where he heads the Energy System Modeling team 'From Minerals to Megawatts' (ES3M). His PhD research focused on the role of natural gas networks in the energy transition, particularly their decommissioning and repurposing for hydrogen and biomethane transport. Currently, his research - together with his team - centers on cross-sectoral modeling of clean-tech supply chains, the analysis of transformation pathways for energy-intensive industries, and market dynamics of LNG and critical raw materials. Since 2022, Sebastian has been an Adjunct Researcher in the Department of Industrial Economics and Technology Management (IØT) at the Norwegian University of Science and Technology (NTNU). He holds a B.Sc. and M.Sc. in Electrical Engineering from TU Wien."
+  bio: "Sebastian Zwickl-Bernhard is a Postdoctoral Researcher in the Energy System Economics Lab at the Institute of Net-Zero Energy Systems at the Technische Universität Wien (TU Wien), where he heads the Energy System Modeling team 'From Minerals to Megawatts' (ES3M). His PhD research focused on the role of natural gas networks in the energy transition, particularly their decommissioning and repurposing for hydrogen and biomethane transport. Currently, his research - together with his team - centers on cross-sectoral modeling of clean-tech supply chains, the analysis of transformation pathways for energy-intensive industries, and market dynamics of LNG and critical raw materials. Since 2022, Sebastian has been an Adjunct Researcher in the Department of Industrial Economics and Technology Management (IØT) at the Norwegian University of Science and Technology (NTNU). He holds a B.Sc. and M.Sc. in Electrical Engineering from TU Wien."
   image: "/assets/images/team/sebastian.jpg"
   email: "zwickl@eeg.tuwien.ac.at"
   social_links:
@@ -22,7 +22,7 @@
 - id: daniel
   name: "Daniel Cäsar"
   role: "Doctoral Researcher"
-  bio: "Daniel is a research associate and PhD candidate at the Energy Economics Group (EEG) since December 2025. His work focuses on the analysis of dual prices in large-scale energy system optimization and on concepts for energy-token-based communities. Daniel also brings prior professional and academic experience in the development of hydrogen markets and infrastructures, as well as in conducting parametric life cycle assessments. He holds a B.Sc. and M.Sc. in Business Administration and Engineering (Mechanical Engineering) from RWTH Aachen University."
+  bio: "Daniel is a research associate and PhD candidate in the Energy System Economics Lab since December 2025. His work focuses on the analysis of dual prices in large-scale energy system optimization and on concepts for energy-token-based communities. Daniel also brings prior professional and academic experience in the development of hydrogen markets and infrastructures, as well as in conducting parametric life cycle assessments. He holds a B.Sc. and M.Sc. in Business Administration and Engineering (Mechanical Engineering) from RWTH Aachen University."
   image: "/assets/images/team/daniel.JPEG"
   email: "caesar@eeg.tuwien.ac.at"
   social_links:
@@ -42,7 +42,7 @@
 - id: alexander
   name: "Alexander Csekö"
   role: "Research Assistant"
-  bio: "Alexander is a student research assistant at the Energy Economics Group (EEG) and a master’s student in Power Engineering and Sustainable Energy Systems at TU Wien. His work is part of the energy system modelling team, where he focuses on equilibrium and complementarity-based modelling approaches. Alexander is currently working on modelling the global solar PV module supply chain."
+  bio: "Alexander is a student research assistant in the Energy System Economics Lab and a master’s student in Power Engineering and Sustainable Energy Systems at TU Wien. His work is part of the energy system modelling team, where he focuses on equilibrium and complementarity-based modelling approaches. Alexander is currently working on modelling the global solar PV module supply chain."
   image: "/assets/images/team/alexander.jpg"
   object_position: "top"
   email: "csekoe@eeg.tuwien.ac.at"
@@ -63,7 +63,7 @@
 - id: helen
   name: "Helen Anais Fischer"
   role: "Doctoral Researcher"
-  bio: "Helen joined the Energy Economics Group (EEG) as a research associate and PhD candidate in November 2023. As part of her doctoral studies, she researches energy security in a decarbonised European energy system, while building expertise in energy system modeling. She focuses on evolving supply risks across commodities ranging from fossil fuels to critical raw materials for clean energy technologies."
+  bio: "Helen joined the Energy System Economics Lab as a research associate and PhD candidate in November 2023. As part of her doctoral studies, she researches energy security in a decarbonised European energy system, while building expertise in energy system modeling. She focuses on evolving supply risks across commodities ranging from fossil fuels to critical raw materials for clean energy technologies."
   image: "/assets/images/team/helen.jpg"
   email: "fischer@eeg.tuwien.ac.at"
   social_links:
@@ -83,7 +83,7 @@
 - id: maximilian
   name: "Maximilian Oitzinger"
   role: "Research Assistant"
-  bio: "Maximilian is a research assistant in the Energy Economics Group at the Institute of Energy Systems and Electrical Drives at the Technische Universität Wien (TU Wien) since March 2025. His work focuses on large-scale energy system modeling with a focus on technology sourcing and raw materials. Maximilian is currently pursuing a Master's degree in Electrical Power Engineering and Sustainable Energy Systems at TU Wien, where he also completed his B.Sc. in Environmental Engineering."
+  bio: "Maximilian is a research assistant in the Energy System Economics Lab at the Institute of Net-Zero Energy Systems at the Technische Universität Wien (TU Wien) since March 2025. His work focuses on large-scale energy system modeling with a focus on technology sourcing and raw materials. Maximilian is currently pursuing a Master's degree in Electrical Power Engineering and Sustainable Energy Systems at TU Wien, where he also completed his B.Sc. in Environmental Engineering."
   image: "/assets/images/team/maximilian.jpg"
   email: "oitzinger@eeg.tuwien.ac.at"
   social_links:
@@ -103,7 +103,7 @@
 - id: marcus
   name: "Marcus Otti"
   role: "Doctoral Researcher"
-  bio: "Marcus is a Doctoral Researcher in the Energy Economics Group at the Institute of Energy Systems and Electrical Drives at the Technische Universität Wien (TU Wien), where he is part of the Energy System Modeling team 'From Minerals to Megawatts' (ES3M).His PhD research focuses on the transformation of energy-intensive industries, with a particular emphasis on the European steel sector and the energy and material requirements for its decarbonization.He holds a B.Sc. in Electrical Engineering from TU Graz and M.Sc. in Electrical Engineering from TU Wien."
+  bio: "Marcus is a Doctoral Researcher in the Energy System Economics Lab at the Institute of Net-Zero Energy Systems at the Technische Universität Wien (TU Wien), where he is part of the Energy System Modeling team 'From Minerals to Megawatts' (ES3M).His PhD research focuses on the transformation of energy-intensive industries, with a particular emphasis on the European steel sector and the energy and material requirements for its decarbonization.He holds a B.Sc. in Electrical Engineering from TU Graz and M.Sc. in Electrical Engineering from TU Wien."
   image: "/assets/images/team/marcus.jpg"
   object_position: "center 10%"
   email: "otti@eeg.tuwien.ac.at"
@@ -124,7 +124,7 @@
 - id: mona
   name: "Mona Marie Wurz"
   role: "Research Assistant"
-  bio: "Mona is a student research assistant at the Energy Economics Group (EEG) and a master's student in Physical Energy Engineering at TU Wien. As part of her thesis, she investigates a potential fuel bottleneck in nuclear fusion technology using optimization models, examining its economic, ecological, and supply-risk implications. She holds a B.Sc. in Energy and Process Engineering from TU Berlin and a second B.Sc. in Environmental System Science from TU Graz."
+  bio: "Mona is a student research assistant in the Energy System Economics Lab and a master's student in Physical Energy Engineering at TU Wien. As part of her thesis, she investigates a potential fuel bottleneck in nuclear fusion technology using optimization models, examining its economic, ecological, and supply-risk implications. She holds a B.Sc. in Energy and Process Engineering from TU Berlin and a second B.Sc. in Environmental System Science from TU Graz."
   image: "/assets/images/team/mona.jpg"
   object_position: "top"
   email: "wurz@eeg.tuwien.ac.at"
