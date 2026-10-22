@@ -38,13 +38,15 @@ header:
     box-shadow: 0 4px 12px rgba(0,0,0,0.08);
   }
 
+  /* DARK THEME FOR ONGOING */
   .accordion-header.ongoing {
-    background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%);
-    border: 1px solid #7dd3fc;
+    background: #1e293b; 
+    border: 1px solid #334155;
   }
+  /* DARK THEME FOR FINISHED */
   .accordion-header.finished {
-    background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%);
-    border: 1px solid #86efac;
+    background: #0f172a; 
+    border: 1px solid #1e293b;
   }
 
   .accordion-label {
@@ -54,21 +56,22 @@ header:
     font-size: 1.2rem;
     font-weight: 700;
   }
-  .accordion-header.ongoing .accordion-label { color: #0369a1; }
-  .accordion-header.finished .accordion-label { color: #166534; }
+  
+  /* Make text white for dark backgrounds */
+  .accordion-header.ongoing .accordion-label,
+  .accordion-header.finished .accordion-label { color: #f8fafc; }
 
   .accordion-count {
     font-size: 0.85rem;
     font-weight: 500;
-    opacity: 0.7;
+    color: #94a3b8; /* Muted gray for the numbers */
   }
 
   .accordion-icon {
     font-size: 1.2rem;
     transition: transform 0.3s ease;
+    color: #f8fafc;
   }
-  .accordion-header.ongoing .accordion-icon { color: #0369a1; }
-  .accordion-header.finished .accordion-icon { color: #166534; }
 
   .accordion-section.collapsed .accordion-icon {
     transform: rotate(-90deg);
@@ -209,16 +212,18 @@ header:
   .repo-btn { margin-top: 0.5rem; color: #1e90ff; }
 </style>
 
-<!-- ═══ Ongoing Theses (expanded by default) ═══ -->
+<!-- ═══ Variables ═══ -->
 {% assign ongoing_topics = site.data.thesis | where: "status", "ongoing" %}
 {% assign finished_topics = site.data.thesis | where: "status", "finished" %}
 
+<!-- ═══ Ongoing Theses (expanded by default) ═══ -->
 <div class="accordion-section" id="ongoing-section">
   <div class="accordion-header ongoing" onclick="toggleAccordion('ongoing-section')">
     <div class="accordion-label">
       <span class="status-dot ongoing" style="width:12px;height:12px;"></span>
       Ongoing Theses
-      <span class="accordion-count">({{ ongoing_topics.size }})</span>
+      <!-- Notice the "| size" filter change here -->
+      <span class="accordion-count">({{ ongoing_topics | size }})</span>
     </div>
     <span class="accordion-icon">▼</span>
   </div>
@@ -255,7 +260,8 @@ header:
     <div class="accordion-label">
       <span class="status-dot finished" style="width:12px;height:12px;"></span>
       Finished Theses
-      <span class="accordion-count">({{ finished_topics.size }})</span>
+      <!-- Notice the "| size" filter change here -->
+      <span class="accordion-count">({{ finished_topics | size }})</span>
     </div>
     <span class="accordion-icon">▼</span>
   </div>
