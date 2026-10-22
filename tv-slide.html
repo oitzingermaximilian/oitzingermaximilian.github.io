@@ -21,18 +21,18 @@ permalink: /tv-display/
     .content-section { display: flex; align-items: stretch; justify-content: space-between; gap: 2rem; }
 
     /* --- LEFT COLUMN: TEXT, STATS, TEAM & KEYWORDS --- */
-    /* Max-width restored to 46% to give the cards room */
     .text-content { flex: 1; max-width: 46%; display: flex; flex-direction: column; justify-content: center; }
     .main-title { font-size: 3.8rem; line-height: 1.1; margin: 0 0 0.5rem 0; font-weight: 800; color: #1e90ff; white-space: nowrap; }
     .sub-title { font-size: 2.6rem; line-height: 1.2; margin: 0 0 2rem 0; font-weight: 700; color: #111827; }
 
-    .tv-stats-container { display: flex; gap: 1rem; margin-bottom: 2.5rem; width: 100%; }
-    .tv-stat-card { flex: 1; background: #ffffff; border: 0.12rem solid #e5e7eb; border-left: 0.55rem solid #1e90ff; border-radius: 1.2rem; padding: 0.9rem 1.4rem; display: flex; align-items: center; gap: 1rem; box-shadow: 0 0.5rem 1rem -0.2rem rgba(0, 0, 0, 0.07); }
-    .tv-stat-icon { width: 3.6rem; height: 3.6rem; background: #f1f5f9; color: #2563eb; border-radius: 0.9rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-    .tv-stat-icon svg { width: 1.9rem; height: 1.9rem; }
-    .tv-stat-content { display: flex; flex-direction: column; }
-    .tv-stat-label { margin: 0; font-size: 0.95rem; color: #64748b; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05rem; line-height: 1.3; }
-    .tv-stat-number { margin: 0.15rem 0 0; font-size: 2rem; font-weight: 800; color: #0f172a; line-height: 1; }
+    /* --- SHORTER, STRETCHED STATS BOXES --- */
+    .tv-stats-container { display: flex; gap: 0.8rem; margin-bottom: 2.5rem; width: 100%; }
+    .tv-stat-card { flex: 1; background: #ffffff; border: 0.12rem solid #e5e7eb; border-left: 0.55rem solid #1e90ff; border-radius: 1rem; padding: 0.6rem 0.9rem; display: flex; align-items: center; gap: 0.8rem; box-shadow: 0 0.5rem 1rem -0.2rem rgba(0, 0, 0, 0.07); }
+    .tv-stat-icon { width: 2.8rem; height: 2.8rem; background: #f1f5f9; color: #2563eb; border-radius: 0.7rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .tv-stat-icon svg { width: 1.5rem; height: 1.5rem; }
+    .tv-stat-content { display: flex; flex-direction: column; justify-content: center; }
+    .tv-stat-label { margin: 0; font-size: 0.8rem; color: #64748b; font-weight: 700; text-transform: uppercase; letter-spacing: 0.02rem; line-height: 1.2; }
+    .tv-stat-number { margin: 0; font-size: 1.65rem; font-weight: 800; color: #0f172a; line-height: 1.1; }
 
     .team-section { display: flex; flex-direction: column; gap: 1.2rem; margin-bottom: 1.5rem; }
     .team-title { font-size: 1.4rem; color: #666; margin: 0; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1rem; }
@@ -63,7 +63,6 @@ permalink: /tv-display/
     .t-status.ongoing { background: #eff6ff; color: #2563eb; border: 1px solid #bfdbfe; }
     .t-status.finished { background: #f0fdf4; color: #16a34a; border: 1px solid #bbf7d0; }
 
-    /* FONT SIZE DECREASED TO 1.2rem HERE */
     .t-title { font-size: 1.2rem; font-weight: 700; color: #0f172a; margin: 0 0 1.2rem 0; line-height: 1.35; }
     
     .t-meta-group { margin-top: auto; display: flex; flex-direction: column; gap: 0.4rem; }
