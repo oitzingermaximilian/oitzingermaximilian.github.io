@@ -374,7 +374,7 @@ header:
     </div>
     <div class="stat-content">
       <h4>Finished Theses</h4>
-      <p class="stat-value">20+</p>
+      <p class="stat-value" id="stat-finished-count">-</p>
     </div>
   </div>
 
@@ -583,17 +583,24 @@ document.addEventListener("DOMContentLoaded", function() {
   ];
 
   let ongoingCount = 0;
+  let finishedCount = 0;
   let totalMonths = 0;
   let validDurationsCount = 0;
 
   thesesData.forEach(function(t) {
+    const cleanStatus = (t.status || "").toString().trim().toLowerCase();
     
     // 1. Count ongoing theses
-    if (t.status === 'ongoing') {
+    if (cleanStatus === 'ongoing') {
       ongoingCount++;
     }
 
-    // 2. Calculate average Master Thesis duration
+    // 2. Count finished theses
+    if (cleanStatus === 'finished') {
+      finishedCount++;
+    }
+
+    // 3. Calculate average Master Thesis duration
     if (t.type === 'Master Thesis' && t.start_date && t.finish_date) {
       const start = new Date(t.start_date);
       const end = new Date(t.finish_date);
@@ -607,6 +614,9 @@ document.addEventListener("DOMContentLoaded", function() {
       }
     }
   });
+
+  // Render Finished Count
+  document.getElementById('stat-finished-count').innerText = finishedCount;
 
   // Render Ongoing Count
   document.getElementById('stat-ongoing-count').innerText = ongoingCount;
