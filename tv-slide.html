@@ -548,7 +548,8 @@ permalink: /tv-display/
     });
 
     // Update the DOM with Stats
-    document.getElementById('tv-stat-count').innerText = (finishedTotal >= 20) ? "20+" : finishedTotal;
+    // Update the DOM with exact Stats
+    document.getElementById('tv-stat-count').innerText = finishedTotal;
     document.getElementById('tv-stat-duration').innerText = (validDurationsCount > 0) ? Math.round(totalMonths / validDurationsCount) + " Months" : "-";
 
 
