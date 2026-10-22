@@ -102,17 +102,17 @@ header:
     transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Drückt den Footer immer ganz nach unten */
+    justify-content: space-between;
   }
 
   /* Hover Border Colors */
   .thesis-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-    border-color: #1e90ff; /* Default Blue */
+    border-color: #1e90ff; 
   }
   .thesis-card.finished:hover {
-    border-color: #28a745; /* Green for finished */
+    border-color: #28a745; 
   }
 
   .thesis-type {
@@ -167,7 +167,7 @@ header:
     font-size: 0.95rem;
     line-height: 1.6;
     margin-bottom: 1.5rem;
-    flex-grow: 1; /* Lässt die Beschreibung den verfügbaren Platz ausfüllen */
+    flex-grow: 1; 
   }
 
   .thesis-footer {
@@ -176,7 +176,6 @@ header:
     font-size: 0.9rem;
   }
 
-  /* Korrigiertes Supervisor Styling für lange und mehrere Namen */
   .supervisor-label {
     font-weight: 600;
     color: #4b5563;
@@ -189,7 +188,7 @@ header:
     font-weight: 500;
     display: inline-block; 
     line-height: 1.4;
-    word-wrap: break-word; /* Bricht den Text um, wenn er zu lang wird */
+    word-wrap: break-word; 
   }
   
   .thesis-card.finished .supervisor-name {
@@ -197,13 +196,17 @@ header:
   }
   
   .contact-btn {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
     margin-top: 1rem;
     text-decoration: none;
     color: #666;
     font-size: 0.85rem;
   }
   .contact-btn:hover { text-decoration: underline; color: #1e90ff; }
+  
+  .repo-btn { margin-top: 0.5rem; color: #1e90ff; }
 </style>
 
 <!-- ═══ Ongoing Theses (expanded by default) ═══ -->
@@ -276,6 +279,13 @@ header:
           <a href="mailto:{{ topic.contact }}" class="contact-btn">
             <i class="fas fa-envelope"></i> Contact Supervisor
           </a>
+          <!-- Dynamically display Repositum link if it exists -->
+          {% if topic.repo_link %}
+          <br>
+          <a href="{{ topic.repo_link }}" target="_blank" class="contact-btn repo-btn">
+            <i class="fas fa-external-link-alt"></i> View in Repositum
+          </a>
+          {% endif %}
         </div>
       </div>
       {% endfor %}
