@@ -64,7 +64,7 @@ header:
   .accordion-count {
     font-size: 0.85rem;
     font-weight: 500;
-    color: #94a3b8; /* Muted gray for the numbers */
+    color: #94a3b8;
   }
 
   .accordion-icon {
@@ -108,7 +108,6 @@ header:
     justify-content: space-between;
   }
 
-  /* Hover Border Colors */
   .thesis-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
@@ -151,7 +150,6 @@ header:
     display: inline-block;
   }
 
-  /* Status Colors */
   .status-dot.ongoing { background-color: #007bff; }
   .thesis-status.ongoing { color: #007bff; }
 
@@ -212,9 +210,18 @@ header:
   .repo-btn { margin-top: 0.5rem; color: #1e90ff; }
 </style>
 
-<!-- ═══ Variables ═══ -->
-{% assign ongoing_topics = site.data.thesis | where: "status", "ongoing" %}
-{% assign finished_topics = site.data.thesis | where: "status", "finished" %}
+<!-- Clean the data and count manually to ignore typos/spaces -->
+{% assign ongoing_count = 0 %}
+{% assign finished_count = 0 %}
+
+{% for topic in site.data.thesis %}
+  {% assign clean_status = topic.status | downcase | strip %}
+  {% if clean_status == 'ongoing' %}
+    {% assign ongoing_count = ongoing_count | plus: 1 %}
+  {% elsif clean_status == 'finished' %}
+    {% assign finished_count = finished_count | plus: 1 %}
+  {% endif %}
+{% endfor %}
 
 <!-- ═══ Ongoing Theses (expanded by default) ═══ -->
 <div class="accordion-section" id="ongoing-section">
@@ -222,14 +229,15 @@ header:
     <div class="accordion-label">
       <span class="status-dot ongoing" style="width:12px;height:12px;"></span>
       Ongoing Theses
-      <!-- Notice the "| size" filter change here -->
-      <span class="accordion-count">({{ ongoing_topics | size }})</span>
+      <span class="accordion-count">({{ ongoing_count }})</span>
     </div>
     <span class="accordion-icon">▼</span>
   </div>
   <div class="accordion-body">
     <div class="thesis-grid">
-      {% for topic in ongoing_topics %}
+      {% for topic in site.data.thesis %}
+      {% assign clean_status = topic.status | downcase | strip %}
+      {% if clean_status == 'ongoing' %}
       <div class="thesis-card ongoing">
         <div class="thesis-header">
           <span class="thesis-type">{{ topic.type }}</span>
@@ -249,6 +257,7 @@ header:
           </a>
         </div>
       </div>
+      {% endif %}
       {% endfor %}
     </div>
   </div>
@@ -260,14 +269,15 @@ header:
     <div class="accordion-label">
       <span class="status-dot finished" style="width:12px;height:12px;"></span>
       Finished Theses
-      <!-- Notice the "| size" filter change here -->
-      <span class="accordion-count">({{ finished_topics | size }})</span>
+      <span class="accordion-count">({{ finished_count }})</span>
     </div>
     <span class="accordion-icon">▼</span>
   </div>
   <div class="accordion-body">
     <div class="thesis-grid">
-      {% for topic in finished_topics %}
+      {% for topic in site.data.thesis %}
+      {% assign clean_status = topic.status | downcase | strip %}
+      {% if clean_status == 'finished' %}
       <div class="thesis-card finished">
         <div class="thesis-header">
           <span class="thesis-type">{{ topic.type }}</span>
@@ -294,6 +304,7 @@ header:
           {% endif %}
         </div>
       </div>
+      {% endif %}
       {% endfor %}
     </div>
   </div>
