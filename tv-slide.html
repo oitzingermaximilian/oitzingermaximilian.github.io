@@ -5,301 +5,300 @@ permalink: /tv-display/
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ES3M - Thesis Topics</title>
-  <style>
-    /* MAGIC SCALING */
-    html { font-size: 0.85vw; }
-    * { box-sizing: border-box; }
-    body { margin: 0; padding: 0; width: 100%; height: 100%; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background: #f8fafc; color: #333; }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ES3M - Thesis Topics</title>
+  <style>
+    /* MAGIC SCALING */
+    html { font-size: 0.85vw; }
+    * { box-sizing: border-box; }
+    body { margin: 0; padding: 0; width: 100%; height: 100%; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background: #f8fafc; color: #333; }
 
-    .tv-wrapper { display: flex; align-items: center; justify-content: center; min-height: 100vh; padding: 2rem; }
-    .slide-container { width: 92vw; background: #ffffff; border: 0.1rem solid #e5e7eb; border-radius: 2rem; padding: 3.5rem 4rem; box-shadow: 0 1.5rem 3rem -0.5rem rgba(0, 0, 0, 0.08); display: flex; flex-direction: column; }
-    
-    /* Removed gaps so we can control alignment perfectly */
-    .content-section { display: flex; align-items: stretch; justify-content: space-between; }
+    .tv-wrapper { display: flex; align-items: center; justify-content: center; min-height: 100vh; padding: 2rem; }
+    .slide-container { width: 92vw; background: #ffffff; border: 0.1rem solid #e5e7eb; border-radius: 2rem; padding: 3.5rem 4rem; box-shadow: 0 1.5rem 3rem -0.5rem rgba(0, 0, 0, 0.08); display: flex; flex-direction: column; }
+    
+    /* GAP RESTORED to guarantee they NEVER overlap */
+    .content-section { display: flex; align-items: stretch; justify-content: space-between; gap: 2rem; }
 
-    /* --- LEFT COLUMN: TEXT, STATS, TEAM & KEYWORDS --- */
-    .text-content { width: 48%; display: flex; flex-direction: column; justify-content: center; }
-    .main-title { font-size: 3.8rem; line-height: 1.1; margin: 0 0 0.5rem 0; font-weight: 800; color: #1e90ff; white-space: nowrap; }
-    .sub-title { font-size: 2.6rem; line-height: 1.2; margin: 0 0 2rem 0; font-weight: 700; color: #111827; }
+    /* --- LEFT COLUMN: TEXT, STATS, TEAM & KEYWORDS --- */
+    /* Max-width restored to 46% to give the cards room */
+    .text-content { flex: 1; max-width: 46%; display: flex; flex-direction: column; justify-content: center; }
+    .main-title { font-size: 3.8rem; line-height: 1.1; margin: 0 0 0.5rem 0; font-weight: 800; color: #1e90ff; white-space: nowrap; }
+    .sub-title { font-size: 2.6rem; line-height: 1.2; margin: 0 0 2rem 0; font-weight: 700; color: #111827; }
 
-    /* Adjusted Stats Boxes (Shorter, Stretched text) */
-    .tv-stats-container { display: flex; gap: 0.8rem; margin-bottom: 2.5rem; width: 100%; }
-    .tv-stat-card { flex: 1; background: #ffffff; border: 0.12rem solid #e5e7eb; border-left: 0.55rem solid #1e90ff; border-radius: 1rem; padding: 0.6rem 0.9rem; display: flex; align-items: center; gap: 0.8rem; box-shadow: 0 0.5rem 1rem -0.2rem rgba(0, 0, 0, 0.07); }
-    .tv-stat-icon { width: 2.8rem; height: 2.8rem; background: #f1f5f9; color: #2563eb; border-radius: 0.7rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-    .tv-stat-icon svg { width: 1.5rem; height: 1.5rem; }
-    .tv-stat-content { display: flex; flex-direction: column; justify-content: center; }
-    .tv-stat-label { margin: 0; font-size: 0.8rem; color: #64748b; font-weight: 700; text-transform: uppercase; letter-spacing: 0.02rem; line-height: 1.2; }
-    .tv-stat-number { margin: 0; font-size: 1.65rem; font-weight: 800; color: #0f172a; line-height: 1.1; }
+    .tv-stats-container { display: flex; gap: 1rem; margin-bottom: 2.5rem; width: 100%; }
+    .tv-stat-card { flex: 1; background: #ffffff; border: 0.12rem solid #e5e7eb; border-left: 0.55rem solid #1e90ff; border-radius: 1.2rem; padding: 0.9rem 1.4rem; display: flex; align-items: center; gap: 1rem; box-shadow: 0 0.5rem 1rem -0.2rem rgba(0, 0, 0, 0.07); }
+    .tv-stat-icon { width: 3.6rem; height: 3.6rem; background: #f1f5f9; color: #2563eb; border-radius: 0.9rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .tv-stat-icon svg { width: 1.9rem; height: 1.9rem; }
+    .tv-stat-content { display: flex; flex-direction: column; }
+    .tv-stat-label { margin: 0; font-size: 0.95rem; color: #64748b; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05rem; line-height: 1.3; }
+    .tv-stat-number { margin: 0.15rem 0 0; font-size: 2rem; font-weight: 800; color: #0f172a; line-height: 1; }
 
-    .team-section { display: flex; flex-direction: column; gap: 1.2rem; margin-bottom: 1.5rem; }
-    .team-title { font-size: 1.4rem; color: #666; margin: 0; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1rem; }
-    .avatar-group { display: flex; align-items: center; }
-    .avatar { width: 6.5rem; height: 6.5rem; border-radius: 50%; object-fit: cover; border: 0.4rem solid #ffffff; box-shadow: 0 0.25rem 0.6rem rgba(0, 0, 0, 0.1); margin-left: -1.5rem; background: #f0f0f0; }
-    .avatar:first-child { margin-left: 0; }
+    .team-section { display: flex; flex-direction: column; gap: 1.2rem; margin-bottom: 1.5rem; }
+    .team-title { font-size: 1.4rem; color: #666; margin: 0; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1rem; }
+    .avatar-group { display: flex; align-items: center; }
+    .avatar { width: 6.5rem; height: 6.5rem; border-radius: 50%; object-fit: cover; border: 0.4rem solid #ffffff; box-shadow: 0 0.25rem 0.6rem rgba(0, 0, 0, 0.1); margin-left: -1.5rem; background: #f0f0f0; }
+    .avatar:first-child { margin-left: 0; }
 
-    .topics-cloud { display: flex; flex-wrap: wrap; gap: 0.6rem; max-width: 95%; }
-    .topic-tag { display: inline-block; padding: 0.5rem 1rem; border-radius: 50rem; font-size: 1.1rem; font-weight: 600; border: 0.1rem solid #dbeafe; background: #eff6ff; color: #1e3a8a; }
-    .topic-tag.more-tag { background: #f8fafc; border: 0.1rem dashed #94a3b8; color: #64748b; }
+    .topics-cloud { display: flex; flex-wrap: wrap; gap: 0.6rem; max-width: 95%; }
+    .topic-tag { display: inline-block; padding: 0.5rem 1rem; border-radius: 50rem; font-size: 1.1rem; font-weight: 600; border: 0.1rem solid #dbeafe; background: #eff6ff; color: #1e3a8a; }
+    .topic-tag.more-tag { background: #f8fafc; border: 0.1rem dashed #94a3b8; color: #64748b; }
 
-    /* --- MIDDLE COLUMN: THESIS SHOWCASE --- */
-    /* Positioned left (margin-right: auto pushes column 3 away), Bottom anchored */
-    .showcase-column { width: 26rem; display: flex; flex-direction: column; justify-content: flex-end; flex-shrink: 0; margin-left: 2rem; margin-right: auto; }
-    .showcase-label { font-size: 1.3rem; font-weight: 700; color: #1e90ff; text-transform: uppercase; letter-spacing: 0.1rem; margin-bottom: 1.5rem; margin-top: 0; display: flex; align-items: center; gap: 0.6rem; }
-    .showcase-label::before { content: ''; display: block; width: 0.9rem; height: 0.9rem; background-color: #ef4444; border-radius: 50%; animation: blink 2s infinite; }
-    
-    /* Locked to exactly 21rem height to match QR Box */
-    .card-stack { position: relative; width: 100%; height: 21rem; }
-    .fake-card-1, .fake-card-2 { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: #ffffff; border: 0.15rem solid #e5e7eb; border-left: 0.6rem solid #93c5fd; border-radius: 1.2rem; box-shadow: 0 0.5rem 1rem -0.2rem rgba(0,0,0,0.05); }
-    .fake-card-1 { transform: translate(0.8rem, -0.8rem); z-index: 1; background: #f8fafc; }
-    .fake-card-2 { transform: translate(0.4rem, -0.4rem); z-index: 2; background: #f1f5f9; }
-    .showcase-card { position: relative; z-index: 3; background: #ffffff; border: 0.15rem solid #e5e7eb; border-left: 0.6rem solid #1e90ff; border-radius: 1.2rem; padding: 2rem 1.5rem; box-shadow: 0 1rem 2rem -0.5rem rgba(0,0,0,0.1); height: 100%; display: flex; flex-direction: column; transition: transform 0.6s cubic-bezier(0.4, 0.0, 0.2, 1), opacity 0.6s ease-out; }
-    
-    .card-header-row { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem; }
-    .t-type { display: inline-block; background: #f1f5f9; color: #475569; padding: 0.3rem 1rem; border-radius: 50rem; font-size: 0.9rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05rem; }
-    
-    .t-status { font-size: 0.75rem; font-weight: 800; text-transform: uppercase; padding: 0.3rem 0.8rem; border-radius: 50rem; }
-    .t-status.ongoing { background: #eff6ff; color: #2563eb; border: 1px solid #bfdbfe; }
-    .t-status.finished { background: #f0fdf4; color: #16a34a; border: 1px solid #bbf7d0; }
+    /* --- MIDDLE COLUMN: THESIS SHOWCASE --- */
+    /* margin-right: auto pulls it tightly to the left to prevent overlap */
+    .showcase-column { width: 25.5rem; display: flex; flex-direction: column; justify-content: flex-end; flex-shrink: 0; padding-top: 15.4rem; margin-right: auto; }
+    .showcase-label { font-size: 1.3rem; font-weight: 700; color: #1e90ff; text-transform: uppercase; letter-spacing: 0.1rem; margin-bottom: 1.5rem; margin-top: 0; display: flex; align-items: center; gap: 0.6rem; }
+    .showcase-label::before { content: ''; display: block; width: 0.9rem; height: 0.9rem; background-color: #ef4444; border-radius: 50%; animation: blink 2s infinite; }
+    
+    .card-stack { position: relative; width: 100%; height: 21rem; }
+    .fake-card-1, .fake-card-2 { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: #ffffff; border: 0.15rem solid #e5e7eb; border-left: 0.6rem solid #93c5fd; border-radius: 1.2rem; box-shadow: 0 0.5rem 1rem -0.2rem rgba(0,0,0,0.05); }
+    .fake-card-1 { transform: translate(0.8rem, -0.8rem); z-index: 1; background: #f8fafc; }
+    .fake-card-2 { transform: translate(0.4rem, -0.4rem); z-index: 2; background: #f1f5f9; }
+    .showcase-card { position: relative; z-index: 3; background: #ffffff; border: 0.15rem solid #e5e7eb; border-left: 0.6rem solid #1e90ff; border-radius: 1.2rem; padding: 2rem 1.5rem; box-shadow: 0 1rem 2rem -0.5rem rgba(0,0,0,0.1); height: 100%; display: flex; flex-direction: column; transition: transform 0.6s cubic-bezier(0.4, 0.0, 0.2, 1), opacity 0.6s ease-out; }
+    
+    .card-header-row { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem; }
+    .t-type { display: inline-block; background: #f1f5f9; color: #475569; padding: 0.3rem 1rem; border-radius: 50rem; font-size: 0.9rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05rem; }
+    
+    .t-status { font-size: 0.75rem; font-weight: 800; text-transform: uppercase; padding: 0.3rem 0.8rem; border-radius: 50rem; }
+    .t-status.ongoing { background: #eff6ff; color: #2563eb; border: 1px solid #bfdbfe; }
+    .t-status.finished { background: #f0fdf4; color: #16a34a; border: 1px solid #bbf7d0; }
 
-    .t-title { font-size: 1.25rem; font-weight: 700; color: #0f172a; margin: 0 0 1.2rem 0; line-height: 1.35; }
-    .t-meta-group { margin-top: auto; display: flex; flex-direction: column; gap: 0.4rem; }
-    .t-student, .t-sup { margin: 0; display: flex; align-items: center; gap: 0.5rem; }
-    .t-student { font-size: 1.25rem; color: #334155; font-weight: 700; }
-    .t-sup { font-size: 1.05rem; color: #64748b; font-weight: 600; }
+    /* FONT SIZE DECREASED TO 1.2rem HERE */
+    .t-title { font-size: 1.2rem; font-weight: 700; color: #0f172a; margin: 0 0 1.2rem 0; line-height: 1.35; }
+    
+    .t-meta-group { margin-top: auto; display: flex; flex-direction: column; gap: 0.4rem; }
+    .t-student, .t-sup { margin: 0; display: flex; align-items: center; gap: 0.5rem; }
+    .t-student { font-size: 1.15rem; color: #334155; font-weight: 700; }
+    .t-sup { font-size: 1.05rem; color: #64748b; font-weight: 600; }
 
-    /* --- RIGHT COLUMN: LOGO & QR --- */
-    /* Space-between anchors the logo to the top edge, and QR box to bottom edge */
-    .right-column { display: flex; flex-direction: column; align-items: center; justify-content: space-between; width: 21rem; flex-shrink: 0; }
-    .brand-logo { width: 100%; max-height: 14rem; object-fit: contain; border-radius: 0.5rem; }
-    
-    /* Locked to exactly 21rem height to match Card Stack */
-    .qr-section { background: #ffffff; padding: 1.2rem; border-radius: 1.5rem; border: 0.2rem solid #1e90ff; box-shadow: 0 1.25rem 1.5rem -0.3rem rgba(30, 144, 255, 0.15); width: 100%; height: 21rem; display: flex; flex-direction: column; justify-content: center; }
-    .qr-code { width: 100%; height: 100%; background: #f1f5f9; display: flex; align-items: center; justify-content: center; border-radius: 0.75rem; overflow: hidden; }
-    .qr-code img { width: 100%; height: 100%; object-fit: cover; }
+    /* --- RIGHT COLUMN: LOGO & QR --- */
+    .right-column { display: flex; flex-direction: column; align-items: center; justify-content: space-between; width: 20rem; flex-shrink: 0; }
+    .brand-logo { width: 100%; max-height: 14rem; object-fit: contain; border-radius: 0.5rem; margin-bottom: 0; }
+    
+    .qr-section { background: #ffffff; padding: 1.2rem; border-radius: 1.5rem; border: 0.2rem solid #1e90ff; box-shadow: 0 1.25rem 1.5rem -0.3rem rgba(30, 144, 255, 0.15); width: 100%; height: 21rem; display: flex; flex-direction: column; justify-content: center; }
+    .qr-code { width: 100%; height: 100%; background: #f1f5f9; display: flex; align-items: center; justify-content: center; border-radius: 0.75rem; overflow: hidden; }
+    .qr-code img { width: 100%; height: 100%; object-fit: cover; }
 
-    @keyframes pulse { 0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(30, 144, 255, 0.3); } 70% { transform: scale(1.02); box-shadow: 0 0 0 1.5rem rgba(30, 144, 255, 0); } 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(30, 144, 255, 0); } }
-    @keyframes blink { 0% { opacity: 1; } 50% { opacity: 0.3; } 100% { opacity: 1; } }
-  </style>
+    @keyframes pulse { 0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(30, 144, 255, 0.3); } 70% { transform: scale(1.02); box-shadow: 0 0 0 1.5rem rgba(30, 144, 255, 0); } 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(30, 144, 255, 0); } }
+    @keyframes blink { 0% { opacity: 1; } 50% { opacity: 0.3; } 100% { opacity: 1; } }
+  </style>
 </head>
 <body>
 
-  <div class="tv-wrapper">
-    <div class="slide-container">
-      <div class="content-section">
-        
-        <!-- COLUMN 1: Text, Stats, Avatars, and Keywords -->
-        <div class="text-content">
-          <h1 class="main-title">From Minerals to Megawatts.</h1>
-          <h2 class="sub-title">Write your thesis with us.</h2>
-          
-          <div class="tv-stats-container">
-            <div class="tv-stat-card">
-              <div class="tv-stat-icon">
-                <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
-              </div>
-              <div class="tv-stat-content">
-                <span class="tv-stat-label">Finished Theses (since 2023)</span>
-                <span class="tv-stat-number" id="tv-stat-count">-</span>
-              </div>
-            </div>
+  <div class="tv-wrapper">
+    <div class="slide-container">
+      <div class="content-section">
+        
+        <!-- COLUMN 1: Text, Stats, Avatars, and Keywords -->
+        <div class="text-content">
+          <h1 class="main-title">From Minerals to Megawatts.</h1>
+          <h2 class="sub-title">Write your thesis with us.</h2>
+          
+          <div class="tv-stats-container">
+            <div class="tv-stat-card">
+              <div class="tv-stat-icon">
+                <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+              </div>
+              <div class="tv-stat-content">
+                <span class="tv-stat-label">Finished Theses (since 2023)</span>
+                <span class="tv-stat-number" id="tv-stat-count">-</span>
+              </div>
+            </div>
 
-            <div class="tv-stat-card">
-              <div class="tv-stat-icon">
-                <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
-              </div>
-              <div class="tv-stat-content">
-                <span class="tv-stat-label">Ongoing Theses</span>
-                <span class="tv-stat-number" id="tv-stat-ongoing">-</span>
-              </div>
-            </div>
+            <div class="tv-stat-card">
+              <div class="tv-stat-icon">
+                <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+              </div>
+              <div class="tv-stat-content">
+                <span class="tv-stat-label">Ongoing Theses</span>
+                <span class="tv-stat-number" id="tv-stat-ongoing">-</span>
+              </div>
+            </div>
 
-            <div class="tv-stat-card">
-              <div class="tv-stat-icon">
-                <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-              </div>
-              <div class="tv-stat-content">
-                <span class="tv-stat-label">Avg. Master Theses Duration</span>
-                <span class="tv-stat-number" id="tv-stat-duration">-</span>
-              </div>
-            </div>
-          </div>
+            <div class="tv-stat-card">
+              <div class="tv-stat-icon">
+                <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+              </div>
+              <div class="tv-stat-content">
+                <span class="tv-stat-label">Avg. Master Theses Duration</span>
+                <span class="tv-stat-number" id="tv-stat-duration">-</span>
+              </div>
+            </div>
+          </div>
 
-          <div class="team-section">
-            <p class="team-title">Meet your supervisors:</p>
-            <div class="avatar-group">
-              {% for member in site.data.team %}
-                <img src="{{ member.image }}" class="avatar" style="object-position: {{ member.object_position | default: 'center' }};" alt="{{ member.name }}">
-              {% endfor %}
-            </div>
-          </div>
+          <div class="team-section">
+            <p class="team-title">Meet your supervisors:</p>
+            <div class="avatar-group">
+              {% for member in site.data.team %}
+                <img src="{{ member.image }}" class="avatar" style="object-position: {{ member.object_position | default: 'center' }};" alt="{{ member.name }}">
+              {% endfor %}
+            </div>
+          </div>
 
-          <div class="topics-cloud">
-            <span class="topic-tag">Resource-Energy Co-Evolution</span>
-            <span class="topic-tag">Energy System Optimization</span>
-            <span class="topic-tag">Modeling of Supply Risk and Geopolitics</span>
-            <span class="topic-tag">Electricity Prices</span>
-            <span class="topic-tag">Modeling of Industrial Transformation Pathways</span>
-            <span class="topic-tag">Space Energy System Optimization</span> 
-            <span class="topic-tag more-tag">+ more...</span>
-          </div>
-        </div>
+          <div class="topics-cloud">
+            <span class="topic-tag">Resource-Energy Co-Evolution</span>
+            <span class="topic-tag">Energy System Optimization</span>
+            <span class="topic-tag">Modeling of Supply Risk and Geopolitics</span>
+            <span class="topic-tag">Electricity Prices</span>
+            <span class="topic-tag">Modeling of Industrial Transformation Pathways</span>
+            <span class="topic-tag">Space Energy System Optimization</span> 
+            <span class="topic-tag more-tag">+ more...</span>
+          </div>
+        </div>
 
-        <!-- COLUMN 2: Theses Showcase -->
-        <div class="showcase-column">
-          <div class="showcase-label">Ongoing & Finished</div>
-          
-          <div class="card-stack">
-            <div class="fake-card-1"></div>
-            <div class="fake-card-2"></div>
-            
-            <div class="showcase-card" id="thesis-card">
-              <div class="card-header-row">
-                <span class="t-type" id="t-type">Loading...</span>
-                <span class="t-status" id="t-status"></span>
-              </div>
-              <h3 class="t-title" id="t-title">Loading recent topics...</h3>
-              <div class="t-meta-group">
-                <p class="t-student" id="t-student"></p>
-                <p class="t-sup" id="t-sup"></p>
-              </div>
-            </div>
-          </div>
-        </div>
+        <!-- COLUMN 2: Theses Showcase -->
+        <div class="showcase-column">
+          <div class="showcase-label">Ongoing & Finished</div>
+          
+          <div class="card-stack">
+            <div class="fake-card-1"></div>
+            <div class="fake-card-2"></div>
+            
+            <div class="showcase-card" id="thesis-card">
+              <div class="card-header-row">
+                <span class="t-type" id="t-type">Loading...</span>
+                <span class="t-status" id="t-status"></span>
+              </div>
+              <h3 class="t-title" id="t-title">Loading recent topics...</h3>
+              <div class="t-meta-group">
+                <p class="t-student" id="t-student"></p>
+                <p class="t-sup" id="t-sup"></p>
+              </div>
+            </div>
+          </div>
+        </div>
 
-        <!-- COLUMN 3: Logo & QR Code -->
-        <div class="right-column">
-          <img src="/assets/images/ES3M_Logo.jpg" alt="ES3M Logo" class="brand-logo">
-          <div class="qr-section" style="animation: pulse 3s infinite;">
-            <div class="qr-code">
-              <img src="/assets/images/qrcode_es3m.eu.png" alt="Scan to see open thesis topics">
-            </div>
-          </div>
-        </div>
+        <!-- COLUMN 3: Logo & QR Code -->
+        <div class="right-column">
+          <img src="/assets/images/ES3M_Logo.jpg" alt="ES3M Logo" class="brand-logo">
+          <div class="qr-section" style="animation: pulse 3s infinite;">
+            <div class="qr-code">
+              <img src="/assets/images/qrcode_es3m.eu.png" alt="Scan to see open thesis topics">
+            </div>
+          </div>
+        </div>
 
-      </div>
-    </div>
-  </div>
+      </div>
+    </div>
+  </div>
 
-  <script>
-    const allThesesData = [
-      {% for t in site.data.thesis %}
-      {
-        type: {{ t.type | default: '' | jsonify }},
-        title: {{ t.title | default: '' | jsonify }},
-        status: {{ t.status | default: '' | jsonify }},
-        student: {{ t.student | default: '' | jsonify }},
-        supervisor: {{ t.supervisor | default: '' | jsonify }},
-        start_date: {{ t.start_date | default: '' | jsonify }},
-        finish_date: {{ t.finish_date | default: '' | jsonify }}
-      }{% unless forloop.last %},{% endunless %}
-      {% endfor %}
-    ];
+  <script>
+    const allThesesData = [
+      {% for t in site.data.thesis %}
+      {
+        type: {{ t.type | default: '' | jsonify }},
+        title: {{ t.title | default: '' | jsonify }},
+        status: {{ t.status | default: '' | jsonify }},
+        student: {{ t.student | default: '' | jsonify }},
+        supervisor: {{ t.supervisor | default: '' | jsonify }},
+        start_date: {{ t.start_date | default: '' | jsonify }},
+        finish_date: {{ t.finish_date | default: '' | jsonify }}
+      }{% unless forloop.last %},{% endunless %}
+      {% endfor %}
+    ];
 
-    let finishedTotal = 0;
-    let ongoingTotal = 0;
-    let totalMonths = 0;
-    let validDurationsCount = 0;
-    const carouselTheses = []; 
+    let finishedTotal = 0;
+    let ongoingTotal = 0;
+    let totalMonths = 0;
+    let validDurationsCount = 0;
+    const carouselTheses = []; 
 
-    allThesesData.forEach(function(t) {
-      const cleanStatus = (t.status || "").toString().trim().toLowerCase();
-      
-      if (cleanStatus === 'finished' || cleanStatus === 'ongoing') {
-        t.status = cleanStatus;
-        carouselTheses.push(t);
-      }
-      
-      if (cleanStatus === 'finished') {
-        finishedTotal++;
-      }
+    allThesesData.forEach(function(t) {
+      const cleanStatus = (t.status || "").toString().trim().toLowerCase();
+      
+      if (cleanStatus === 'finished' || cleanStatus === 'ongoing') {
+        t.status = cleanStatus;
+        carouselTheses.push(t);
+      }
+      
+      if (cleanStatus === 'finished') {
+        finishedTotal++;
+      }
 
-      if (cleanStatus === 'ongoing') {
-        ongoingTotal++;
-      }
+      if (cleanStatus === 'ongoing') {
+        ongoingTotal++;
+      }
 
-      if (t.type === 'Master Thesis' && t.start_date && t.finish_date) {
-        const start = new Date(t.start_date);
-        const end = new Date(t.finish_date);
-        if (!isNaN(start) && !isNaN(end)) {
-          const diffMonths = Math.abs(end - start) / (1000 * 60 * 60 * 24 * 30.44);
-          totalMonths += diffMonths;
-          validDurationsCount++;
-        }
-      }
-    });
+      if (t.type === 'Master Thesis' && t.start_date && t.finish_date) {
+        const start = new Date(t.start_date);
+        const end = new Date(t.finish_date);
+        if (!isNaN(start) && !isNaN(end)) {
+          const diffMonths = Math.abs(end - start) / (1000 * 60 * 60 * 24 * 30.44);
+          totalMonths += diffMonths;
+          validDurationsCount++;
+        }
+      }
+    });
 
-    document.getElementById('tv-stat-count').innerText = finishedTotal;
-    document.getElementById('tv-stat-ongoing').innerText = ongoingTotal;
-    document.getElementById('tv-stat-duration').innerText = (validDurationsCount > 0) ? Math.round(totalMonths / validDurationsCount) + " Months" : "-";
+    document.getElementById('tv-stat-count').innerText = finishedTotal;
+    document.getElementById('tv-stat-ongoing').innerText = ongoingTotal;
+    document.getElementById('tv-stat-duration').innerText = (validDurationsCount > 0) ? Math.round(totalMonths / validDurationsCount) + " Months" : "-";
 
-    if (carouselTheses.length === 0) {
-      carouselTheses.push(
-        { type: "Master Thesis", title: "Optimizing Hydrogen Supply Chains in Central Europe", status: "ongoing", student: "Max Mustermann", supervisor: "Sebastian Zwickl-Bernhard" },
-        { type: "Bachelor Thesis", title: "Carbon Capture Integration in Steel Manufacturing", status: "finished", student: "Erika Musterfrau", supervisor: "Marcus Otti" }
-      );
-    }
+    if (carouselTheses.length === 0) {
+      carouselTheses.push(
+        { type: "Master Thesis", title: "Optimizing Hydrogen Supply Chains in Central Europe", status: "ongoing", student: "Max Mustermann", supervisor: "Sebastian Zwickl-Bernhard" },
+        { type: "Bachelor Thesis", title: "Carbon Capture Integration in Steel Manufacturing", status: "finished", student: "Erika Musterfrau", supervisor: "Marcus Otti" }
+      );
+    }
 
-    carouselTheses.sort(() => 0.5 - Math.random());
+    carouselTheses.sort(() => 0.5 - Math.random());
 
-    let currentIndex = 0;
-    const card = document.getElementById('thesis-card');
-    const tType = document.getElementById('t-type');
-    const tStatus = document.getElementById('t-status');
-    const tTitle = document.getElementById('t-title');
-    const tStudent = document.getElementById('t-student');
-    const tSup = document.getElementById('t-sup');
+    let currentIndex = 0;
+    const card = document.getElementById('thesis-card');
+    const tType = document.getElementById('t-type');
+    const tStatus = document.getElementById('t-status');
+    const tTitle = document.getElementById('t-title');
+    const tStudent = document.getElementById('t-student');
+    const tSup = document.getElementById('t-sup');
 
-    function updateCardContent(data) {
-      tType.textContent = data.type;
-      tTitle.textContent = data.title;
-      
-      tStatus.textContent = data.status;
-      if(data.status === 'ongoing') {
-          tStatus.className = "t-status ongoing";
-      } else {
-          tStatus.className = "t-status finished";
-      }
-      
-      if(data.student) {
-        tStudent.innerHTML = `<svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="flex-shrink:0"><path stroke-linecap="round" stroke-linejoin="round" d="M22 10l-10-5-10 5 10 5 10-5z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M6 12v5c3 3 9 3 12 0v-5"></path></svg> ${data.student}`;
-        tStudent.style.display = "flex";
-      } else {
-        tStudent.style.display = "none";
-      }
+    function updateCardContent(data) {
+      tType.textContent = data.type;
+      tTitle.textContent = data.title;
+      
+      tStatus.textContent = data.status;
+      if(data.status === 'ongoing') {
+          tStatus.className = "t-status ongoing";
+      } else {
+          tStatus.className = "t-status finished";
+      }
+      
+      if(data.student) {
+        tStudent.innerHTML = `<svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="flex-shrink:0"><path stroke-linecap="round" stroke-linejoin="round" d="M22 10l-10-5-10 5 10 5 10-5z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M6 12v5c3 3 9 3 12 0v-5"></path></svg> ${data.student}`;
+        tStudent.style.display = "flex";
+      } else {
+        tStudent.style.display = "none";
+      }
 
-      if(data.supervisor) {
-        tSup.innerHTML = `<svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="flex-shrink:0"><path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg> ${data.supervisor}`;
-        tSup.style.display = "flex";
-      } else {
-        tSup.style.display = "none";
-      }
-    }
+      if(data.supervisor) {
+        tSup.innerHTML = `<svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="flex-shrink:0"><path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg> ${data.supervisor}`;
+        tSup.style.display = "flex";
+      } else {
+        tSup.style.display = "none";
+      }
+    }
 
-    updateCardContent(carouselTheses[currentIndex]);
-    currentIndex++;
+    updateCardContent(carouselTheses[currentIndex]);
+    currentIndex++;
 
-    function dealNextCard() {
-      card.style.transform = 'translateX(-3rem)';
-      card.style.opacity = '0';
-      
-      setTimeout(() => {
-        updateCardContent(carouselTheses[currentIndex]);
-        card.style.transition = 'none'; 
-        card.style.transform = 'translateX(3rem)';
-        void card.offsetWidth; 
+    function dealNextCard() {
+      card.style.transform = 'translateX(-3rem)';
+      card.style.opacity = '0';
+      
+      setTimeout(() => {
+        updateCardContent(carouselTheses[currentIndex]);
+        card.style.transition = 'none'; 
+        card.style.transform = 'translateX(3rem)';
+        void card.offsetWidth; 
 
-        card.style.transition = 'transform 0.6s cubic-bezier(0.4, 0.0, 0.2, 1), opacity 0.6s ease-out';
-        card.style.transform = 'translateX(0)';
-        card.style.opacity = '1';
-        
-        currentIndex = (currentIndex + 1) % carouselTheses.length;
-      }, 600); 
-    }
+        card.style.transition = 'transform 0.6s cubic-bezier(0.4, 0.0, 0.2, 1), opacity 0.6s ease-out';
+        card.style.transform = 'translateX(0)';
+        card.style.opacity = '1';
+        
+        currentIndex = (currentIndex + 1) % carouselTheses.length;
+      }, 600); 
+    }
 
-    setInterval(dealNextCard, 5000);
-  </script>
+    setInterval(dealNextCard, 5000);
+  </script>
 </body>
 </html>
