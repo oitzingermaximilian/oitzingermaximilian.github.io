@@ -21,18 +21,18 @@ permalink: /tv-display/
     .content-section { display: flex; align-items: stretch; justify-content: space-between; }
 
     /* --- LEFT COLUMN: TEXT, STATS, TEAM & KEYWORDS --- */
-    .text-content { width: 48%; display: flex; flex-direction: column; justify-content: center; }
+    .text-content { flex: 1; max-width: 52%; display: flex; flex-direction: column; justify-content: center; }
     .main-title { font-size: 3.8rem; line-height: 1.1; margin: 0 0 0.5rem 0; font-weight: 800; color: #1e90ff; white-space: nowrap; }
     .sub-title { font-size: 2.6rem; line-height: 1.2; margin: 0 0 2rem 0; font-weight: 700; color: #111827; }
 
-    /* Adjusted Stats Boxes (Shorter, Stretched text) */
-    .tv-stats-container { display: flex; gap: 0.8rem; margin-bottom: 2.5rem; width: 100%; }
-    .tv-stat-card { flex: 1; background: #ffffff; border: 0.12rem solid #e5e7eb; border-left: 0.55rem solid #1e90ff; border-radius: 1rem; padding: 0.6rem 0.9rem; display: flex; align-items: center; gap: 0.8rem; box-shadow: 0 0.5rem 1rem -0.2rem rgba(0, 0, 0, 0.07); }
-    .tv-stat-icon { width: 2.8rem; height: 2.8rem; background: #f1f5f9; color: #2563eb; border-radius: 0.7rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-    .tv-stat-icon svg { width: 1.5rem; height: 1.5rem; }
-    .tv-stat-content { display: flex; flex-direction: column; justify-content: center; }
-    .tv-stat-label { margin: 0; font-size: 0.8rem; color: #64748b; font-weight: 700; text-transform: uppercase; letter-spacing: 0.02rem; line-height: 1.2; }
-    .tv-stat-number { margin: 0; font-size: 1.65rem; font-weight: 800; color: #0f172a; line-height: 1.1; }
+    /* Adjusted Stats Boxes */
+    .tv-stats-container { display: flex; gap: 1rem; margin-bottom: 2.5rem; width: 100%; }
+    .tv-stat-card { flex: 1; background: #ffffff; border: 0.12rem solid #e5e7eb; border-left: 0.55rem solid #1e90ff; border-radius: 1.2rem; padding: 0.9rem 1.4rem; display: flex; align-items: center; gap: 1rem; box-shadow: 0 0.5rem 1rem -0.2rem rgba(0, 0, 0, 0.07); }
+    .tv-stat-icon { width: 3.6rem; height: 3.6rem; background: #f1f5f9; color: #2563eb; border-radius: 0.9rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .tv-stat-icon svg { width: 1.9rem; height: 1.9rem; }
+    .tv-stat-content { display: flex; flex-direction: column; }
+    .tv-stat-label { margin: 0; font-size: 0.95rem; color: #64748b; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05rem; line-height: 1.3; }
+    .tv-stat-number { margin: 0.15rem 0 0; font-size: 2rem; font-weight: 800; color: #0f172a; line-height: 1; }
 
     .team-section { display: flex; flex-direction: column; gap: 1.2rem; margin-bottom: 1.5rem; }
     .team-title { font-size: 1.4rem; color: #666; margin: 0; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1rem; }
@@ -45,13 +45,13 @@ permalink: /tv-display/
     .topic-tag.more-tag { background: #f8fafc; border: 0.1rem dashed #94a3b8; color: #64748b; }
 
     /* --- MIDDLE COLUMN: THESIS SHOWCASE --- */
-    /* Positioned left (margin-right: auto pushes column 3 away), Bottom anchored */
-    .showcase-column { width: 26rem; display: flex; flex-direction: column; justify-content: flex-end; flex-shrink: 0; margin-left: 2rem; margin-right: auto; }
+    /* Adjusted padding-top slightly so the taller box doesn't overflow the bottom */
+    .showcase-column { width: 26rem; display: flex; flex-direction: column; justify-content: flex-end; flex-shrink: 0; padding-top: 11.9rem; margin-left: 2rem; margin-right: auto; }
     .showcase-label { font-size: 1.3rem; font-weight: 700; color: #1e90ff; text-transform: uppercase; letter-spacing: 0.1rem; margin-bottom: 1.5rem; margin-top: 0; display: flex; align-items: center; gap: 0.6rem; }
     .showcase-label::before { content: ''; display: block; width: 0.9rem; height: 0.9rem; background-color: #ef4444; border-radius: 50%; animation: blink 2s infinite; }
     
-    /* Locked to exactly 21rem height to match QR Box */
-    .card-stack { position: relative; width: 100%; height: 21rem; }
+    /* Increased height from 21rem to 24.5rem to fit long titles */
+    .card-stack { position: relative; width: 100%; height: 24.5rem; }
     .fake-card-1, .fake-card-2 { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: #ffffff; border: 0.15rem solid #e5e7eb; border-left: 0.6rem solid #93c5fd; border-radius: 1.2rem; box-shadow: 0 0.5rem 1rem -0.2rem rgba(0,0,0,0.05); }
     .fake-card-1 { transform: translate(0.8rem, -0.8rem); z-index: 1; background: #f8fafc; }
     .fake-card-2 { transform: translate(0.4rem, -0.4rem); z-index: 2; background: #f1f5f9; }
@@ -71,12 +71,11 @@ permalink: /tv-display/
     .t-sup { font-size: 1.05rem; color: #64748b; font-weight: 600; }
 
     /* --- RIGHT COLUMN: LOGO & QR --- */
-    /* Space-between anchors the logo to the top edge, and QR box to bottom edge */
     .right-column { display: flex; flex-direction: column; align-items: center; justify-content: space-between; width: 21rem; flex-shrink: 0; }
-    .brand-logo { width: 100%; max-height: 14rem; object-fit: contain; border-radius: 0.5rem; }
+    .brand-logo { width: 100%; max-height: 14rem; object-fit: contain; border-radius: 0.5rem; margin-bottom: 0; }
     
-    /* Locked to exactly 21rem height to match Card Stack */
-    .qr-section { background: #ffffff; padding: 1.2rem; border-radius: 1.5rem; border: 0.2rem solid #1e90ff; box-shadow: 0 1.25rem 1.5rem -0.3rem rgba(30, 144, 255, 0.15); width: 100%; height: 21rem; display: flex; flex-direction: column; justify-content: center; }
+    /* Increased height from 21rem to 24.5rem to match the card stack perfectly */
+    .qr-section { background: #ffffff; padding: 1.2rem; border-radius: 1.5rem; border: 0.2rem solid #1e90ff; box-shadow: 0 1.25rem 1.5rem -0.3rem rgba(30, 144, 255, 0.15); width: 100%; height: 24.5rem; display: flex; flex-direction: column; justify-content: center; }
     .qr-code { width: 100%; height: 100%; background: #f1f5f9; display: flex; align-items: center; justify-content: center; border-radius: 0.75rem; overflow: hidden; }
     .qr-code img { width: 100%; height: 100%; object-fit: cover; }
 
