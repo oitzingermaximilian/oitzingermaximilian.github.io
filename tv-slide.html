@@ -23,12 +23,12 @@ permalink: /tv-display/
     .sub-title { font-size: 2.6rem; line-height: 1.2; margin: 0 0 2rem 0; font-weight: 700; color: #111827; }
 
     .tv-stats-container { display: flex; gap: 1.2rem; margin-bottom: 2.5rem; }
-    .tv-stat-card { flex: 1; background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); border: 0.12rem solid #bfdbfe; border-radius: 1.2rem; padding: 1.2rem 1.5rem; display: flex; align-items: center; gap: 1.2rem; box-shadow: 0 0.4rem 0.8rem rgba(15, 23, 42, 0.04); }
-    .tv-stat-icon { width: 4.2rem; height: 4.2rem; background: #2563eb; color: white; border-radius: 1rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .tv-stat-card { flex: 1; background: linear-gradient(135deg, #f4f9ff 0%, #e8f1ff 100%); border: 0.12rem solid #d1e4ff; border-radius: 1.2rem; padding: 1.2rem 1.5rem; display: flex; align-items: center; gap: 1.2rem; box-shadow: 0 0.4rem 0.8rem rgba(59, 130, 246, 0.08); }
+    .tv-stat-icon { width: 4.2rem; height: 4.2rem; background: #dbeafe; color: #3b82f6; border-radius: 1rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
     .tv-stat-icon svg { width: 2.2rem; height: 2.2rem; }
     .tv-stat-content { display: flex; flex-direction: column; }
-    .tv-stat-label { margin: 0; font-size: 0.95rem; color: #475569; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05rem; line-height: 1.3; }
-    .tv-stat-number { margin: 0.2rem 0 0; font-size: 2.2rem; font-weight: 800; color: #1e3a8a; line-height: 1; }
+    .tv-stat-label { margin: 0; font-size: 0.95rem; color: #60a5fa; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05rem; line-height: 1.3; }
+    .tv-stat-number { margin: 0.2rem 0 0; font-size: 2.2rem; font-weight: 800; color: #3b82f6; line-height: 1; }
 
     .team-section { display: flex; flex-direction: column; gap: 1.2rem; margin-bottom: 1.5rem; }
     .team-title { font-size: 1.4rem; color: #666; margin: 0; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1rem; }
@@ -91,6 +91,16 @@ permalink: /tv-display/
               <div class="tv-stat-content">
                 <span class="tv-stat-label">Finished Theses (since 2023)</span>
                 <span class="tv-stat-number" id="tv-stat-count">-</span>
+              </div>
+            </div>
+
+            <div class="tv-stat-card">
+              <div class="tv-stat-icon">
+                <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+              </div>
+              <div class="tv-stat-content">
+                <span class="tv-stat-label">Ongoing Theses</span>
+                <span class="tv-stat-number" id="tv-stat-ongoing">-</span>
               </div>
             </div>
 
@@ -177,6 +187,7 @@ permalink: /tv-display/
     ];
 
     let finishedTotal = 0;
+    let ongoingTotal = 0;
     let totalMonths = 0;
     let validDurationsCount = 0;
     const carouselTheses = []; 
@@ -195,6 +206,10 @@ permalink: /tv-display/
         finishedTotal++;
       }
 
+      if (cleanStatus === 'ongoing') {
+        ongoingTotal++;
+      }
+
       if (t.type === 'Master Thesis' && t.start_date && t.finish_date) {
         const start = new Date(t.start_date);
         const end = new Date(t.finish_date);
@@ -208,6 +223,7 @@ permalink: /tv-display/
 
     // Show EXACT finished count
     document.getElementById('tv-stat-count').innerText = finishedTotal;
+    document.getElementById('tv-stat-ongoing').innerText = ongoingTotal;
     document.getElementById('tv-stat-duration').innerText = (validDurationsCount > 0) ? Math.round(totalMonths / validDurationsCount) + " Months" : "-";
 
     if (carouselTheses.length === 0) {
