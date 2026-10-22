@@ -1,3 +1,12 @@
+- id: space-energy-system-models
+  type: "paper"
+  title: "Toward modeling principles for space energy system optimization"
+  authors: "Sebastian Zwickl-Bernhard"
+  year: 2026
+  doi: "10.1016/j.adapen.2026.100302"
+  url: "https://doi.org/10.1016/j.adapen.2026.100302"
+  description: "This study presents a novel modeling framework for space energy system optimization that integrates unique extraterrestrial constraints—thermodynamic limits, material flows, and mission criticality—into traditional terrestrial capacity expansion and sector coupling approaches. Examining a sustained one-year operational scenario for a lunar space village, the findings reveal that cost-optimal designs demand a highly hybrid architecture of nuclear power, solar photovoltaics, batteries, electrolyzers, and fuel cells, and that this infrastructure establishes a preliminary benchmark levelized cost of electricity of approximately 7,800 EUR/MWh."
+
 - id: extending-energy-system-models
   type: "paper"
   title: "Extending energy system models to assess technology sourcing and resilience"
