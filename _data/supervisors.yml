@@ -1,6 +1,6 @@
 - name: "Sebastian Zwickl-Bernhard"
   role: "Group Lead"
-  contact: "zwickl@eeg.tuwien.ac.at"
+  contact: "zwickl@eselab.tuwien.ac.at"
   image: "/assets/images/team/sebastian.jpg"
   offer_topics:
     - "Market Dynamics of CRMs and LNG"
@@ -16,7 +16,7 @@
 
 - name: "Daniel Cäsar"
   role: "Doctoral Researcher"
-  contact: "caesar@eeg.tuwien.ac.at"
+  contact: "caesar@eselab.tuwien.ac.at"
   image: "/assets/images/team/daniel.JPEG"
   offer_topics:
     - "Long-term electricity price modelling" 
@@ -33,14 +33,14 @@
 
 - name: "Alexander Csekö"
   role: "Research Assistant"
-  contact: "csekoe@eeg.tuwien.ac.at"
+  contact: "csekoe@eselab.tuwien.ac.at"
   image: "/assets/images/team/alexander.jpg"
   offer_topics:
     - "Game-Theoretic Modeling Approaches in Energy System Modeling"
 
 - name: "Helen Anais Fischer"
   role: "Doctoral Researcher"
-  contact: "fischer@eeg.tuwien.ac.at"
+  contact: "fischer@eselab.tuwien.ac.at"
   image: "/assets/images/team/helen.jpg"
   offer_topics:
     - "Geopolitical Risk Quantification"
@@ -55,7 +55,7 @@
 
 - name: "Maximilian Oitzinger"
   role: "Research Assistant"
-  contact: "oitzinger@eeg.tuwien.ac.at"
+  contact: "oitzinger@eselab.tuwien.ac.at"
   image: "/assets/images/team/maximilian.jpg"
   offer_topics:
     - "Large Scale Energy System Modeling"
@@ -64,7 +64,7 @@
 
 - name: "Marcus Otti"
   role: "Doctoral Researcher"
-  contact: "otti@eeg.tuwien.ac.at"
+  contact: "otti@eselab.tuwien.ac.at"
   image: "/assets/images/team/marcus.jpg"
   offer_topics:
     - "Transformation pathways for energy-intensive industry"
@@ -79,7 +79,7 @@
 
 - name: "Mona Wurz"
   role: "Research Assistant"
-  contact: "wurz@eeg.tuwien.ac.at"
+  contact: "wurz@eselab.tuwien.ac.at"
   image: "/assets/images/team/mona.jpg"
   offer_topics:
     - "Bottom-up technology modeling: physics, chemistry, mechanics"
