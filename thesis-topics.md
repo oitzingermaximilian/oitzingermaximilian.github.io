@@ -25,53 +25,62 @@ header:
     display: none !important;
   }
 
-  /* --- STATS BAR STYLES --- */
+  /* --- STATS BAR STYLES (TV-Slide Style) --- */
   .stats-container {
     display: flex;
-    gap: 1.5rem;
+    gap: 1.2rem;
     margin-bottom: 3rem;
     margin-top: 1rem;
+    width: 100%;
   }
 
   .stat-card {
     flex: 1;
-    background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
-    border: 1px solid #bfdbfe;
+    background: #ffffff;
+    border: 2px solid #e5e7eb;
+    border-left: 8px solid #1e90ff;
     border-radius: 14px;
-    padding: 1.25rem 1.5rem; /* Reduced padding for less height */
+    padding: 1.2rem 1.5rem;
     display: flex;
     align-items: center;
     gap: 1.2rem;
-    box-shadow: 0 4px 6px rgba(15, 23, 42, 0.03);
-    transition: transform 0.2s ease;
-    min-height: 100px; /* Keeps all cards uniformly sized */
+    box-shadow: 0 8px 16px -4px rgba(0, 0, 0, 0.07);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    min-height: 90px;
   }
   
   .stat-card:hover {
-    transform: translateY(-2px);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 20px -4px rgba(0, 0, 0, 0.1);
   }
 
   .stat-icon {
-    width: 50px; /* Slightly reduced */
-    height: 50px; /* Slightly reduced */
-    background: #2563eb;
-    color: white;
-    border-radius: 12px;
+    width: 56px; 
+    height: 56px; 
+    background: #f1f5f9;
+    color: #2563eb;
+    border-radius: 14px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
   }
 
+  .stat-icon svg {
+    width: 28px;
+    height: 28px;
+  }
+
   .stat-content {
     display: flex;
     flex-direction: column;
+    justify-content: center;
   }
 
   .stat-content h4 {
-    margin: 0 0 0.3rem 0;
+    margin: 0;
     font-size: 0.85rem;
-    color: #475569;
+    color: #64748b;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.05rem;
@@ -79,12 +88,12 @@ header:
   }
 
   .stat-content .stat-value {
-    margin: 0;
-    font-size: 1.75rem; /* Reduced size to fit text */
+    margin: 0.2rem 0 0;
+    font-size: 2rem; 
     font-weight: 800;
-    color: #1e3a8a;
-    line-height: 1;
-    white-space: nowrap; /* Forces "12 Months" to stay on one row */
+    color: #0f172a;
+    line-height: 1.1;
+    white-space: nowrap; 
   }
   
   @media (max-width: 768px) {
@@ -93,6 +102,7 @@ header:
     }
   }
 
+  /* --- SUPERVISOR GRID --- */
   .supervisor-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
@@ -337,7 +347,7 @@ header:
     margin-top: auto; 
   }
 
-  /* --- NEW: REPOSITUM BUTTON STYLES --- */
+  /* --- REPOSITUM BUTTON STYLES --- */
   .repo-link {
     display: inline-flex;
     align-items: center;
@@ -367,8 +377,7 @@ header:
 <div class="stats-container">
   <div class="stat-card">
     <div class="stat-icon">
-      <!-- Checkmark Icon -->
-      <svg width="26" height="26" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+      <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
       </svg>
     </div>
@@ -378,11 +387,9 @@ header:
     </div>
   </div>
 
-  <!-- NEW ONGOING THESES CARD -->
   <div class="stat-card">
     <div class="stat-icon">
-      <!-- Activity/Sync Icon -->
-      <svg width="26" height="26" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+      <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
       </svg>
     </div>
@@ -394,8 +401,7 @@ header:
 
   <div class="stat-card">
     <div class="stat-icon">
-      <!-- Clock Icon -->
-      <svg width="26" height="26" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+      <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
       </svg>
     </div>
