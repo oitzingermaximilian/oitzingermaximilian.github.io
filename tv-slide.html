@@ -10,402 +10,72 @@ permalink: /tv-display/
   <title>ES3M - Thesis Topics</title>
   <style>
     /* MAGIC SCALING */
-    html {
-      font-size: 0.85vw; 
-    }
-
-    /* Reset & Base */
+    html { font-size: 0.85vw; }
     * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      padding: 0;
-      width: 100%;
-      height: 100%;
-      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-      background: #f8fafc;
-      color: #333;
-    }
+    body { margin: 0; padding: 0; width: 100%; height: 100%; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background: #f8fafc; color: #333; }
 
-    .tv-wrapper {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      padding: 2rem;
-    }
+    .tv-wrapper { display: flex; align-items: center; justify-content: center; min-height: 100vh; padding: 2rem; }
+    .slide-container { width: 92vw; background: #ffffff; border: 0.1rem solid #e5e7eb; border-radius: 2rem; padding: 3.5rem 4rem; box-shadow: 0 1.5rem 3rem -0.5rem rgba(0, 0, 0, 0.08); display: flex; flex-direction: column; }
+    .content-section { display: flex; align-items: stretch; justify-content: space-between; gap: 2.5rem; }
 
-    .slide-container {
-      width: 92vw; 
-      background: #ffffff;
-      border: 0.1rem solid #e5e7eb;
-      border-radius: 2rem;
-      padding: 3.5rem 4rem; 
-      box-shadow: 0 1.5rem 3rem -0.5rem rgba(0, 0, 0, 0.08);
-      display: flex;
-      flex-direction: column;
-    }
+    .text-content { flex: 1; max-width: 48%; display: flex; flex-direction: column; justify-content: center; }
+    .main-title { font-size: 3.8rem; line-height: 1.1; margin: 0 0 0.5rem 0; font-weight: 800; color: #1e90ff; white-space: nowrap; }
+    .sub-title { font-size: 2.6rem; line-height: 1.2; margin: 0 0 2rem 0; font-weight: 700; color: #111827; }
 
-    /* 3-Column Layout */
-    .content-section {
-      display: flex;
-      align-items: stretch; 
-      justify-content: space-between;
-      gap: 2.5rem; 
-    }
+    .tv-stats-container { display: flex; gap: 1.2rem; margin-bottom: 2.5rem; }
+    .tv-stat-card { flex: 1; background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); border: 0.12rem solid #bfdbfe; border-radius: 1.2rem; padding: 1.2rem 1.5rem; display: flex; align-items: center; gap: 1.2rem; box-shadow: 0 0.4rem 0.8rem rgba(15, 23, 42, 0.04); }
+    .tv-stat-icon { width: 4.2rem; height: 4.2rem; background: #2563eb; color: white; border-radius: 1rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .tv-stat-icon svg { width: 2.2rem; height: 2.2rem; }
+    .tv-stat-content { display: flex; flex-direction: column; }
+    .tv-stat-label { margin: 0; font-size: 0.95rem; color: #475569; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05rem; line-height: 1.3; }
+    .tv-stat-number { margin: 0.2rem 0 0; font-size: 2.2rem; font-weight: 800; color: #1e3a8a; line-height: 1; }
 
-    /* --- LEFT COLUMN: TEXT, STATS, TEAM & KEYWORDS --- */
-    .text-content {
-      flex: 1; 
-      max-width: 48%; 
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    .main-title {
-      font-size: 3.8rem;
-      line-height: 1.1;
-      margin: 0 0 0.5rem 0;
-      font-weight: 800;
-      color: #1e90ff; 
-      white-space: nowrap;
-    }
-
-    .sub-title {
-      font-size: 2.6rem;
-      line-height: 1.2;
-      margin: 0 0 2rem 0; 
-      font-weight: 700;
-      color: #111827;
-    }
-
-    .tv-stats-container {
-      display: flex;
-      gap: 1.2rem;
-      margin-bottom: 2.5rem;
-    }
-
-    .tv-stat-card {
-      flex: 1;
-      background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
-      border: 0.12rem solid #bfdbfe;
-      border-radius: 1.2rem;
-      padding: 1.2rem 1.5rem;
-      display: flex;
-      align-items: center;
-      gap: 1.2rem;
-      box-shadow: 0 0.4rem 0.8rem rgba(15, 23, 42, 0.04);
-    }
-
-    .tv-stat-icon {
-      width: 4.2rem;
-      height: 4.2rem;
-      background: #2563eb;
-      color: white;
-      border-radius: 1rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-
-    .tv-stat-icon svg {
-      width: 2.2rem;
-      height: 2.2rem;
-    }
-
-    .tv-stat-content {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .tv-stat-label {
-      margin: 0;
-      font-size: 0.95rem;
-      color: #475569;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.05rem;
-      line-height: 1.3;
-    }
-
-    .tv-stat-number {
-      margin: 0.2rem 0 0;
-      font-size: 2.2rem;
-      font-weight: 800;
-      color: #1e3a8a;
-      line-height: 1;
-    }
-
-    /* --- TEAM SECTION --- */
-    .team-section {
-      display: flex;
-      flex-direction: column;
-      gap: 1.2rem;
-      margin-bottom: 1.5rem; 
-    }
-
-    .team-title {
-      font-size: 1.4rem;
-      color: #666;
-      margin: 0;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.1rem;
-    }
-
-    .avatar-group {
-      display: flex;
-      align-items: center;
-    }
-
-    .avatar {
-      width: 6.5rem; 
-      height: 6.5rem;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 0.4rem solid #ffffff;
-      box-shadow: 0 0.25rem 0.6rem rgba(0, 0, 0, 0.1);
-      margin-left: -1.5rem; 
-      background: #f0f0f0;
-    }
+    .team-section { display: flex; flex-direction: column; gap: 1.2rem; margin-bottom: 1.5rem; }
+    .team-title { font-size: 1.4rem; color: #666; margin: 0; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1rem; }
+    .avatar-group { display: flex; align-items: center; }
+    .avatar { width: 6.5rem; height: 6.5rem; border-radius: 50%; object-fit: cover; border: 0.4rem solid #ffffff; box-shadow: 0 0.25rem 0.6rem rgba(0, 0, 0, 0.1); margin-left: -1.5rem; background: #f0f0f0; }
     .avatar:first-child { margin-left: 0; }
 
-    /* --- KEYWORDS CLOUD --- */
-    .topics-cloud {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.6rem;
-      max-width: 95%;
-    }
+    .topics-cloud { display: flex; flex-wrap: wrap; gap: 0.6rem; max-width: 95%; }
+    .topic-tag { display: inline-block; padding: 0.5rem 1rem; border-radius: 50rem; font-size: 1.1rem; font-weight: 600; border: 0.1rem solid #dbeafe; background: #eff6ff; color: #1e3a8a; }
+    .topic-tag.more-tag { background: #f8fafc; border: 0.1rem dashed #94a3b8; color: #64748b; }
 
-    .topic-tag {
-      display: inline-block;
-      padding: 0.5rem 1rem;
-      border-radius: 50rem;
-      font-size: 1.1rem; 
-      font-weight: 600;
-      border: 0.1rem solid #dbeafe;
-      background: #eff6ff;
-      color: #1e3a8a;
-    }
+    .showcase-column { width: 26rem; display: flex; flex-direction: column; flex-shrink: 0; }
+    .showcase-label { font-size: 1.3rem; font-weight: 700; color: #1e90ff; text-transform: uppercase; letter-spacing: 0.1rem; margin-bottom: 1.5rem; margin-top: auto; display: flex; align-items: center; gap: 0.6rem; }
+    .showcase-label::before { content: ''; display: block; width: 0.9rem; height: 0.9rem; background-color: #ef4444; border-radius: 50%; animation: blink 2s infinite; }
+    .card-stack { position: relative; width: 100%; height: 21rem; }
+    .fake-card-1, .fake-card-2 { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: #ffffff; border: 0.15rem solid #e5e7eb; border-left: 0.6rem solid #93c5fd; border-radius: 1.2rem; box-shadow: 0 0.5rem 1rem -0.2rem rgba(0,0,0,0.05); }
+    .fake-card-1 { transform: translate(0.8rem, -0.8rem); z-index: 1; background: #f8fafc; }
+    .fake-card-2 { transform: translate(0.4rem, -0.4rem); z-index: 2; background: #f1f5f9; }
+    .showcase-card { position: relative; z-index: 3; background: #ffffff; border: 0.15rem solid #e5e7eb; border-left: 0.6rem solid #1e90ff; border-radius: 1.2rem; padding: 2rem 1.5rem; box-shadow: 0 1rem 2rem -0.5rem rgba(0,0,0,0.1); height: 100%; display: flex; flex-direction: column; transition: transform 0.6s cubic-bezier(0.4, 0.0, 0.2, 1), opacity 0.6s ease-out; }
     
-    .topic-tag.more-tag {
-      background: #f8fafc;
-      border: 0.1rem dashed #94a3b8;
-      color: #64748b;
-    }
-
-    /* --- MIDDLE COLUMN: THESIS SHOWCASE --- */
-    .showcase-column {
-      width: 26rem; 
-      display: flex;
-      flex-direction: column;
-      flex-shrink: 0;
-    }
-
-    .showcase-label {
-      font-size: 1.3rem;
-      font-weight: 700;
-      color: #1e90ff;
-      text-transform: uppercase;
-      letter-spacing: 0.1rem;
-      margin-bottom: 1.5rem; 
-      margin-top: auto; 
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-    }
-
-    .showcase-label::before {
-      content: '';
-      display: block;
-      width: 0.9rem;
-      height: 0.9rem;
-      background-color: #ef4444;
-      border-radius: 50%;
-      animation: blink 2s infinite;
-    }
-
-    .card-stack {
-      position: relative;
-      width: 100%;
-      height: 21rem; 
-    }
-
-    .fake-card-1, .fake-card-2 {
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: #ffffff;
-      border: 0.15rem solid #e5e7eb;
-      border-left: 0.6rem solid #93c5fd; 
-      border-radius: 1.2rem;
-      box-shadow: 0 0.5rem 1rem -0.2rem rgba(0,0,0,0.05);
-    }
-
-    .fake-card-1 {
-      transform: translate(0.8rem, -0.8rem);
-      z-index: 1;
-      background: #f8fafc;
-    }
-
-    .fake-card-2 {
-      transform: translate(0.4rem, -0.4rem);
-      z-index: 2;
-      background: #f1f5f9;
-    }
-
-    .showcase-card {
-      position: relative;
-      z-index: 3;
-      background: #ffffff;
-      border: 0.15rem solid #e5e7eb;
-      border-left: 0.6rem solid #1e90ff;
-      border-radius: 1.2rem;
-      padding: 2rem 1.5rem; 
-      box-shadow: 0 1rem 2rem -0.5rem rgba(0,0,0,0.1); 
-      height: 100%; 
-      display: flex;
-      flex-direction: column;
-      transition: transform 0.6s cubic-bezier(0.4, 0.0, 0.2, 1), opacity 0.6s ease-out;
-    }
+    .card-header-row { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem; }
+    .t-type { display: inline-block; background: #f1f5f9; color: #475569; padding: 0.3rem 1rem; border-radius: 50rem; font-size: 0.9rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05rem; }
     
-    .card-header-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      margin-bottom: 1rem;
-    }
+    .t-status { font-size: 0.75rem; font-weight: 800; text-transform: uppercase; padding: 0.3rem 0.8rem; border-radius: 50rem; }
+    .t-status.ongoing { background: #eff6ff; color: #2563eb; border: 1px solid #bfdbfe; }
+    .t-status.finished { background: #f0fdf4; color: #16a34a; border: 1px solid #bbf7d0; }
 
-    .t-type {
-      display: inline-block;
-      background: #f1f5f9;
-      color: #475569;
-      padding: 0.3rem 1rem;
-      border-radius: 50rem;
-      font-size: 0.9rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.05rem;
-    }
-    
-    .t-status {
-      font-size: 0.75rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      padding: 0.3rem 0.8rem;
-      border-radius: 50rem;
-    }
-    
-    .t-status.ongoing {
-      background: #eff6ff;
-      color: #2563eb;
-      border: 1px solid #bfdbfe;
-    }
-    
-    .t-status.finished {
-      background: #f0fdf4;
-      color: #16a34a;
-      border: 1px solid #bbf7d0;
-    }
+    .t-title { font-size: 1.5rem; font-weight: 700; color: #0f172a; margin: 0 0 1.2rem 0; line-height: 1.35; }
+    .t-meta-group { margin-top: auto; display: flex; flex-direction: column; gap: 0.4rem; }
+    .t-student, .t-sup { margin: 0; display: flex; align-items: center; gap: 0.5rem; }
+    .t-student { font-size: 1.15rem; color: #334155; font-weight: 700; }
+    .t-sup { font-size: 1.05rem; color: #64748b; font-weight: 600; }
 
-    .t-title {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: #0f172a;
-      margin: 0 0 1.2rem 0;
-      line-height: 1.35;
-    }
+    .right-column { display: flex; flex-direction: column; align-items: center; gap: 2.5rem; width: 21rem; flex-shrink: 0; }
+    .brand-logo { width: 100%; max-height: 14rem; object-fit: contain; border-radius: 0.5rem; margin-bottom: auto; }
+    .qr-section { background: #ffffff; padding: 1.2rem; border-radius: 1.5rem; border: 0.2rem solid #1e90ff; box-shadow: 0 1.25rem 1.5rem -0.3rem rgba(30, 144, 255, 0.15); width: 100%; }
+    .qr-code { width: 100%; height: 18.2rem; background: #f1f5f9; display: flex; align-items: center; justify-content: center; border-radius: 0.75rem; overflow: hidden; }
+    .qr-code img { width: 100%; height: 100%; object-fit: cover; }
 
-    .t-meta-group {
-      margin-top: auto;
-      display: flex;
-      flex-direction: column;
-      gap: 0.4rem;
-    }
-
-    .t-student, .t-sup {
-      margin: 0;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .t-student {
-      font-size: 1.15rem;
-      color: #334155;
-      font-weight: 700;
-    }
-
-    .t-sup {
-      font-size: 1.05rem;
-      color: #64748b;
-      font-weight: 600;
-    }
-
-    /* --- RIGHT COLUMN: LOGO & QR --- */
-    .right-column {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 2.5rem; 
-      width: 21rem; 
-      flex-shrink: 0;
-    }
-
-    .brand-logo {
-      width: 100%; 
-      max-height: 14rem; 
-      object-fit: contain; 
-      border-radius: 0.5rem;
-      margin-bottom: auto; 
-    }
-
-    .qr-section {
-      background: #ffffff;
-      padding: 1.2rem; 
-      border-radius: 1.5rem;
-      border: 0.2rem solid #1e90ff;
-      box-shadow: 0 1.25rem 1.5rem -0.3rem rgba(30, 144, 255, 0.15);
-      width: 100%; 
-    }
-
-    .qr-code {
-      width: 100%; 
-      height: 18.2rem; 
-      background: #f1f5f9;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 0.75rem;
-      overflow: hidden;
-    }
-    
-    .qr-code img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    @keyframes pulse {
-      0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(30, 144, 255, 0.3); }
-      70% { transform: scale(1.02); box-shadow: 0 0 0 1.5rem rgba(30, 144, 255, 0); }
-      100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(30, 144, 255, 0); }
-    }
-
-    @keyframes blink {
-      0% { opacity: 1; }
-      50% { opacity: 0.3; }
-      100% { opacity: 1; }
-    }
+    @keyframes pulse { 0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(30, 144, 255, 0.3); } 70% { transform: scale(1.02); box-shadow: 0 0 0 1.5rem rgba(30, 144, 255, 0); } 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(30, 144, 255, 0); } }
+    @keyframes blink { 0% { opacity: 1; } 50% { opacity: 0.3; } 100% { opacity: 1; } }
   </style>
 </head>
 <body>
 
   <div class="tv-wrapper">
     <div class="slide-container">
-
-      <!-- Main Content Row -->
       <div class="content-section">
         
         <!-- COLUMN 1: Text, Stats, Avatars, and Keywords -->
@@ -413,13 +83,10 @@ permalink: /tv-display/
           <h1 class="main-title">From Minerals to Megawatts.</h1>
           <h2 class="sub-title">Write your thesis with us.</h2>
           
-          <!-- STATS CARDS -->
           <div class="tv-stats-container">
             <div class="tv-stat-card">
               <div class="tv-stat-icon">
-                <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
-                </svg>
+                <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
               </div>
               <div class="tv-stat-content">
                 <span class="tv-stat-label">Finished Theses (since 2023)</span>
@@ -429,9 +96,7 @@ permalink: /tv-display/
 
             <div class="tv-stat-card">
               <div class="tv-stat-icon">
-                <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                </svg>
+                <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
               </div>
               <div class="tv-stat-content">
                 <span class="tv-stat-label">Avg. Master Theses Duration</span>
@@ -449,19 +114,18 @@ permalink: /tv-display/
             </div>
           </div>
 
-          <!-- Curated Keywords Cloud -->
-            <div class="topics-cloud">
-              <span class="topic-tag">Resource-Energy Co-Evolution</span>
-              <span class="topic-tag">Energy System Optimization</span>
-              <span class="topic-tag">Modeling of Supply Risk and Geopolitics</span>
-              <span class="topic-tag">Electricity Prices</span>
-              <span class="topic-tag">Modeling of Industrial Transformation Pathways</span>
-              <span class="topic-tag">Space Energy System Optimization</span> 
-              <span class="topic-tag more-tag">+ more...</span>
-            </div>
+          <div class="topics-cloud">
+            <span class="topic-tag">Resource-Energy Co-Evolution</span>
+            <span class="topic-tag">Energy System Optimization</span>
+            <span class="topic-tag">Modeling of Supply Risk and Geopolitics</span>
+            <span class="topic-tag">Electricity Prices</span>
+            <span class="topic-tag">Modeling of Industrial Transformation Pathways</span>
+            <span class="topic-tag">Space Energy System Optimization</span> 
+            <span class="topic-tag more-tag">+ more...</span>
+          </div>
         </div>
 
-        <!-- COLUMN 2: Theses Showcase (Animated Stack) -->
+        <!-- COLUMN 2: Theses Showcase -->
         <div class="showcase-column">
           <div class="showcase-label">Ongoing & Finished</div>
           
@@ -474,22 +138,18 @@ permalink: /tv-display/
                 <span class="t-type" id="t-type">Loading...</span>
                 <span class="t-status" id="t-status"></span>
               </div>
-              
               <h3 class="t-title" id="t-title">Loading recent topics...</h3>
-              
               <div class="t-meta-group">
                 <p class="t-student" id="t-student"></p>
                 <p class="t-sup" id="t-sup"></p>
               </div>
             </div>
           </div>
-          
         </div>
 
         <!-- COLUMN 3: Logo & QR Code -->
         <div class="right-column">
           <img src="/assets/images/ES3M_Logo.jpg" alt="ES3M Logo" class="brand-logo">
-          
           <div class="qr-section" style="animation: pulse 3s infinite;">
             <div class="qr-code">
               <img src="/assets/images/qrcode_es3m.eu.png" alt="Scan to see open thesis topics">
@@ -498,11 +158,9 @@ permalink: /tv-display/
         </div>
 
       </div>
-
     </div>
   </div>
 
-  <!-- JavaScript to run the Animated Showcase AND the Stats -->
   <script>
     const allThesesData = [
       {% for t in site.data.thesis %}
@@ -518,24 +176,25 @@ permalink: /tv-display/
       {% endfor %}
     ];
 
-    // --- A. CALCULATE STATS ---
     let finishedTotal = 0;
     let totalMonths = 0;
     let validDurationsCount = 0;
-    const carouselTheses = []; // NOW HOLDS BOTH ONGOING & FINISHED
+    const carouselTheses = []; 
 
     allThesesData.forEach(function(t) {
-      // Add both ongoing and finished to the rotating carousel
-      if (t.status === 'finished' || t.status === 'ongoing') {
+      // THIS FIXES THE INVISIBLE SPACE / TYPO ISSUE
+      const cleanStatus = (t.status || "").toString().trim().toLowerCase();
+      
+      if (cleanStatus === 'finished' || cleanStatus === 'ongoing') {
+        // Rewrite the status to the clean version so the card styling works
+        t.status = cleanStatus;
         carouselTheses.push(t);
       }
       
-      // Calculate total finished stats
-      if (t.status === 'finished') {
+      if (cleanStatus === 'finished') {
         finishedTotal++;
       }
 
-      // Calculate avg duration for Master Theses
       if (t.type === 'Master Thesis' && t.start_date && t.finish_date) {
         const start = new Date(t.start_date);
         const end = new Date(t.finish_date);
@@ -547,13 +206,10 @@ permalink: /tv-display/
       }
     });
 
-    // Update the DOM with Stats
-    // Update the DOM with exact Stats
+    // Show EXACT finished count
     document.getElementById('tv-stat-count').innerText = finishedTotal;
     document.getElementById('tv-stat-duration').innerText = (validDurationsCount > 0) ? Math.round(totalMonths / validDurationsCount) + " Months" : "-";
 
-
-    // --- B. CAROUSEL ANIMATION ---
     if (carouselTheses.length === 0) {
       carouselTheses.push(
         { type: "Master Thesis", title: "Optimizing Hydrogen Supply Chains in Central Europe", status: "ongoing", student: "Max Mustermann", supervisor: "Sebastian Zwickl-Bernhard" },
@@ -575,7 +231,6 @@ permalink: /tv-display/
       tType.textContent = data.type;
       tTitle.textContent = data.title;
       
-      // Update Status Badge
       tStatus.textContent = data.status;
       if(data.status === 'ongoing') {
           tStatus.className = "t-status ongoing";
@@ -598,7 +253,6 @@ permalink: /tv-display/
       }
     }
 
-    // Set initial card
     updateCardContent(carouselTheses[currentIndex]);
     currentIndex++;
 
@@ -608,10 +262,8 @@ permalink: /tv-display/
       
       setTimeout(() => {
         updateCardContent(carouselTheses[currentIndex]);
-        
         card.style.transition = 'none'; 
         card.style.transform = 'translateX(3rem)';
-        
         void card.offsetWidth; 
 
         card.style.transition = 'transform 0.6s cubic-bezier(0.4, 0.0, 0.2, 1), opacity 0.6s ease-out';
@@ -624,6 +276,5 @@ permalink: /tv-display/
 
     setInterval(dealNextCard, 5000);
   </script>
-
 </body>
 </html>
